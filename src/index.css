@@ -1,4 +1,13 @@
-
 .logo {
     max-height: 70px !important;
 }
+
+.icon-custom {
+    width: 25px;
+    height: 25px;
+}
+
+.info {
+    margin-top: 5%;
+}
+
