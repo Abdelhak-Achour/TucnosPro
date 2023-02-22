@@ -11,3 +11,33 @@
     margin-top: 5%;
 }
 
+.navbar {
+    background-color: transparent !important;
+    color: aliceblue !important;
+}
+
+.navbar-menu .navbar-item {
+    color: aliceblue !important;
+}
+.navbar-item:hover{
+    background-color: transparent !important;
+}
+
+.active{
+    background-color: transparent !important;
+}
+
+.home-image {
+    background-image: linear-gradient(rgba(65, 76, 160, 0.415), rgba(35, 40, 80, 0.442)), url("images/class.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding-top: 17rem;
+    padding-bottom: 17rem;
+    padding-left: 15rem;
+    filter: brightness(100%);
+    color: rgb(255, 255, 255);
+    font-size: 5rem !important;
+}

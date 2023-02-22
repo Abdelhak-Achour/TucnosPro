@@ -19,7 +19,7 @@ export function Navbar ()
 
     return(
         <>
-            <nav className = "navbar has-shadow is-transparent">
+            <nav className = "navbar is-fixed-top">
                 <div className = "navbar-brand">
                     <Link className = "navbar-item py-4 px-6" to = "/"> <img className = "logo" src = {Logo} alt = "logo img" /></Link>
                     <table className="info">
