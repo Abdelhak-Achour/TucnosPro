@@ -36,8 +36,14 @@
     width: 100%;
     padding-top: 17rem;
     padding-bottom: 17rem;
-    padding-left: 15rem;
     filter: brightness(100%);
-    color: rgb(255, 255, 255);
-    font-size: 5rem !important;
+    color: rgb(255, 255, 255) !important;
+}
+
+p {
+    color: aliceblue !important;
+}
+
+.is-active {
+    background-color: rgb(51, 53, 54) !important;
 }
