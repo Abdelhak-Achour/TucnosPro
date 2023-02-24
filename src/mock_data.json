@@ -1,0 +1,32 @@
+{
+    "categorie": [
+        {
+            "name": "Ethical Hacking",
+            "description": "L’Ethical Hacking est une démarche de sécurité informatique. Les « pirates éthiques » endossent alors le rôle des hackers malveillants pendant la durée d’une mission au sein."
+        },
+        {
+            "name": "Data Science et Business Intelligence",
+            "description": "La Data Science est un mélange disciplinaire qui vise à résoudre des problèmes analytique complexes centrés autour de quantités massives des données dans un organisme."
+        },
+        {
+            "name": "Développement et coding",
+            "description": "les profils dévoloppeurs sont de plus en plus en demande dans le marché d'emploi. Le développement vous permet de disposer des notions pour développer des applications."
+        },
+        {
+            "name": "Internet of Things",
+            "description": "L'internet des objets décrit des dispositifs dotés de capteurs, de logiciels, etc... qui se connectent et échangent des données avec d'autres dispositifs via l'internet."
+        },
+        {
+            "name": "Cloud Computing",
+            "description": "Tout le cloud"
+        },
+        {
+            "name": "Fibre optique",
+            "description": "Specialisez-vous en fibre optique en devenant technicien FTTH. Apprenez en ligne et en pratique à réaliser, câbler et assurer la maintenance d'un réseau fibre optiques"
+        },
+        {
+            "name": "Gestion de projet",
+            "description": "Les formations en gestion de projet permettent de préparer les candidats pour intégrer facilement et rapidement des équipes opérationnelles et participer à des projets?"
+        }
+    ]
+}

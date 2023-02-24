@@ -1,5 +1,5 @@
 .logo {
-    max-height: 70px !important;
+    max-height: 5rem !important;
 }
 
 .icon-custom {
@@ -47,3 +47,23 @@ p {
 .is-active {
     background-color: rgb(51, 53, 54) !important;
 }
+
+.centered-table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.spaced-cells {
+    padding-right: 3rem;
+    padding-left: 3rem;
+}
+
+.anchor-style {
+    color: aliceblue !important;
+}
+
+.card-section {
+    max-width: 21rem;
+    margin: auto;
+}
+
