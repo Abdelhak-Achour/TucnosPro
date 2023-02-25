@@ -81,3 +81,64 @@ p {
 .cards-title {
     margin-top: 1rem;
 }
+
+.card-image {
+    margin: auto;
+    max-width: 275px;
+    padding-top: 1rem;
+}
+
+.methods-section {
+    margin-top: 3rem;
+    background-color: rgb(236, 240, 243);
+    padding: 0;
+    margin-bottom: 3rem;
+}
+
+.methods-image {
+    max-width: 28rem;
+}
+
+.padding-0 {
+    padding: 0px !important;
+}
+
+.margin-left {
+    margin-left: 1rem !important;
+}
+
+.methods-p {
+    padding-bottom: 1rem;
+}
+
+.method-nb {
+    color: #ff5a2c !important;
+}
+
+.formation-image {
+    max-width: 16rem;
+    
+}
+
+.image-column {
+    max-width: 17rem;
+    
+}
+
+.timing-column {
+    max-width: 7rem;
+}
+
+.info-column {
+    max-width: 21rem;
+}
+
+.info-text {
+    font-size: 0.8rem;
+}
+
+.formation-box {
+    max-width: 37rem;
+    margin: auto;
+    padding: 15px;
+}

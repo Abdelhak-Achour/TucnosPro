@@ -1,10 +1,11 @@
 import React from 'react';
-import ehimage from '../images/eh.png';
 import data from '../mock_data.json';
 import { Navigation, Pagination, A11y, EffectCoverflow } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 import { Card } from '../components/card';
+import methodsimg from '../images/methods.jpg';
+import pceh from '../images/pceh.png';
 
 export function Home()
 {
@@ -55,23 +56,174 @@ export function Home()
                         data.categories.map((categorie) => {
                             return (
                                 <SwiperSlide>
-                                    <Card 
-                                        key = {categorie.id} 
-                                        id = {categorie.id} 
-                                        image = {categorie.image} 
-                                        name = {categorie.name} 
-                                        description = {categorie.description} 
-                                    />
+                                    <Card
+                                        key = {categorie.id}
+                                        id = {categorie.id}
+                                        name = {categorie.name}
+                                        description = {categorie.description}
+                                        image = {categorie.image}
+                                     />
                                 </SwiperSlide>
                             )
                         })
                     }
-                    
                 </Swiper>
+            </div>
+
+            <div className='methods-section'>
+                <div className='columns'>
+                    <div className='column is-11-mobile has-text-centered-mobile is-4 padding-0'>
+                        <img className='' src = {methodsimg} alt = "work methods image" />
+                    </div>
+                    <div className='column'>
+                        <p className='title is-2 has-text-dark margin-left'>Faire la bonne chose au bon moment.</p>
+                        <div className='columns'>
+                            <div className='column is-1 has-text-centered-tablet is-paddingless'>
+                                <p className='title is-3 method-nb margin-left'>01.</p>
+                            </div>
+                            <div className='column is-paddingless'>
+                                <p className='title is-3 has-text-grey-dark has-text-centered-mobile'>Notre Centre</p>
+                            </div>
+                        </div>
+                        <p className='has-text-dark methods-p margin-left'>TucnosPRO est spécialisé dans la formation et le consulting principalement dans les métiers des nouvelles technologies. Nous vous proposons des formations ciblées pour accélérer et faciliter votre intégration dans le milieu professionnel.Notre objectif est de vous garantir une formation qui répond à vos besoins et vous permet d'acquérir de véritables compétences. et vous rendre opérationnels.</p>
+                        <div className='columns'>
+                            <div className='column is-1 has-text-centered-tablet is-paddingless'>
+                                <p className='title is-3 method-nb margin-left'>02.</p>
+                            </div>
+                            <div className='column is-paddingless'>
+                            <p className='title is-3 has-text-grey-dark has-text-centered-mobile'>Nos atouts</p>
+                            </div>
+                        </div>
+                        <p className='has-text-dark methods-p margin-left'>C’est par la pratique et l'écoute de nos clients que nous arrivons à faciliter votre insertion professionnel. Les formations qu'on propose s'adressent aussi bien aux entreprises, aux particuliers, étudiants, personnes douées ou encore aux salariés à la recherche d'une formule de reconversion. Nous nous efforçons de traiter le besoins de la façon la plus appropriée possible tout en restant flexible et ouverts à toute suggestion.</p>
+                        <div className='columns'>
+                            <div className='column is-1 has-text-centered-tablet is-paddingless'>
+                                <p className='title is-3 method-nb margin-left'>03.</p>
+                            </div>
+                            <div className='column is-paddingless'>
+                            <p className='title is-3 has-text-grey-dark has-text-centered-mobile'>Notre méthode</p>
+                            </div>
+                        </div>
+                        <p className='has-text-dark methods-p margin-left'>TucnosPRO vous propose des formations pratiques, sur-mesure et adaptés à vos besoins. Développez votre savoir-faire et vos compétences grâce à nos formations orientées métiers. Pratiques, adaptées et riches, nos formations répondent parfaitement aux besoins du marché du travail actuel. Nos formateurs qualifiés sont disponibles pour vous accompagner tout au long de votre passage chez nous.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div className='formations-section'>
+                <div className='box'>
+                    <div className='columns'>
+                        <div className='column'>
+                            <div className='box formation-box'>
+                                <div className='columns is-gapless'>
+                                    <div className='column image-column'>
+                                        <img className='formation-image' src = {pceh} alt = "pceh image" />
+                                    </div>
+                                    <div className='column info-column'>
+                                        <div className='card is-shadowless'>
+                                            <div className='card-content is-paddingless'>
+                                                <p className='title is-4 has-text-dark my-1'>Préparation à la certification CEH</p>
+                                                <div className='columns'>
+                                                    <div className='column timing-column is-gapless'>
+                                                        <p className='has-text-grey'>40 Heures</p>
+                                                        <p className='has-text-grey'>Date:</p>
+                                                        <p className='has-text-grey'>2022-03-31</p>
+                                                    </div>
+                                                    <div className='column'>
+                                                        <p className='has-text-grey info-text'>Établir et régir des normes minimales pour l’accréditation des spécialistes et professionnels de la sécurité de l’information en matière de mesures de piratage éthique.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='column'>
+                            <div className='box formation-box'>
+                                <div className='columns is-gapless'>
+                                    <div className='column image-column'>
+                                        <img className='formation-image' src = {pceh} alt = "pceh image" />
+                                    </div>
+                                    <div className='column info-column'>
+                                        <div className='card is-shadowless'>
+                                            <div className='card-content is-paddingless'>
+                                                <p className='title is-4 has-text-dark my-1'>Préparation à la certification CEH</p>
+                                                <div className='columns'>
+                                                    <div className='column timing-column is-gapless'>
+                                                        <p className='has-text-grey'>40 Heures</p>
+                                                        <p className='has-text-grey'>Date:</p>
+                                                        <p className='has-text-grey'>2022-03-31</p>
+                                                    </div>
+                                                    <div className='column'>
+                                                        <p className='has-text-grey info-text'>Établir et régir des normes minimales pour l’accréditation des spécialistes et professionnels de la sécurité de l’information en matière de mesures de piratage éthique.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='columns'>
+                        <div className='column'>
+                            <div className='box formation-box'>
+                                <div className='columns is-gapless'>
+                                    <div className='column image-column'>
+                                        <img className='formation-image' src = {pceh} alt = "pceh image" />
+                                    </div>
+                                    <div className='column info-column'>
+                                        <div className='card is-shadowless'>
+                                            <div className='card-content is-paddingless'>
+                                                <p className='title is-4 has-text-dark my-1'>Préparation à la certification CEH</p>
+                                                <div className='columns'>
+                                                    <div className='column timing-column is-gapless'>
+                                                        <p className='has-text-grey'>40 Heures</p>
+                                                        <p className='has-text-grey'>Date:</p>
+                                                        <p className='has-text-grey'>2022-03-31</p>
+                                                    </div>
+                                                    <div className='column'>
+                                                        <p className='has-text-grey info-text'>Établir et régir des normes minimales pour l’accréditation des spécialistes et professionnels de la sécurité de l’information en matière de mesures de piratage éthique.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='column'>
+                            <div className='box formation-box'>
+                                <div className='columns is-gapless'>
+                                    <div className='column image-column'>
+                                        <img className='formation-image' src = {pceh} alt = "pceh image" />
+                                    </div>
+                                    <div className='column info-column'>
+                                        <div className='card is-shadowless'>
+                                            <div className='card-content is-paddingless'>
+                                                <p className='title is-4 has-text-dark my-1'>Préparation à la certification CEH</p>
+                                                <div className='columns'>
+                                                    <div className='column timing-column is-gapless'>
+                                                        <p className='has-text-grey'>40 Heures</p>
+                                                        <p className='has-text-grey'>Date:</p>
+                                                        <p className='has-text-grey'>2022-03-31</p>
+                                                    </div>
+                                                    <div className='column'>
+                                                        <p className='has-text-grey info-text'>Établir et régir des normes minimales pour l’accréditation des spécialistes et professionnels de la sécurité de l’information en matière de mesures de piratage éthique.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div className='temp-div'>
                 <h1>it works</h1>
+                <img className='card-image' src = {require("../images/ds.png")} alt = "nah" />
             </div>
         </>
     )

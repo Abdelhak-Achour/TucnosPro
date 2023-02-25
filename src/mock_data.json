@@ -4,43 +4,180 @@
             "id": 1,
             "name": "Ethical Hacking",
             "description": "L’Ethical Hacking est une démarche de sécurité informatique. Les « pirates éthiques » endossent alors le rôle des hackers malveillants pendant la durée d’une mission au sein.",
-            "image": "'../images/eh.png'"
+            "image": "eh.png"
         },
         {
             "id": 2,
             "name": "Data Science et Business Intelligence",
             "description": "La Data Science est un mélange disciplinaire qui vise à résoudre des problèmes analytique complexes centrés autour de quantités massives des données dans un organisme.",
-            "image": "'../images/ds.png'"
+            "image": "ds.png"
         },
         {
             "id": 3,
             "name": "Développement et coding",
             "description": "les profils dévoloppeurs sont de plus en plus en demande dans le marché d'emploi. Le développement vous permet de disposer des notions pour développer des applications.",
-            "image": "'../images/iot.png'"
+            "image": "dc.png"
         },
         {
             "id": 4,
             "name": "Internet of Things",
             "description": "L'internet des objets décrit des dispositifs dotés de capteurs, de logiciels, etc... qui se connectent et échangent des données avec d'autres dispositifs via l'internet.",
-            "image": "'../images/iot.png'"
+            "image": "iot.png"
         },
         {
             "id": 5,
             "name": "Cloud Computing",
             "description": "Tout le cloud",
-            "image": "'../images/cc.jpg'"
+            "image": "cc.jpg"
         },
         {
             "id": 6,
             "name": "Fibre optique",
             "description": "Specialisez-vous en fibre optique en devenant technicien FTTH. Apprenez en ligne et en pratique à réaliser, câbler et assurer la maintenance d'un réseau fibre optiques",
-            "image": "'../images/fo.png'"
+            "image": "fo.png"
         },
         {
             "id": 7,
             "name": "Gestion de projet",
             "description": "Les formations en gestion de projet permettent de préparer les candidats pour intégrer facilement et rapidement des équipes opérationnelles et participer à des projets?",
-            "image": "'../images/gp.jpg'"
+            "image": "gp.jpg"
+        }
+    ],
+    "formations":[
+        {
+            "id": 8,
+            "name": "Préparation à la certification CEH",
+            "description": "Établir et régir des normes minimales pour l’accréditation des spécialistes et professionnels de la sécurité de l’information en matière de mesures de piratage éthique.",
+            "duration": 40,
+            "date": "2022-03-31",
+            "price": 2500,
+            "image": "pceh.png"
+        },
+        {
+            "id": 9,
+            "name": "Python Intelligence Artificielle",
+            "description": "Cette formation vous permet d'acquérir les fondamentaux pour démarrer dans le domaine de la Data Science. Développer et deployez vos modèles predictifs avec scikit-learn.",
+            "duration": 30,
+            "date": "2023-03-04",
+            "price": 800,
+            "image": "pia.png"
+        },
+        {
+            "id": 10,
+            "name": "Programmation Python",
+            "description": "Python est un langage de programmation simple à utiliser, puissant et très utilisé pour faire du développement web, Data Science, IA, Gaming, embarqué, mobile, etc.",
+            "duration": 30,
+            "date": "2020-10-10",
+            "price": 400,
+            "image": "fp.png"
+        },
+        {
+            "id": 11,
+            "name": "Initiation à l'EH",
+            "description": "L'Ethical Hacking vise à former les professionnels pour identifier les vulnérabilités d'un SI. Ceci permet de mettre en place les mesures adéquates pour les protéger.",
+            "duration": 30,
+            "date": "2020-10-03",
+            "price": 400,
+            "image": "ceh.png"
+        },
+        {
+            "id": 12,
+            "name": "Full stack Spring Boot & Angular",
+            "description": "Devenez un développeur concepteur d'application web Senior Angular 8 et SpringBoot avec cette formation de 30H. Le marché du développement web est en expansion continue.",
+            "duration": 30,
+            "date": "2020-10-24",
+            "price": 500,
+            "image": "sba.png"
+        },
+        {
+            "id": 13,
+            "name": "VMware vSphere: Install, Configure, Manage [V7]",
+            "description": "Apprendre l'essentiel de la virtualisation pour bien gérer vos systèmes et administrer votre réseau. Créer des environnements adéquats à vos besoins et conformes.",
+            "duration": 30,
+            "date": "2022-03-11",
+            "price": 2200,
+            "image": "vm.png"
+        },
+        {
+            "id": 14,
+            "name": "Préparation à la certification Professional Scrum Master 1 & Professional Scrum Product Owner 1",
+            "description": "Une formation visant à préparer les certifications PSM 1 et PSPO 1 avec de la théorie, des ateliers et des examens blancs pour bien maitriser les fondements agile.",
+            "duration": 20,
+            "date": "2022-03-25",
+            "price": 600,
+            "image": "agile.png"
+        },
+        {
+            "id": 15,
+            "name": "Certification Designing and Implementing a Data Science Solution on Azure (DP-100)",
+            "description": "Devenir un expert des données sur Azure avec la certification data Scientist Associate de Microsoft pour créer, évaluer et déployer des modèles de Machine Learning.",
+            "duration": 30,
+            "date": "2022-06-17",
+            "price": 1250,
+            "image": "azure.png"
+        },
+        {
+            "id": 16,
+            "name": "Certification Microsoft Power BI Data Analyst (PL-300)",
+            "description": "Maitriser l'analyse et la visualisation des données avec l'outil Microsoft Power BI et la Business Intelligence. Ce parcours vous prépare aussi à la certification DA-100.",
+            "duration": 25,
+            "date": "2023-01-07",
+            "price": 850,
+            "image": "mspbi.png"
+        },
+        {
+            "id": 17,
+            "name": "Certification Microsoft Azure Fundamentals (AZ-900)",
+            "description": "Cette formation vous permet de vous préparer à la certification AZ-900 pour maitriser les concepts de base pour la gestion du Cloud Azure ainsi que toutes ses fonctions.",
+            "duration": 14,
+            "date": "2022-06-17",
+            "price": 400,
+            "image": "msaz.png"
+        },
+        {
+            "id": 18,
+            "name": "Certification Microsoft Azure Administrator (AZ-104)",
+            "description": "Maitriser les techniques pour bien administrer les fonctionnalités sur Azure.",
+            "duration": 30,
+            "date": "2022-10-01",
+            "price": 1250,
+            "image": "azadmin.png"
+        },
+        {
+            "id": 19,
+            "name": "Certification Microsoft Azure AI Fundamentals (AI-900)",
+            "description": "Bien maitriser et comprendre les charges de travail etles services cloud en IA Azure, principes fondamentaux du ML sur Azure, Computer vision, NLP, IA conversationnelle.",
+            "duration": 14,
+            "date": "2022-06-09",
+            "price": 400,
+            "image": "aiaz.png"
+        },
+        {
+            "id": 20,
+            "name": "Certification Microsoft Azure Data Fundamentals (DP-900)",
+            "description": "Apprenez à créer, configurer et déployer des ressources pour la gestion des données sur le cloud Azure ainsi que la création des instances des bases de données SQL.",
+            "duration": 15,
+            "date": "2022-06-09",
+            "price": 400,
+            "image": "azf.png"
+        },
+        {
+            "id": 21,
+            "name": "Certification Microsoft Power Platform Fundamentals (PL-900)",
+            "description": "Améliorer la productivité en comprenant les capacités de Power Platform, les processus opérationnels de base avec Power Automate et Power BI.",
+            "duration": 14,
+            "date": "2022-06-18",
+            "price": 400,
+            "image": "ppf.png"
+        },
+        {
+            "id": 22,
+            "name": "Certification Microsoft Security, Compliance, and Identity Fundamentals (SC-900)",
+            "description": "Solutions de sécurité sur Azure pour découvrir Zero-Trust, les principes de sécurité et de conformité de Microsoft, le portail Service Trust et la gestion des identités.",
+            "duration": 14,
+            "date": "2022-06-12",
+            "price": 400,
+            "image": "msazsecurity.png"
         }
     ]
 }
