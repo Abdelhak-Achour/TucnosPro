@@ -7,7 +7,7 @@ export function Card (props)
             <div className='card-section-box'>
                 <div className='card'>
                     <div className='card-image has-text-centered'>
-                        <img className='card-image' src = {require(`../images/${props.image}`)} alt = "nah" />
+                        <img className='card-image' src = {require(`../images/${props.image}`)} alt = "categorie" />
                     </div>
                     <div className='card-content'>
                         <p className='title is-3 has-text-dark has-text-centered'>{props.name}</p>

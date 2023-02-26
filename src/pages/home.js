@@ -6,9 +6,13 @@ import 'swiper/swiper-bundle.css';
 import { Card } from '../components/card';
 import methodsimg from '../images/methods.jpg';
 import pceh from '../images/pceh.png';
+import { FormationLine } from '../components/formationsline';
 
 export function Home()
 {
+    let col1 = data.formations.filter(formation => formation.id % 2 === 0);
+    let col2 = data.formations.filter(formation => formation.id % 2 !== 0);
+
     return (
         <>
             <div className = 'home-image'>
@@ -73,7 +77,7 @@ export function Home()
             <div className='methods-section'>
                 <div className='columns'>
                     <div className='column is-11-mobile has-text-centered-mobile is-4 padding-0'>
-                        <img className='' src = {methodsimg} alt = "work methods image" />
+                        <img className='' src = {methodsimg} alt = "work methods" />
                     </div>
                     <div className='column'>
                         <p className='title is-2 has-text-dark margin-left'>Faire la bonne chose au bon moment.</p>
@@ -109,115 +113,28 @@ export function Home()
             </div>
 
             <div className='formations-section'>
-                <div className='box'>
-                    <div className='columns'>
-                        <div className='column'>
-                            <div className='box formation-box'>
-                                <div className='columns is-gapless'>
-                                    <div className='column image-column'>
-                                        <img className='formation-image' src = {pceh} alt = "pceh image" />
-                                    </div>
-                                    <div className='column info-column'>
-                                        <div className='card is-shadowless'>
-                                            <div className='card-content is-paddingless'>
-                                                <p className='title is-4 has-text-dark my-1'>Préparation à la certification CEH</p>
-                                                <div className='columns'>
-                                                    <div className='column timing-column is-gapless'>
-                                                        <p className='has-text-grey'>40 Heures</p>
-                                                        <p className='has-text-grey'>Date:</p>
-                                                        <p className='has-text-grey'>2022-03-31</p>
-                                                    </div>
-                                                    <div className='column'>
-                                                        <p className='has-text-grey info-text'>Établir et régir des normes minimales pour l’accréditation des spécialistes et professionnels de la sécurité de l’information en matière de mesures de piratage éthique.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='column'>
-                            <div className='box formation-box'>
-                                <div className='columns is-gapless'>
-                                    <div className='column image-column'>
-                                        <img className='formation-image' src = {pceh} alt = "pceh image" />
-                                    </div>
-                                    <div className='column info-column'>
-                                        <div className='card is-shadowless'>
-                                            <div className='card-content is-paddingless'>
-                                                <p className='title is-4 has-text-dark my-1'>Préparation à la certification CEH</p>
-                                                <div className='columns'>
-                                                    <div className='column timing-column is-gapless'>
-                                                        <p className='has-text-grey'>40 Heures</p>
-                                                        <p className='has-text-grey'>Date:</p>
-                                                        <p className='has-text-grey'>2022-03-31</p>
-                                                    </div>
-                                                    <div className='column'>
-                                                        <p className='has-text-grey info-text'>Établir et régir des normes minimales pour l’accréditation des spécialistes et professionnels de la sécurité de l’information en matière de mesures de piratage éthique.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='columns'>
-                        <div className='column'>
-                            <div className='box formation-box'>
-                                <div className='columns is-gapless'>
-                                    <div className='column image-column'>
-                                        <img className='formation-image' src = {pceh} alt = "pceh image" />
-                                    </div>
-                                    <div className='column info-column'>
-                                        <div className='card is-shadowless'>
-                                            <div className='card-content is-paddingless'>
-                                                <p className='title is-4 has-text-dark my-1'>Préparation à la certification CEH</p>
-                                                <div className='columns'>
-                                                    <div className='column timing-column is-gapless'>
-                                                        <p className='has-text-grey'>40 Heures</p>
-                                                        <p className='has-text-grey'>Date:</p>
-                                                        <p className='has-text-grey'>2022-03-31</p>
-                                                    </div>
-                                                    <div className='column'>
-                                                        <p className='has-text-grey info-text'>Établir et régir des normes minimales pour l’accréditation des spécialistes et professionnels de la sécurité de l’information en matière de mesures de piratage éthique.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='column'>
-                            <div className='box formation-box'>
-                                <div className='columns is-gapless'>
-                                    <div className='column image-column'>
-                                        <img className='formation-image' src = {pceh} alt = "pceh image" />
-                                    </div>
-                                    <div className='column info-column'>
-                                        <div className='card is-shadowless'>
-                                            <div className='card-content is-paddingless'>
-                                                <p className='title is-4 has-text-dark my-1'>Préparation à la certification CEH</p>
-                                                <div className='columns'>
-                                                    <div className='column timing-column is-gapless'>
-                                                        <p className='has-text-grey'>40 Heures</p>
-                                                        <p className='has-text-grey'>Date:</p>
-                                                        <p className='has-text-grey'>2022-03-31</p>
-                                                    </div>
-                                                    <div className='column'>
-                                                        <p className='has-text-grey info-text'>Établir et régir des normes minimales pour l’accréditation des spécialistes et professionnels de la sécurité de l’information en matière de mesures de piratage éthique.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div className='box mx-5'>
+                    {
+                        col1.map((formation, index) => {
+                            return (
+                                <FormationLine
+                                    key = {formation.id}
+                                    id1 = {formation.id}
+                                    id2 = { col2.length >= index + 1 ? col2[index].id : null }
+                                    image1 = {formation.image}
+                                    name1 = {formation.name}
+                                    duration1 = {formation.duration}
+                                    date1 = {formation.date}
+                                    description1 = {formation.description}
+                                    image2 = { col2.length >= index + 1 ? col2[index].image : null }
+                                    name2 = { col2.length >= index + 1 ? col2[index].name : null }
+                                    duration2 = { col2.length >= index + 1 ? col2[index].duration : null }
+                                    date2 = { col2.length >= index + 1 ? col2[index].date : null }
+                                    description2 = { col2.length >= index + 1 ? col2[index].description : null }
+                                 />
+                            )
+                        })
+                    }
                 </div>
             </div>
 
