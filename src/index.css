@@ -88,9 +88,13 @@ p {
     padding-top: 1rem;
 }
 
+:root {
+    --swiper-theme-color: #485FC7;
+}
+
 .methods-section {
     margin-top: 3rem;
-    background-color: rgb(236, 240, 243);
+    background-color: #fafafa;
     padding: 0;
     margin-bottom: 3rem;
 }
@@ -117,12 +121,10 @@ p {
 
 .formation-image {
     max-width: 16rem;
-    
 }
 
 .image-column {
     max-width: 17rem;
-    
 }
 
 .timing-column {
@@ -141,4 +143,27 @@ p {
     max-width: 37rem;
     margin: auto;
     padding: 15px;
+}
+
+.formation-outer-card {
+    max-width: 37rem;
+    margin: auto;
+}
+
+.formations-section {
+    margin-bottom: 3rem;
+}
+
+.formations-section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.newsletter-box {
+   max-width: 65rem;
+   margin: auto;
+}
+
+.newsletter-icon {
+    max-width: 55px;
 }

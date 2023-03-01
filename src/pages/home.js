@@ -20,10 +20,10 @@ export function Home()
                 <p className='subtitle is-1 is-spaced has-text-centered'>Se former, c'est Avancer</p>
                 <div className='columns'>
                     <div className='column is-2 has-text-centered is-offset-4'>
-                        <button className='button is-medium is-primary'><a className='anchor-style' href='/formation'>VOIR LES COURS</a></button>
+                        <button className='button is-medium is-link'><a className='anchor-style' href='/formation'>VOIR LES COURS</a></button>
                     </div>
                     <div className='column is-2 has-text-centered'>
-                        <button className='button is-medium is-primary'><a className='anchor-style' href='/contact'>CONTACTEZ-NOUS</a></button>
+                        <button className='button is-medium is-link'><a className='anchor-style' href='/contact'>CONTACTEZ-NOUS</a></button>
                     </div>
                 </div>
             </div>
@@ -37,6 +37,8 @@ export function Home()
                     navigation
                     pagination={{ clickable: true }}
                     loop={false}
+                    rewind={true}
+                    grabCursor={true}
                     effect={"coverflow"}
                     coverflowEffect={{
                         rotate: 17,
@@ -113,6 +115,9 @@ export function Home()
             </div>
 
             <div className='formations-section'>
+                <div className='formations-section-title'>
+                    <a className='title is-1 has-text-dark'>Les session en cours</a>
+                </div>
                 <div className='box mx-5'>
                     {
                         col1.map((formation, index) => {
@@ -126,21 +131,18 @@ export function Home()
                                     duration1 = {formation.duration}
                                     date1 = {formation.date}
                                     description1 = {formation.description}
+                                    price1 = {formation.price}
                                     image2 = { col2.length >= index + 1 ? col2[index].image : null }
                                     name2 = { col2.length >= index + 1 ? col2[index].name : null }
                                     duration2 = { col2.length >= index + 1 ? col2[index].duration : null }
                                     date2 = { col2.length >= index + 1 ? col2[index].date : null }
                                     description2 = { col2.length >= index + 1 ? col2[index].description : null }
+                                    price2 = { col2.length >= index + 1 ? col2[index].price : null }
                                  />
                             )
                         })
                     }
                 </div>
-            </div>
-
-            <div className='temp-div'>
-                <h1>it works</h1>
-                <img className='card-image' src = {require("../images/ds.png")} alt = "nah" />
             </div>
         </>
     )

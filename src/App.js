@@ -7,7 +7,8 @@ import {Blog} from './pages/blog';
 import {Formation} from './pages/formation';
 import {Certification} from './pages/certification';
 import {Contact} from './pages/contact';
-import {Partners} from './pages/partners'
+import {Partners} from './pages/partners';
+import { Footer } from './components/footer';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path = '/contact' element = {<Contact />} />
         <Route path = '/nos-partenaires' element = {<Partners />} />
       </Routes>
+      <Footer />
     </>
   );
 }
