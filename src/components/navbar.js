@@ -3,7 +3,7 @@ import Logo from "../images/logo_tucnospro.png";
 import "bulma/css/bulma.min.css";
 import {Link, NavLink} from "react-router-dom";
 import phoneIcon from '../images/phone-287.svg';
-import emailIcon from '../images/email-161.svg';
+import emailIcon from '../images/email-155.svg';
 
 export function Navbar ()
 {

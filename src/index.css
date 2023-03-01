@@ -167,3 +167,12 @@ p {
 .newsletter-icon {
     max-width: 55px;
 }
+
+.menu-div {
+    max-width: 25rem;
+}
+
+.social-media-icon {
+    max-width: 2rem;
+    margin: 5px;
+}
