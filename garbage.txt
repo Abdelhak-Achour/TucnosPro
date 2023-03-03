@@ -1,0 +1,18 @@
+                    <table className="info is-hidden-mobile">
+                        <tr>
+                            <td>
+                                <img className="icon-custom" src={phoneIcon} alt = "phone-icon" />
+                            </td>
+                            <td>
+                                92 999 737 | 27 643 085
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img className="icon-custom" src={emailIcon} alt = "email-icon" />
+                            </td>
+                            <td>
+                                tucnospro@gmail.com
+                            </td>
+                        </tr>
+                    </table>

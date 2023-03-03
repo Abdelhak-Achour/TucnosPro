@@ -24,7 +24,7 @@ export function FormationLine(props)
                                                             <p className='has-text-grey'>{props.duration1} heures</p>
                                                             <p className='has-text-grey'>Date:</p>
                                                             <p className='has-text-grey'>{props.date1}</p>
-                                                            <span className="tag is-medium my-2">{props.price1} TND</span>
+                                                            <span className="tag is-link orange-bg is-medium my-2">{props.price1} TND</span>
                                                         </div>
                                                         <div className='column'>
                                                             <p className='has-text-grey info-text'>{props.description1}</p>
@@ -58,7 +58,7 @@ export function FormationLine(props)
                                                             <p className='has-text-grey'>{props.duration2} heures</p>
                                                             <p className='has-text-grey'>Date:</p>
                                                             <p className='has-text-grey'>{props.date2}</p>
-                                                            <span className="tag is-medium my-2">{props.price2} TND</span>
+                                                            <span className="tag is-link orange-bg is-medium my-2">{props.price2} TND</span>
                                                         </div>
                                                         <div className='column'>
                                                             <p className='has-text-grey info-text'>{props.description2}</p>
@@ -101,7 +101,7 @@ export function FormationLine(props)
                                                             <p className='has-text-grey'>{props.duration1} heures</p>
                                                             <p className='has-text-grey'>Date:</p>
                                                             <p className='has-text-grey'>{props.date1}</p>
-                                                            <span className="tag is-medium my-2">{props.price1} TND</span>
+                                                            <span className="tag is-link orange-bg is-medium my-2">{props.price1} TND</span>
                                                         </div>
                                                         <div className='column'>
                                                             <p className='has-text-grey info-text'>{props.description1}</p>

@@ -7,6 +7,7 @@ import { Card } from '../components/card';
 import methodsimg from '../images/methods.jpg';
 import pceh from '../images/pceh.png';
 import { FormationLine } from '../components/formationsline';
+import { Navbar } from '../components/navbar';
 
 export function Home()
 {
@@ -16,11 +17,12 @@ export function Home()
     return (
         <>
             <div className = 'home-image'>
+                <Navbar />
                 <p className='title is-1 has-text-centered'>Tucnos Pro,</p>
                 <p className='subtitle is-1 is-spaced has-text-centered'>Se former, c'est Avancer</p>
                 <div className='columns'>
                     <div className='column is-2 has-text-centered is-offset-4'>
-                        <button className='button is-medium is-link'><a className='anchor-style' href='/formation'>VOIR LES COURS</a></button>
+                        <button className='button is-medium is-link orange-bg'><a className='anchor-style' href='/formation'>VOIR LES COURS</a></button>
                     </div>
                     <div className='column is-2 has-text-centered'>
                         <button className='button is-medium is-link'><a className='anchor-style' href='/contact'>CONTACTEZ-NOUS</a></button>
@@ -36,8 +38,9 @@ export function Home()
                     centeredSlides={true}
                     navigation
                     pagination={{ clickable: true }}
-                    loop={false}
-                    rewind={true}
+                    loop={true}
+                    rewind={false}
+                    initialSlide = {0}
                     grabCursor={true}
                     effect={"coverflow"}
                     coverflowEffect={{
@@ -51,7 +54,7 @@ export function Home()
                         {
                             630:
                                 {
-                                    slidesPerView: 2
+                                    slidesPerView: 3
                                 }
                         }
                     }

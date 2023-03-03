@@ -21,32 +21,32 @@ export function Navbar ()
         <>
             <nav className = "navbar is-fixed-top">
                 <div className = "navbar-brand">
-                    <Link className = "navbar-item py-4 px-6" to = "/"> <img className = "logo" src = {Logo} alt = "logo img" /></Link>
-                    <table className="info">
-                        <tr>
-                            <td>
-                                <img className="icon-custom" src={phoneIcon} alt = "phone-icon" />
-                            </td>
-                            <td>
-                                92 999 737 | 27 643 085
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img className="icon-custom" src={emailIcon} alt = "email-icon" />
-                            </td>
-                            <td>
-                                tucnospro@gmail.com
-                            </td>
-                        </tr>
-                    </table>
+                    <Link className = "navbar-item my-4 mx-5" to = "/"> <img className = "logo" src = {Logo} alt = "logo img" /></Link>
+                    <ul className="info">
+                        <li>
+                            <span class="info icon-text is-hidden-mobile">
+                                <span class="icon">
+                                    <img className="icon-custom" src={phoneIcon} alt = "phone-icon" />
+                                </span>
+                                <span>92 999 737 | 27 643 085</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="info icon-text is-hidden-mobile">
+                                <span class="icon">
+                                    <img className="icon-custom" src={emailIcon} alt = "email-icon" />
+                                </span>
+                                <span>tucnospro@gmail.com</span>
+                            </span>
+                        </li>
+                    </ul>
                     <a className="navbar-burger" onClick={activateLinks}>
                         <span></span>
                         <span></span>
                         <span></span>
                     </a>
                 </div>
-                <div className = {active ? "navbar-menu is-active" : "navbar-menu"} id = "nav-links">
+                <div className = {active ? "navbar-menu is-active mx-5" : "navbar-menu mx-6"} id = "nav-links">
                     <div className = "navbar-end">
                         <NavLink className = "navbar-item" to = "/">Accueil</NavLink>
                         <NavLink className = "navbar-item" to = "/a-propos">A propos</NavLink>
