@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Logo from "../images/logo_tucnospro.png";
 import "bulma/css/bulma.min.css";
 import {Link, NavLink} from "react-router-dom";
 import phoneIcon from '../images/phone-287.svg';
 import emailIcon from '../images/email-155.svg';
+import { Expo, gsap } from "gsap";
 
 export function Navbar ()
 {
@@ -15,7 +16,45 @@ export function Navbar ()
         setActive( (prev) => {
             return !prev
         })
-    }
+    };
+
+    const dropmenuRef = useRef(null);
+
+    const [toggle, setToggle] = useState(false);
+
+    function toggleDrop ()
+    {
+        setToggle(!toggle);
+    };
+
+    useEffect(() => {
+        if (toggle)
+        {
+            console.log(toggle);
+            gsap.to(dropmenuRef.current, {
+                duration: 0.75,
+                y: 0,
+                delay: 0,
+                repeat: 0,
+                yoyo: false,
+                ease: Expo.easeInOut,
+                paused: false
+            });
+        }
+        else
+        {
+            console.log(toggle)
+            gsap.to(dropmenuRef.current, {
+                duration: 0.75,
+                y: -250,
+                delay: 0,
+                repeat: 0,
+                yoyo: false,
+                ease: Expo.easeInOut,
+                paused: false
+            });
+        }
+    }, [toggle]);
 
     return(
         <>
@@ -48,13 +87,24 @@ export function Navbar ()
                 </div>
                 <div className = {active ? "navbar-menu is-active mx-5" : "navbar-menu mx-6"} id = "nav-links">
                     <div className = "navbar-end">
-                        <NavLink className = "navbar-item" to = "/">Accueil</NavLink>
-                        <NavLink className = "navbar-item" to = "/a-propos">A propos</NavLink>
-                        <NavLink className = "navbar-item" to = "/formation">Formations</NavLink>
-                        <NavLink className = "navbar-item" to = "/nos-partenaires">Nos partenaires</NavLink>
-                        <NavLink className = "navbar-item" to = "/certification">Certifications</NavLink>
-                        <NavLink className = "navbar-item" to = "/blog">Blog</NavLink>
-                        <NavLink className = "navbar-item" to = "/contact">Contact</NavLink>
+                        <NavLink className = "navbar-item aqua font-size" to = "/">Accueil</NavLink>
+                        <NavLink className = "navbar-item aqua font-size" to = "/a-propos">A propos</NavLink>
+                        <div className="drop">
+                            <NavLink onMouseEnter={toggleDrop} onMouseLeave={toggleDrop} className = "navbar-item aqua font-size drop-btn-padding" to = "/formation">Formations</NavLink>
+                            <div className="drop-menu-box">
+                                <div ref={dropmenuRef} onMouseEnter={toggleDrop} onMouseLeave={toggleDrop} className="drop-menu box">
+                                    <p className="has-text-dark my-2">Ethical Hacking</p>
+                                    <p className="has-text-dark my-2">Data Science et Business Intelligence</p>
+                                    <p className="has-text-dark my-2">Développement et coding</p>
+                                    <p className="has-text-dark my-2">Internet of Things</p>
+                                    <p className="has-text-dark my-2">Cloud Computing</p>
+                                </div>
+                            </div>
+                        </div>
+                        <NavLink className = "navbar-item aqua font-size" to = "/nos-partenaires">Nos partenaires</NavLink>
+                        <NavLink className = "navbar-item aqua font-size" to = "/certification">Certifications</NavLink>
+                        <NavLink className = "navbar-item aqua font-size" to = "/blog">Blog</NavLink>
+                        <NavLink className = "navbar-item aqua font-size" to = "/contact">Contact</NavLink>
                     </div>
                 </div>
             </nav>

@@ -23,27 +23,75 @@
 }
 
 .info {
-    margin-top: 5%;
+    margin-top: 3%;
 }
 
 .navbar {
     background-color: transparent !important;
     color: aliceblue !important;
+    max-height: 90px;
 }
 
-.navbar-menu .navbar-item {
+.dark-color {
+    color: #363636 !important;
+}
+
+.navbar-menu .aqua {
     color: aliceblue !important;
 }
 .navbar-item:hover {
     background-color: transparent !important;
 }
 
+.navbar-item {
+    padding-bottom: 0;
+    padding-top: 0;
+    max-height: 90px;
+}
+
+.navbar-link {
+    color: aliceblue;
+    background-color: transparent !important;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+.navbar-link:hover {
+    color: aliceblue;
+    background-color: transparent !important;
+}
+
+.navbar-dropdown {
+    background-color: #ffffff;
+}
+
 .active {
     background-color: transparent !important;
 }
 
+.drop {
+    position: relative;
+    margin-top: 33px;
+}
+
+.drop-btn-padding {
+    padding-bottom: 13px;
+}
+
+.drop-menu {
+    padding: 7px 17px;
+    width: 12rem;
+    transform: translateY(-250px);
+}
+
+.drop-menu-box {
+    position: absolute;
+    top: calc(75%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
 .home-image {
-    background-image: linear-gradient(rgba(65, 76, 160, 0.415), rgba(35, 40, 80, 0.442)), url("images/class.jpg");
+    background-image: linear-gradient(rgba(75, 85, 161, 0.556), rgba(35, 40, 80, 0.442)), url("images/class.jpg");
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -180,6 +228,10 @@ p {
 
 .view-button-text {
     color: #fafafa;
+}
+
+.footer {
+    background-image: url("./images/cubes.png");
 }
 
 .newsletter-box {
