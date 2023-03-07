@@ -232,15 +232,24 @@ p {
 
 .footer {
     background-image: url("./images/cubes.png");
+    padding-bottom: 1px;
+    padding-top: 2rem;
 }
 
 .newsletter-box {
-   max-width: 65rem;
+   max-width: 55rem;
    margin: auto;
+   padding: 2rem !important;
+   margin-bottom: 2rem !important;
 }
 
 .newsletter-icon {
     max-width: 55px;
+}
+
+.form-col {
+    padding-bottom: 0px;
+    padding-top: 0px;
 }
 
 .menu-div {
@@ -250,4 +259,24 @@ p {
 .social-media-icon {
     max-width: 2rem;
     margin: 5px;
+}
+
+.under-logo-text {
+    font-size: 0.75rem;
+}
+
+.footer-logo {
+    max-width: 10rem;
+}
+
+.footer a {
+    padding: 3px 12px;
+}
+
+.footer a:hover {
+    background-color: transparent;
+}
+
+.footer .column {
+    padding-top: 0px;
 }

@@ -19,21 +19,10 @@ export function Footer()
                                 <img className="newsletter-icon" src={paperplane} alt="newsletter i" />
                             </div>
                             <div className="column is-6 has-text-left-desktop">
-                                <p className="title is-2 has-text-dark">Vous souhaitez être tenu au courant de nos actualités Formation?</p>
-                                <p className="subtitle is-3 has-text-dark">Inscrivez-vous à notre newsletter!</p>
+                                <p className="title is-3 has-text-dark">Inscrivez-vous à notre newsletter!</p>
                             </div>
-                            <div className="column">
-                                <form className="box is-shadowless has-text-left-desktop">
-                                    <div className="field">
-                                        <div className="control">
-                                            <input className="input" type="name" placeholder="Prénom" />
-                                        </div>
-                                    </div>
-                                    <div className="field">
-                                        <div className="control">
-                                            <input className="input" type="lastname" placeholder="Nom" />
-                                        </div>
-                                    </div>
+                            <div className="column form-col">
+                                <form className="box is-shadowless has-text-left-desktop is-paddingless">
                                     <div className="field">
                                         <div className="control">
                                             <input className="input" type="email" placeholder="Email" />
@@ -48,14 +37,16 @@ export function Footer()
                     </div>
                     <div className="columns my-6 mx-6">
                         <div className="column has-text-left">
-                            <img src={Logo} alt="logo" />
-                            <p className="has-text-dark">
+                            <div className="footer-logo-margin has-text-centered"><img className="footer-logo" src={Logo} alt="logo" /></div>
+                            <p className="has-text-dark under-logo-text has-text-centered">
                                 TucnosPRO est une centre de formation et de consulting qui offre des formations principalement dans le domaine des nouvelles technologies. Nos experts vous accompagnent pour faciliter votre reconversion ou insertion professionnelle. Nos sessions répondent à vos besoins spécifiques et ciblent les domaines les plus en demande sur le marché.
                             </p>
-                            <a href="https://www.facebook.com/TucnosPRO/"><img className="social-media-icon" src={Facebook} alt="facebook" /></a>
-                            <a><img className="social-media-icon" src={Twitter} alt="twitter" /></a>
-                            <a href="https://www.linkedin.com/company/tucnospro/"><img className="social-media-icon" src={Linkedin} alt="linkedin" /></a>
-                            <a><img className="social-media-icon" src={Instagram} alt="instagram" /></a>
+                            <div className="has-text-centered">
+                                <a className="social-media-anchor" href="https://www.facebook.com/TucnosPRO/"><img className="social-media-icon" src={Facebook} alt="facebook" /></a>
+                                <a className="social-media-anchor"><img className="social-media-icon" src={Twitter} alt="twitter" /></a>
+                                <a className="social-media-anchor" href="https://www.linkedin.com/company/tucnospro/"><img className="social-media-icon" src={Linkedin} alt="linkedin" /></a>
+                                <a className="social-media-anchor"><img className="social-media-icon" src={Instagram} alt="instagram" /></a>
+                            </div>
                         </div>
                         <div className="column has-text-left">
                             <div className="menu">
