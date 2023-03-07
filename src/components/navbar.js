@@ -5,6 +5,7 @@ import {Link, NavLink} from "react-router-dom";
 import phoneIcon from '../images/phone-287.svg';
 import emailIcon from '../images/email-155.svg';
 import { Expo, gsap } from "gsap";
+import data from '../mock_data.json';
 
 export function Navbar ()
 {
@@ -32,7 +33,7 @@ export function Navbar ()
         {
             console.log(toggle);
             gsap.to(dropmenuRef.current, {
-                duration: 0.75,
+                duration: 1,
                 y: 0,
                 delay: 0,
                 repeat: 0,
@@ -45,8 +46,8 @@ export function Navbar ()
         {
             console.log(toggle)
             gsap.to(dropmenuRef.current, {
-                duration: 0.75,
-                y: -250,
+                duration: 0.85,
+                y: -375,
                 delay: 0,
                 repeat: 0,
                 yoyo: false,
@@ -93,11 +94,16 @@ export function Navbar ()
                             <NavLink onMouseEnter={() => {toggle ? setToggle(true) : setToggle(true)}} onMouseLeave={toggleDrop} className = "navbar-item aqua font-size drop-btn-padding" to = "/formation">Formations</NavLink>
                             <div className="drop-menu-box">
                                 <div ref={dropmenuRef} onMouseEnter={() => {toggle ? setToggle(true) : setToggle(true)}} onMouseLeave={toggleDrop} className="drop-menu box">
-                                    <p className="has-text-dark my-2">Ethical Hacking</p>
-                                    <p className="has-text-dark my-2">Data Science et Business Intelligence</p>
-                                    <p className="has-text-dark my-2">Développement et coding</p>
-                                    <p className="has-text-dark my-2">Internet of Things</p>
-                                    <p className="has-text-dark my-2">Cloud Computing</p>
+                                    {
+                                        data.categories.map((categorie) =>
+                                        {
+                                            return (
+                                                <>
+                                                    <a><p className="has-text-dark my-2">{categorie.name}</p></a>
+                                                </>
+                                            )
+                                        })
+                                    }
                                 </div>
                             </div>
                         </div>
