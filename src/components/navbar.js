@@ -90,9 +90,9 @@ export function Navbar ()
                         <NavLink className = "navbar-item aqua font-size" to = "/">Accueil</NavLink>
                         <NavLink className = "navbar-item aqua font-size" to = "/a-propos">A propos</NavLink>
                         <div className="drop">
-                            <NavLink onMouseEnter={toggleDrop} onMouseLeave={toggleDrop} className = "navbar-item aqua font-size drop-btn-padding" to = "/formation">Formations</NavLink>
+                            <NavLink onMouseEnter={() => {toggle ? setToggle(true) : setToggle(true)}} onMouseLeave={toggleDrop} className = "navbar-item aqua font-size drop-btn-padding" to = "/formation">Formations</NavLink>
                             <div className="drop-menu-box">
-                                <div ref={dropmenuRef} onMouseEnter={toggleDrop} onMouseLeave={toggleDrop} className="drop-menu box">
+                                <div ref={dropmenuRef} onMouseEnter={() => {toggle ? setToggle(true) : setToggle(true)}} onMouseLeave={toggleDrop} className="drop-menu box">
                                     <p className="has-text-dark my-2">Ethical Hacking</p>
                                     <p className="has-text-dark my-2">Data Science et Business Intelligence</p>
                                     <p className="has-text-dark my-2">Développement et coding</p>
