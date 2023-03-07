@@ -280,3 +280,28 @@ p {
 .footer .column {
     padding-top: 0px;
 }
+
+/*
+
+
+
+
+            a propos section css
+
+
+
+
+*/
+
+.presentation-section {
+    margin: 5rem 0rem 5rem 5rem;
+    max-width: 80rem;
+}
+
+.pres-img {
+    max-width: 17rem;
+}
+
+.pres-text {
+    font-size: 1.15rem;
+}
