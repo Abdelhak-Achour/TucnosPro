@@ -179,5 +179,39 @@
             "price": 400,
             "image": "msazsecurity.png"
         }
+    ],
+    "testimonies": [
+        {
+            "id": 23,
+            "name": "Walid",
+            "lastname": "Ben Fraj",
+            "job": "Professeur d'enseignement secondaire",
+            "testimony": "Je remercie toute l'équipe, en particulier M. Semeh pour sa générosité, sa haute moralité et sa formation utile.",
+            "image": "BenFrajWalid.png"
+        },
+        {
+            "id": 24,
+            "name": "Person",
+            "lastname": "Not real",
+            "job": "Dolore aute ut eiusmod duis.",
+            "testimony": "Eiusmod ipsum laboris consectetur enim dolor anim culpa culpa ut cupidatat officia.",
+            "image": "not_real_person_1.png"
+        },
+        {
+            "id": 24,
+            "name": "Kouaho KOUAHO",
+            "lastname": "Florent",
+            "job": "Technicien Telecom",
+            "testimony": "Un enseignement trés enrichissant. Cela va nous permettre d'optimiser notre travail.",
+            "image": "FlorentKouaho.png"
+        },
+        {
+            "id": 26,
+            "name": "Person",
+            "lastname": "Not real",
+            "job": "Reprehenderit tempor.",
+            "testimony": "Velit non aliqua elit consectetur.Deserunt veniam aliquip est mollit sit nulla proident exercitation occaecat nisi sunt veniam.",
+            "image": "not_real_person_2.png"
+        }
     ]
 }

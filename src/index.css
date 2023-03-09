@@ -294,8 +294,14 @@ p {
 */
 
 .presentation-section {
-    margin: 5rem 0rem 5rem 5rem;
-    max-width: 80rem;
+    max-width: 90rem;
+}
+
+.orange-hr {
+    background: #ff5a2c;
+    margin: 15px 0px 0px 0px;
+    height: 3px;
+    max-width: 5rem;
 }
 
 .pres-img {
@@ -304,4 +310,71 @@ p {
 
 .pres-text {
     font-size: 1.15rem;
+}
+
+.lvl-3 {
+    font-size: 2.5rem;
+}
+
+.lvl-4 {
+    font-size: 2rem;
+}
+
+.lvl-7 {
+    font-size: 0.95rem;
+}
+
+.notre-method-text {
+    max-width: 61rem;
+    margin: auto;
+}
+
+.notre-method-hr {
+    background: #ff5a2c;
+    height: 3px;
+    width: 35rem;
+    margin: auto;
+    margin-bottom: 1.7rem;
+}
+
+.notre-method-p {
+    font-size: 1.3rem;
+}
+
+.founder-word-section {
+    background-color: #fafafa;
+}
+
+.founder-word-img {
+    max-width: 30rem;
+}
+
+.founder-word-p {
+    font-size: 1.1rem;
+}
+
+.founder-word-box {
+    margin: 3rem 5rem 3rem 3rem;
+    background-color: #fafafa;
+}
+
+.testemonies-box {
+    max-width: 70rem;
+    margin: auto;
+}
+
+.testemony-box {
+    margin: 5rem auto 5rem auto;
+    max-width: 19rem;
+}
+
+.testemony-img {
+    width: 13rem;
+    height: 13rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.lvl-10 {
+    font-size: 0.75rem;
 }
