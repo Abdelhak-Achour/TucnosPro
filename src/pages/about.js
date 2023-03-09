@@ -7,11 +7,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 import data from '../mock_data.json';
 import { Testemony } from "../components/testemony";
+import { Navbar2 } from "../components/navbar2";
 
 export function About ()
 {
     return (
         <>
+            <Navbar2 />
             <div className="presentation-section">
                 <div className="box m-6 is-shadowless">
                     <div className="columns">
@@ -127,8 +129,6 @@ export function About ()
                                     }
                             }
                         }
-                        onSwiper={(swiper) => console.log(swiper)}
-                        onSlideChange={() => console.log('slide change')}
                         >
                         {
                             data.testimonies.map((testemony) => {
@@ -149,6 +149,48 @@ export function About ()
                         }
                     </Swiper>
                 </div>
+                <div className="note-btn-div has-text-centered">
+                    <a><button className="button is-medium is-primary orange-bg">Notez Nous</button></a>
+                </div>
+            </div>
+
+            <div className="center-pic-section">
+                <p className="title has-text-dark">Notre centre en images</p>
+                <Swiper
+                        modules={[Navigation, Pagination, A11y, EffectCoverflow]}
+                        slidesPerView={1}
+                        centeredSlides={true}
+                        pagination={{ clickable: true }}
+                        loop={true}
+                        rewind={false}
+                        initialSlide = {0}
+                        grabCursor={true}
+                        effect={"coverflow"}
+                        coverflowEffect={{
+                            rotate: 17,
+                            stretch: 0,
+                            depth: 100,
+                            modifier: 1,
+                            slideShadows: false,
+                        }}
+                        breakpoints={
+                            {
+                                630:
+                                    {
+                                        slidesPerView: 3
+                                    }
+                            }
+                        }
+                        >
+                        <SwiperSlide><div className="has-text-centered my-6"><img className="center-interior-img" src={require("../images/1.jpg")} alt="center interior" /></div></SwiperSlide>
+                        <SwiperSlide><div className="has-text-centered my-6"><img className="center-interior-img" src={require("../images/2.jpg")} alt="center interior" /></div></SwiperSlide>
+                        <SwiperSlide><div className="has-text-centered my-6"><img className="center-interior-img" src={require("../images/3.jpg")} alt="center interior" /></div></SwiperSlide>
+                        <SwiperSlide><div className="has-text-centered my-6"><img className="center-interior-img" src={require("../images/4.jpg")} alt="center interior" /></div></SwiperSlide>
+                        <SwiperSlide><div className="has-text-centered my-6"><img className="center-interior-img" src={require("../images/5.jpg")} alt="center interior" /></div></SwiperSlide>
+                        <SwiperSlide><div className="has-text-centered my-6"><img className="center-interior-img" src={require("../images/6.jpg")} alt="center interior" /></div></SwiperSlide>
+                        <SwiperSlide><div className="has-text-centered my-6"><img className="center-interior-img" src={require("../images/7.jpg")} alt="center interior" /></div></SwiperSlide>
+                        <SwiperSlide><div className="has-text-centered my-6"><img className="center-interior-img" src={require("../images/8.jpg")} alt="center interior" /></div></SwiperSlide>
+                    </Swiper>
             </div>
         </>
     )

@@ -293,6 +293,10 @@ p {
 
 */
 
+.fa-bg {
+    background-color: #fafafa;
+}
+
 .presentation-section {
     max-width: 90rem;
 }
@@ -377,4 +381,20 @@ p {
 
 .lvl-10 {
     font-size: 0.75rem;
+}
+
+.note-btn-div {
+    margin: 5rem auto 5rem auto;
+}
+
+.center-pic-section {
+    max-width: 85rem;
+    margin: 5rem auto 5rem auto;
+    text-align: center;
+}
+
+.center-interior-img {
+    width: 25rem;
+    height: 15rem;
+    object-fit: cover;
 }
