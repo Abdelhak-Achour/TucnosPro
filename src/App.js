@@ -9,6 +9,7 @@ import {Certification} from './pages/certification';
 import {Contact} from './pages/contact';
 import {Partners} from './pages/partners';
 import { Footer } from './components/footer';
+import { Temoin } from './pages/temoin';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path = '/certification' element = {<Certification />} />
         <Route path = '/contact' element = {<Contact />} />
         <Route path = '/nos-partenaires' element = {<Partners />} />
+        <Route path = '/temoin' element = {<Temoin />} />
       </Routes>
       <Footer />
     </>

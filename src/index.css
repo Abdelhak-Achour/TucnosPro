@@ -398,3 +398,25 @@ p {
     height: 15rem;
     object-fit: cover;
 }
+
+/*
+
+
+            Temoin page
+
+
+*/
+
+.temoin {
+    max-width: 57rem;
+    margin: 5rem auto 5rem auto;
+    text-align: center;
+}
+
+.orange-star {
+    color: #ff5a2c !important;
+}
+
+.image-upload-icon {
+    max-width: 1.3rem;
+}

@@ -85,7 +85,7 @@ export function Footer()
                                     <li>Start Work, 87 rue de la république en face UPES, 2033 Mégrine coteaux</li>
                                     <li>92 999 727 | 27 643 085</li>
                                     <li>tucnospro@gmail.com</li>
-                                    <li><a href="https://www.google.com/maps/place/START+WORK+coworking+space/@36.7683348,10.2445893,15z/data=!4m5!3m4!1s0x0:0x3dec8d86e17ea558!8m2!3d36.7683348!4d10.2445893">Plan d'accèes</a></li>
+                                    <li><a className="is-paddingless" href="https://www.google.com/maps/place/START+WORK+coworking+space/@36.7683348,10.2445893,15z/data=!4m5!3m4!1s0x0:0x3dec8d86e17ea558!8m2!3d36.7683348!4d10.2445893">Plan d'accèes</a></li>
                                 </ul>
                             </div>
                         </div>

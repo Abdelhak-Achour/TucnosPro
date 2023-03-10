@@ -8,6 +8,7 @@ import 'swiper/swiper-bundle.css';
 import data from '../mock_data.json';
 import { Testemony } from "../components/testemony";
 import { Navbar2 } from "../components/navbar2";
+import { Link } from "react-router-dom";
 
 export function About ()
 {
@@ -150,7 +151,7 @@ export function About ()
                     </Swiper>
                 </div>
                 <div className="note-btn-div has-text-centered">
-                    <a><button className="button is-medium is-primary orange-bg">Notez Nous</button></a>
+                    <Link to="/temoin"><button className="button is-medium is-primary orange-bg">Notez Nous</button></Link>
                 </div>
             </div>
 
