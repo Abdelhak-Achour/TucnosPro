@@ -420,3 +420,33 @@ p {
 .image-upload-icon {
     max-width: 1.3rem;
 }
+
+/*
+
+
+            Contact page
+
+
+*/
+
+.orange-hr-contact {
+    background: #ff5a2c;
+    height: 4px;
+    width: 5rem;
+    margin: 1.2rem 0rem 0rem 0rem;
+}
+
+.contact-title {
+    color: #ff5a2c !important;
+}
+
+.contact-info-col {
+    background-image: url("images/map_shape.webp");
+    background-size: cover;
+    background-position: right;
+    padding: 2.5rem 2.5rem 5rem 2.5rem;
+}
+
+.contact-form-col {
+    padding-top: 2.5rem;
+}
