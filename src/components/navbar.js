@@ -57,6 +57,44 @@ export function Navbar ()
         }
     }, [toggle]);
 
+    const dropmenuRef2 = useRef(null);
+
+    const [toggle2, setToggle2] = useState(false);
+
+    function toggleDrop2 ()
+    {
+        setToggle2(!toggle2);
+    };
+
+    useEffect(() => {
+        if (toggle2)
+        {
+            console.log(toggle2);
+            gsap.to(dropmenuRef2.current, {
+                duration: 1,
+                y: 0,
+                delay: 0,
+                repeat: 0,
+                yoyo: false,
+                ease: Expo.easeInOut,
+                paused: false
+            });
+        }
+        else
+        {
+            console.log(toggle2)
+            gsap.to(dropmenuRef2.current, {
+                duration: 0.85,
+                y: -375,
+                delay: 0,
+                repeat: 0,
+                yoyo: false,
+                ease: Expo.easeInOut,
+                paused: false
+            });
+        }
+    }, [toggle2]);
+
     return(
         <>
             <nav className = "navbar is-fixed-top">
@@ -108,7 +146,23 @@ export function Navbar ()
                             </div>
                         </div>
                         <NavLink className = "navbar-item aqua font-size" to = "/nos-partenaires">Nos partenaires</NavLink>
-                        <NavLink className = "navbar-item aqua font-size" to = "/certification">Certifications</NavLink>
+                        <div className="drop">
+                            <NavLink onMouseEnter={() => {toggle2 ? setToggle2(true) : setToggle2(true)}} onMouseLeave={toggleDrop2} className = "navbar-item aqua font-size drop-btn-padding" to = "/formation">Certifications</NavLink>
+                            <div className="drop-menu-box">
+                                <div ref={dropmenuRef2} onMouseEnter={() => {toggle2 ? setToggle2(true) : setToggle2(true)}} onMouseLeave={toggleDrop2} className="drop-menu box">
+                                    {
+                                        data.categories.map((categorie) =>
+                                        {
+                                            return (
+                                                <>
+                                                    <a><p className="has-text-dark my-2">{categorie.name}</p></a>
+                                                </>
+                                            )
+                                        })
+                                    }
+                                </div>
+                            </div>
+                        </div>
                         <NavLink className = "navbar-item aqua font-size" to = "/blog">Blog</NavLink>
                         <NavLink className = "navbar-item aqua font-size" to = "/contact">Contact</NavLink>
                     </div>

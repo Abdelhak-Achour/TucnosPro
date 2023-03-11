@@ -91,16 +91,27 @@
 }
 
 .home-image {
-    background-image: linear-gradient(rgba(75, 85, 161, 0.556), rgba(35, 40, 80, 0.442)), url("images/class.jpg");
-    height: 100%;
+    background-image: linear-gradient(rgba(75, 85, 161, 0.556), rgba(35, 40, 80, 0.442)), url("images/study-1.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100%;
     padding-top: 17rem;
     padding-bottom: 17rem;
     filter: brightness(100%);
     color: rgb(255, 255, 255) !important;
+    height: 10rem;
+}
+
+.home-image-2 {
+    background-image: linear-gradient(rgba(75, 85, 161, 0.556), rgba(35, 40, 80, 0.442)), url("images/study-2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 17rem;
+    padding-bottom: 17rem;
+    filter: brightness(100%);
+    color: rgb(255, 255, 255) !important;
+    height: 10rem;
 }
 
 p {
@@ -125,8 +136,17 @@ p {
     color: aliceblue !important;
 }
 
+.buttons-div {
+    margin: auto;
+    max-width: 25rem;
+}
+
 .orange-bg {
     background-color: #ff5a2c !important;
+}
+
+.medium-height-btn {
+    max-height: 2.5rem;
 }
 
 .card-section {
@@ -228,6 +248,28 @@ p {
 
 .view-button-text {
     color: #fafafa;
+}
+
+.formations-container {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.formation-card-image {
+    width: 223px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.formation-card-section-box {
+    max-width: 21rem;
+    margin: auto;
+}
+
+.formation-card-image {
+    margin: auto;
+    max-width: 275px;
 }
 
 .footer {
