@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import data from '../mock_data.json';
 import { Navigation, Pagination, A11y, EffectCoverflow, EffectCreative, EffectFade, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -8,9 +8,23 @@ import methodsimg from '../images/methods.jpg';
 import { FormationCard } from '../components/formationcard';
 import { Navbar } from '../components/navbar';
 import { Link } from 'react-router-dom';
+import SplitType from 'split-type';
+import { gsap } from "gsap";
 
 export function Home()
 {
+    // const lineOneRef = useRef(null);
+    
+    // const lineOneText = new SplitType(lineOneRef, {types: 'chars', charClass: 'lineonechar'});
+
+    // console.log(lineOneText)
+
+    // gsap.from(lineOneText.chars, {
+    //     y: -30,
+    //     duration: 0.5,
+    //     delay: 2,
+    //     stagger: 0.05
+    // })
 
     return (
         <>
@@ -43,14 +57,14 @@ export function Home()
                     <SwiperSlide>
                         <div className = 'home-image'>
                             <Navbar />
-                            <p className='title is-1 has-text-centered'>Tucnos Pro,</p>
-                            <p className='subtitle is-1 is-spaced has-text-centered'>Se former, c'est Avancer</p>
+                            <p className='title lvl-1 has-text-centered'>Tucnos Pro,</p>
+                            <p className='subtitle lvl-1 is-spaced has-text-centered'>Se former, c'est Avancer</p>
                             <div className='buttons-div'>
                                 <div className='columns'>
-                                    <div className='column is-narrow'>
+                                    <div className='column is-narrow has-text-centered'>
                                         <button className='button medium-height-btn is-medium is-link orange-bg'><Link className='anchor-style' href='/formation'>VOIR LES COURS</Link></button>
                                     </div>
-                                    <div className='column is-narrow'>
+                                    <div className='column is-narrow has-text-centered'>
                                         <button className='button medium-height-btn is-medium is-link'><Link className='anchor-style' href='/contact'>CONTACTEZ-NOUS</Link></button>
                                     </div>
                                 </div>
@@ -60,14 +74,14 @@ export function Home()
                     <SwiperSlide>
                         <div className = 'home-image-2'>
                             <Navbar />
-                            <p className='title is-1 has-text-centered'>Tucnos Pro,</p>
-                            <p className='subtitle is-1 is-spaced has-text-centered'>Se former, c'est Avancer</p>
+                            <p className='title lvl-1 has-text-centered'>Tucnos Pro,</p>
+                            <p className='subtitle lvl-1 is-spaced has-text-centered'>Se former, c'est Avancer</p>
                             <div className='buttons-div'>
                                 <div className='columns'>
-                                    <div className='column is-narrow'>
+                                    <div className='column is-narrow has-text-centered'>
                                         <button className='button medium-height-btn is-medium is-link orange-bg'><Link className='anchor-style' href='/formation'>VOIR LES COURS</Link></button>
                                     </div>
-                                    <div className='column is-narrow'>
+                                    <div className='column is-narrow has-text-centered'>
                                         <button className='button medium-height-btn is-medium is-link'><Link className='anchor-style' href='/contact'>CONTACTEZ-NOUS</Link></button>
                                     </div>
                                 </div>
@@ -164,9 +178,9 @@ export function Home()
 
             <div className='formations-section'>
                 <div className='formations-section-title'>
-                    <a className='title is-1 has-text-dark'>Les session en cours</a>
+                    <a className='title is-1 has-text-dark'>Les sessions en cours</a>
                 </div>
-                <div className='box formations-container mx-5'>
+                <div className='box formations-container'>
                     {
                         data.formations.map((formation) => {
                             return(
@@ -179,6 +193,8 @@ export function Home()
                                         duration = {formation.duration}
                                         date = {formation.date}
                                         price = {formation.price}
+                                        description = {formation.description}
+                                        formateur = {formation.formateur}
                                      />
                                 </>
                             )

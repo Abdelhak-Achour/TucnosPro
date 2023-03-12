@@ -252,9 +252,20 @@ p {
 
 .formations-container {
     display: grid;
-    grid-gap: 2rem;
+    grid-gap: 0rem;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    margin: auto 5rem auto 5rem;
 }
+
+@media only screen and (max-width: 768px) {
+    .formations-container
+    {
+        display: grid;
+        grid-gap: 0rem;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        margin: auto 2.5rem auto 2.5rem; 
+    }
+  }
 
 .formation-card-image {
     width: 223px;
@@ -263,13 +274,21 @@ p {
 }
 
 .formation-card-section-box {
-    max-width: 21rem;
+    max-width: 223px;
     margin: auto;
 }
 
 .formation-card-image {
     margin: auto;
     max-width: 275px;
+}
+
+.duration-icon {
+    max-width: 1.3rem;
+}
+
+.date-icon {
+    max-width: 1.5rem;
 }
 
 .footer {
@@ -358,16 +377,32 @@ p {
     font-size: 1.15rem;
 }
 
+.lvl-1 {
+    font-size: 3.7rem !important;
+}
+
 .lvl-3 {
-    font-size: 2.5rem;
+    font-size: 2.5rem !important;
 }
 
 .lvl-4 {
-    font-size: 2rem;
+    font-size: 2rem !important;
+}
+
+.lvl-5 {
+    font-size: 1.1rem !important;
 }
 
 .lvl-7 {
-    font-size: 0.95rem;
+    font-size: 0.95rem !important;
+}
+
+.lvl-8 {
+    font-size: 0.85rem !important;
+}
+
+.lvl-10 {
+    font-size: 0.75rem !important;
 }
 
 .notre-method-text {
@@ -419,10 +454,6 @@ p {
     height: 13rem;
     object-fit: cover;
     border-radius: 50%;
-}
-
-.lvl-10 {
-    font-size: 0.75rem;
 }
 
 .note-btn-div {

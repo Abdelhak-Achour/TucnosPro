@@ -51,7 +51,8 @@
             "duration": 40,
             "date": "2022-03-31",
             "price": 2500,
-            "image": "pceh.png"
+            "image": "pceh.png",
+            "formateur": "TucnosPro"
         },
         {
             "id": 9,
@@ -60,7 +61,8 @@
             "duration": 30,
             "date": "2023-03-04",
             "price": 800,
-            "image": "pia.png"
+            "image": "pia.png",
+            "formateur": "TucnosPro"
         },
         {
             "id": 10,
@@ -69,7 +71,8 @@
             "duration": 30,
             "date": "2020-10-10",
             "price": 400,
-            "image": "fp.png"
+            "image": "fp.png",
+            "formateur": "TucnosPro"
         },
         {
             "id": 11,
@@ -78,7 +81,8 @@
             "duration": 30,
             "date": "2020-10-03",
             "price": 400,
-            "image": "ceh.png"
+            "image": "ceh.png",
+            "formateur": "TucnosPro"
         },
         {
             "id": 12,
@@ -87,7 +91,8 @@
             "duration": 30,
             "date": "2020-10-24",
             "price": 500,
-            "image": "sba.png"
+            "image": "sba.png",
+            "formateur": "TucnosPro"
         },
         {
             "id": 13,
@@ -96,7 +101,8 @@
             "duration": 30,
             "date": "2022-03-11",
             "price": 2200,
-            "image": "vm.png"
+            "image": "vm.png",
+            "formateur": "TucnosPro"
         },
         {
             "id": 14,
@@ -105,7 +111,8 @@
             "duration": 20,
             "date": "2022-03-25",
             "price": 600,
-            "image": "agile.png"
+            "image": "agile.png",
+            "formateur": "TucnosPro"
         },
         {
             "id": 15,
@@ -114,7 +121,8 @@
             "duration": 30,
             "date": "2022-06-17",
             "price": 1250,
-            "image": "azure.png"
+            "image": "azure.png",
+            "formateur": "TucnosPro"
         },
         {
             "id": 16,
@@ -123,7 +131,8 @@
             "duration": 25,
             "date": "2023-01-07",
             "price": 850,
-            "image": "mspbi.png"
+            "image": "mspbi.png",
+            "formateur": "TucnosPro"
         },
         {
             "id": 17,
@@ -132,7 +141,8 @@
             "duration": 14,
             "date": "2022-06-17",
             "price": 400,
-            "image": "msaz.png"
+            "image": "msaz.png",
+            "formateur": "TucnosPro"
         },
         {
             "id": 18,
@@ -141,7 +151,8 @@
             "duration": 30,
             "date": "2022-10-01",
             "price": 1250,
-            "image": "azadmin.png"
+            "image": "azadmin.png",
+            "formateur": "TucnosPro"
         },
         {
             "id": 19,
@@ -150,7 +161,8 @@
             "duration": 14,
             "date": "2022-06-09",
             "price": 400,
-            "image": "aiaz.png"
+            "image": "aiaz.png",
+            "formateur": "TucnosPro"
         },
         {
             "id": 20,
@@ -159,7 +171,8 @@
             "duration": 15,
             "date": "2022-06-09",
             "price": 400,
-            "image": "azf.png"
+            "image": "azf.png",
+            "formateur": "TucnosPro"
         },
         {
             "id": 21,
@@ -168,7 +181,8 @@
             "duration": 14,
             "date": "2022-06-18",
             "price": 400,
-            "image": "ppf.png"
+            "image": "ppf.png",
+            "formateur": "TucnosPro"
         },
         {
             "id": 22,
@@ -177,7 +191,8 @@
             "duration": 14,
             "date": "2022-06-12",
             "price": 400,
-            "image": "msazsecurity.png"
+            "image": "msazsecurity.png",
+            "formateur": "TucnosPro"
         }
     ],
     "testimonies": [
