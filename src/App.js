@@ -9,6 +9,7 @@ import {Contact} from './pages/contact';
 import {Partners} from './pages/partners';
 import { Footer } from './components/footer';
 import { Temoin } from './pages/temoin';
+import { NotFound } from './pages/notfound';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path = '/contact' element = {<Contact />} />
         <Route path = '/nos-partenaires' element = {<Partners />} />
         <Route path = '/temoin' element = {<Temoin />} />
+        <Route path = '*' element = {<NotFound />} />
       </Routes>
       <Footer />
     </>

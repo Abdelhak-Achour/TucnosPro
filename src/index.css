@@ -523,3 +523,15 @@ p {
 .contact-form-col {
     padding-top: 2.5rem;
 }
+
+/*
+
+
+            404 Not Found page
+
+
+*/
+
+.not-found-box {
+    max-width: 57rem;
+}
