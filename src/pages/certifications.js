@@ -1,6 +1,6 @@
 import React from "react";
 
-export function Certification ()
+export function Certifications ()
 {
     return (
         <>

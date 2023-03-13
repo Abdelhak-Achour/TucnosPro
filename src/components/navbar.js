@@ -6,6 +6,7 @@ import phoneIcon from '../images/phone-287.svg';
 import emailIcon from '../images/email-155.svg';
 import { Expo, gsap } from "gsap";
 import data from '../mock_data.json';
+import uuid from "react-uuid";
 
 export function Navbar ()
 {
@@ -114,7 +115,9 @@ export function Navbar ()
                                 <span className="icon">
                                     <img className="icon-custom" src={emailIcon} alt = "email-icon" />
                                 </span>
-                                <span>tucnospro@gmail.com</span>
+                                <div className="m-auto">
+                                    <span>tucnospro@gmail.com</span>
+                                </div>
                             </span>
                         </li>
                     </ul>
@@ -129,7 +132,7 @@ export function Navbar ()
                         <NavLink className = "navbar-item aqua font-size" to = "/">Accueil</NavLink>
                         <NavLink className = "navbar-item aqua font-size" to = "/a-propos">A propos</NavLink>
                         <div className="drop">
-                            <NavLink onMouseEnter={() => {toggle ? setToggle(true) : setToggle(true)}} onMouseLeave={toggleDrop} className = "navbar-item aqua font-size drop-btn-padding" to = "/formation">Formations</NavLink>
+                            <NavLink onMouseEnter={() => {toggle ? setToggle(true) : setToggle(true)}} onMouseLeave={toggleDrop} className = "navbar-item aqua font-size drop-btn-padding" to = "/formations">Formations</NavLink>
                             <div className="drop-menu-box">
                                 <div ref={dropmenuRef} onMouseEnter={() => {toggle ? setToggle(true) : setToggle(true)}} onMouseLeave={toggleDrop} className="drop-menu box">
                                     {
@@ -137,7 +140,7 @@ export function Navbar ()
                                         {
                                             return (
                                                 <>
-                                                    <a key={categorie.id}><p className="has-text-dark my-2">{categorie.name}</p></a>
+                                                    <a key={uuid()}><p className="has-text-dark my-2">{categorie.name}</p></a>
                                                 </>
                                             )
                                         })
@@ -147,7 +150,7 @@ export function Navbar ()
                         </div>
                         <NavLink className = "navbar-item aqua font-size" to = "/nos-partenaires">Nos partenaires</NavLink>
                         <div className="drop">
-                            <NavLink onMouseEnter={() => {toggle2 ? setToggle2(true) : setToggle2(true)}} onMouseLeave={toggleDrop2} className = "navbar-item aqua font-size drop-btn-padding" to = "/formation">Certifications</NavLink>
+                            <NavLink onMouseEnter={() => {toggle2 ? setToggle2(true) : setToggle2(true)}} onMouseLeave={toggleDrop2} className = "navbar-item aqua font-size drop-btn-padding" to = "/certifications">Certifications</NavLink>
                             <div className="drop-menu-box">
                                 <div ref={dropmenuRef2} onMouseEnter={() => {toggle2 ? setToggle2(true) : setToggle2(true)}} onMouseLeave={toggleDrop2} className="drop-menu box">
                                     {
@@ -155,7 +158,7 @@ export function Navbar ()
                                         {
                                             return (
                                                 <>
-                                                    <a key={categorie.id}><p className="has-text-dark my-2">{categorie.name}</p></a>
+                                                    <a key={uuid()}><p className="has-text-dark my-2">{categorie.name}</p></a>
                                                 </>
                                             )
                                         })

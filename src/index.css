@@ -535,3 +535,32 @@ p {
 .not-found-box {
     max-width: 57rem;
 }
+
+/*
+
+
+            formation page
+
+
+*/
+
+.formation-page-image {
+    max-width: 32.5rem;
+    margin-right: 2rem;
+}
+
+.formateur-image {
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.formation-info-box {
+    max-width: 57.4rem;
+    margin:3rem auto 3rem auto !important;
+}
+
+.formation-title {
+    color: #ff5a2c !important;
+}

@@ -9,6 +9,7 @@ import data from '../mock_data.json';
 import { Testemony } from "../components/testemony";
 import { Navbar2 } from "../components/navbar2";
 import { Link } from "react-router-dom";
+import uuid from "react-uuid";
 
 export function About ()
 {
@@ -136,7 +137,7 @@ export function About ()
                                 return (
                                     <SwiperSlide>
                                         <Testemony
-                                            key = {testemony.id}
+                                            key = {uuid()}
                                             id = {testemony.id}
                                             name = {testemony.name}
                                             lastname = {testemony.lastname}

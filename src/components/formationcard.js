@@ -2,12 +2,9 @@ import React from "react";
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import 'tippy.js/themes/light.css';
-import 'tippy.js/animations/scale.css';
-import 'tippy.js/animations/shift-away.css';
-import 'tippy.js/animations/shift-toward.css';
-import 'tippy.js/animations/perspective.css';
 import durationIcon from '../images/duration.svg';
 import dateIcon from '../images/date.svg';
+import { Link } from "react-router-dom";
 
 export function FormationCard(props)
 {
@@ -43,7 +40,7 @@ export function FormationCard(props)
                         <p className='subtitle has-text-dark lvl-7 mt-2 mb-1 mr-4 ml-4'>{props.description}</p>
 
                         <div className="m-auto has-text-centered">
-                            <button className="button is-link mt-2 mb-3 mx-auto">voir plus</button>
+                            <Link to = {`/formations/${props.id}`}><button className="button is-link mt-2 mb-3 mx-auto">voir plus</button></Link>
                         </div>
                     </>
                 }

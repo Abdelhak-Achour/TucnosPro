@@ -10,6 +10,7 @@ import { Navbar } from '../components/navbar';
 import { Link } from 'react-router-dom';
 import SplitType from 'split-type';
 import { gsap } from "gsap";
+import uuid from 'react-uuid';
 
 export function Home()
 {
@@ -125,7 +126,7 @@ export function Home()
                             return (
                                 <SwiperSlide>
                                     <Card
-                                        key = {categorie.id}
+                                        key = {uuid()}
                                         id = {categorie.id}
                                         name = {categorie.name}
                                         description = {categorie.description}
@@ -186,7 +187,7 @@ export function Home()
                             return(
                                 <>
                                     <FormationCard
-                                        key = {formation.id}
+                                        key = {uuid()}
                                         id = {formation.id}
                                         image = {formation.image}
                                         name = {formation.name}

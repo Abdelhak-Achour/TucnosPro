@@ -3,13 +3,14 @@ import {Home} from "./pages/home";
 import React from 'react';
 import {About} from './pages/about';
 import {Blog} from './pages/blog';
-import {Formation} from './pages/formation';
-import {Certification} from './pages/certification';
+import { Formations} from './pages/formations';
+import {Certifications} from './pages/certifications';
 import {Contact} from './pages/contact';
 import {Partners} from './pages/partners';
 import { Footer } from './components/footer';
 import { Temoin } from './pages/temoin';
 import { NotFound } from './pages/notfound';
+import { Formation } from './pages/formation';
 
 function App() {
   return (
@@ -18,11 +19,15 @@ function App() {
         <Route path = '/' element = {<Home />} />
         <Route path = '/a-propos' element = {<About />} />
         <Route path = '/blog' element = {<Blog />} />
-        <Route path = '/formation' element = {<Formation />} />
-        <Route path = '/certification' element = {<Certification />} />
+        <Route path = '/formations'>
+          <Route index element = {<Formations />} />
+          <Route path = ':id' element = {<Formation />} />
+        </Route>
+        <Route path = '/certifications' element = {<Certifications />} />
         <Route path = '/contact' element = {<Contact />} />
         <Route path = '/nos-partenaires' element = {<Partners />} />
         <Route path = '/temoin' element = {<Temoin />} />
+        <Route path = 'not-found' element = {<NotFound />} />
         <Route path = '*' element = {<NotFound />} />
       </Routes>
       <Footer />

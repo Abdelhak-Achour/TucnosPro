@@ -6,6 +6,7 @@ import phoneIcon from '../images/phone-287-dark.svg';
 import emailIcon from '../images/email-155-dark.svg';
 import { Expo, gsap } from "gsap";
 import data from '../mock_data.json';
+import uuid from "react-uuid";
 
 export function Navbar2 ()
 {
@@ -76,7 +77,9 @@ export function Navbar2 ()
                                 <span class="icon">
                                     <img className="icon-custom" src={emailIcon} alt = "email-icon" />
                                 </span>
-                                <span className="has-text-dark">tucnospro@gmail.com</span>
+                                <div className="m-auto">
+                                    <span className="has-text-dark">tucnospro@gmail.com</span>
+                                </div>
                             </span>
                         </li>
                     </ul>
@@ -91,7 +94,7 @@ export function Navbar2 ()
                         <NavLink className = "navbar-item has-text-dark font-size" to = "/">Accueil</NavLink>
                         <NavLink className = "navbar-item has-text-dark font-size" to = "/a-propos">A propos</NavLink>
                         <div className="drop">
-                            <NavLink onMouseEnter={() => {toggle ? setToggle(true) : setToggle(true)}} onMouseLeave={toggleDrop} className = "navbar-item has-text-dark font-size drop-btn-padding" to = "/formation">Formations</NavLink>
+                            <NavLink onMouseEnter={() => {toggle ? setToggle(true) : setToggle(true)}} onMouseLeave={toggleDrop} className = "navbar-item has-text-dark font-size drop-btn-padding" to = "/formations">Formations</NavLink>
                             <div className="drop-menu-box">
                                 <div ref={dropmenuRef} onMouseEnter={() => {toggle ? setToggle(true) : setToggle(true)}} onMouseLeave={toggleDrop} className="drop-menu box fa-bg">
                                     {
@@ -99,7 +102,7 @@ export function Navbar2 ()
                                         {
                                             return (
                                                 <>
-                                                    <a><p className="has-text-dark my-2">{categorie.name}</p></a>
+                                                    <a key={uuid()}><p className="has-text-dark my-2">{categorie.name}</p></a>
                                                 </>
                                             )
                                         })
@@ -108,7 +111,7 @@ export function Navbar2 ()
                             </div>
                         </div>
                         <NavLink className = "navbar-item has-text-dark font-size" to = "/nos-partenaires">Nos partenaires</NavLink>
-                        <NavLink className = "navbar-item has-text-dark font-size" to = "/certification">Certifications</NavLink>
+                        <NavLink className = "navbar-item has-text-dark font-size" to = "/certifications">Certifications</NavLink>
                         <NavLink className = "navbar-item has-text-dark font-size" to = "/blog">Blog</NavLink>
                         <NavLink className = "navbar-item has-text-dark font-size" to = "/contact">Contact</NavLink>
                     </div>

@@ -6,6 +6,7 @@ import Facebook from '../images/facebook.svg';
 import Twitter from '../images/twitter.svg';
 import Linkedin from '../images/linkedin.svg';
 import Instagram from '../images/instagram.svg';
+import uuid from 'react-uuid';
 
 export function Footer()
 {
@@ -69,7 +70,7 @@ export function Footer()
                                     {
                                         data.categories.map((categorie) => {
                                             return(
-                                                <li><a>{categorie.name}</a></li>
+                                                <li key={uuid()}><a>{categorie.name}</a></li>
                                             )
                                         })
                                     }
