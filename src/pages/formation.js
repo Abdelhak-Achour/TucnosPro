@@ -1,10 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { Navbar2 } from "../components/navbar2";
 import data from '../mock_data.json';
+import { A11y, EffectFade } from 'swiper';
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+import 'swiper/swiper-bundle.css';
 
 export function Formation()
 {
+    const [currentSlide, setCurrentSlide] = useState(1);
+
     const { id } = useParams();
 
     const navigate = useNavigate()
@@ -18,6 +23,48 @@ export function Formation()
     });
 
     const image = data.formations[id-1].image;
+
+    const Tabs = () =>
+    {
+        const swiper = useSwiper();
+        console.log(swiper);
+
+        function tabSwitch(nb)
+        {
+            setCurrentSlide(nb);
+            swiper.slideTo(nb);
+        };
+
+        return(
+            <>
+                <div className="tabs is-toggle is-fullwidth">
+                    <ul>
+                        <li className={currentSlide === 1 ? "is-active" : ""} onClick={() => {tabSwitch(1)}}>
+                            <a>description</a>
+                        </li>
+                        <li className={currentSlide === 2 ? "is-active" : ""} onClick={() => {tabSwitch(2)}}>
+                            <a>programme</a>
+                        </li>
+                        <li className={currentSlide === 3 ? "is-active" : ""} onClick={() => {tabSwitch(3)}}>
+                            <a>pré-requis</a>
+                        </li>
+                        <li className={currentSlide === 4 ? "is-active" : ""} onClick={() => {tabSwitch(4)}}>
+                            <a>objectif</a>
+                        </li>
+                        <li className={currentSlide === 5 ? "is-active" : ""} onClick={() => {tabSwitch(5)}}>
+                            <a>déroulement</a>
+                        </li>
+                        <li className={currentSlide === 6 ? "is-active" : ""} onClick={() => {tabSwitch(6)}}>
+                            <a>les outils</a>
+                        </li>
+                        <li className={currentSlide === 7 ? "is-active" : ""} onClick={() => {tabSwitch(7)}}>
+                            <a>public cible</a>
+                        </li>
+                    </ul>
+                </div>
+            </>
+        )
+    }
 
     if(id<=data.formations.length)
     {
@@ -76,6 +123,88 @@ export function Formation()
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div className="box is-shadowless m-6 pr-6 pl-6 pt-5">
+                    <Swiper
+                        modules={[A11y, EffectFade]}
+                        slidesPerView={1}
+                        centeredSlides={true}
+                        allowTouchMove = {true}
+                        loop={true}
+                        rewind={false}
+                        initialSlide = {0}
+                        speed={150}
+                        effect={"fade"}
+                        breakpoints={
+                            {
+                                630:
+                                    {
+                                        slidesPerView: 1
+                                    }
+                            }
+                        }
+                    >
+                        
+                        <SwiperSlide>
+                            <div className="under-tab-content p-3">
+                                <Tabs />
+                            </div>
+                            <div className="under-tab-content p-6">
+                                <p className="title has-text-dark">description:</p>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="under-tab-content p-3">
+                                <Tabs />
+                            </div>
+                            <div className="under-tab-content p-6">
+                                <p className="title has-text-dark">programme:</p>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="under-tab-content p-3">
+                                <Tabs />
+                            </div>
+                            <div className="under-tab-content p-6">
+                                <p className="title has-text-dark">pré-requis:</p>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="under-tab-content p-3">
+                                <Tabs />
+                            </div>
+                            <div className="under-tab-content p-6">
+                                <p className="title has-text-dark">objectif:</p>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="under-tab-content p-3">
+                                <Tabs />
+                            </div>
+                            <div className="under-tab-content p-6">
+                                <p className="title has-text-dark">déroulement:</p>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="under-tab-content p-3">
+                                <Tabs />
+                            </div>
+                            <div className="under-tab-content p-6">
+                                <p className="title has-text-dark">les outils:</p>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="under-tab-content p-3">
+                                <Tabs />
+                            </div>
+                            <div className="under-tab-content p-6">
+                                <p className="title has-text-dark">public cible:</p>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                        </SwiperSlide>
+                    </Swiper>
                 </div>
             </>
         )

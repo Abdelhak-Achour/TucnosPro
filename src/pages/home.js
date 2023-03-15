@@ -36,6 +36,7 @@ export function Home()
                     centeredSlides={true}
                     // navigation
                     pagination={{ clickable: true, dynamicBullets: true }}
+                    allowTouchMove = {false}
                     loop={true}
                     rewind={false}
                     initialSlide = {0}

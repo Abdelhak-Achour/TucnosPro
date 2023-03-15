@@ -65,16 +65,16 @@ export function Navbar2 ()
                     <Link className = "navbar-item my-4 mx-5" to = "/"> <img className = "logo" src = {Logo} alt = "logo img" /></Link>
                     <ul className="info">
                         <li>
-                            <span class="info icon-text is-hidden-mobile">
-                                <span class="icon">
+                            <span className="info icon-text is-hidden-mobile">
+                                <span className="icon">
                                     <img className="icon-custom" src={phoneIcon} alt = "phone-icon" />
                                 </span>
                                 <span className="has-text-dark">92 999 737 | 27 643 085</span>
                             </span>
                         </li>
                         <li>
-                            <span class="info icon-text is-hidden-mobile">
-                                <span class="icon">
+                            <span className="info icon-text is-hidden-mobile">
+                                <span className="icon">
                                     <img className="icon-custom" src={emailIcon} alt = "email-icon" />
                                 </span>
                                 <div className="m-auto">
