@@ -132,6 +132,7 @@ export function Formation()
                         slidesPerView={1}
                         centeredSlides={true}
                         allowTouchMove = {true}
+                        autoHeight={true}
                         loop={true}
                         rewind={false}
                         initialSlide = {0}
@@ -162,7 +163,7 @@ export function Formation()
                             </div>
                             <div className="under-tab-content p-6">
                                 <p className="title has-text-dark">programme:</p>
-                                <p className="has-text-dark">Nulla ea consectetur aute aliqua est consequat Lorem sint. Sint ad mollit ullamco do pariatur incididunt Lorem est amet. Et culpa et tempor qui tempor irure ipsum Lorem qui do. Aliquip nulla sint officia sit laborum velit laborum eiusmod.</p>
+                                <p className="has-text-dark">Nulla ea consectetur aute aliqua est consequat Lorem sint. Sint ad mollit ullamco do pariatur incididunt Lorem est amet. Et culpa et tempor qui tempor irure ipsum Lorem qui do. Aliquip nulla sint officia sit laborum velit laborum eiusmod. Mollit nulla non proident consectetur excepteur id elit quis sint aute voluptate do et aute. Ipsum mollit anim cupidatat labore commodo eiusmod anim proident eu quis id magna do dolore. Et aliquip culpa sit esse. Non excepteur Lorem Lorem deserunt dolor pariatur sit ad est ut quis commodo amet ullamco. Consequat deserunt laboris exercitation magna exercitation eiusmod excepteur reprehenderit sunt minim fugiat in excepteur aute. Laboris cupidatat esse Lorem cupidatat cillum ullamco in voluptate pariatur. Ad eu duis sint laboris sint est culpa qui elit ut. Ullamco veniam magna cupidatat duis ea duis aliquip sit nisi. Quis magna adipisicing occaecat esse. Consectetur dolor ullamco excepteur aute adipisicing deserunt laborum aliquip irure ut qui amet in velit. Mollit amet labore duis ut ad et voluptate exercitation nostrud proident. Fugiat aute Lorem eu ea elit pariatur ullamco irure nisi. Ad aliqua reprehenderit do ipsum culpa aliquip.</p>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
@@ -198,7 +199,7 @@ export function Formation()
                             </div>
                             <div className="under-tab-content p-6">
                                 <p className="title has-text-dark">les outils:</p>
-                                <p className="has-text-dark">Lorem amet tempor reprehenderit labore consequat minim et commodo. Laboris dolor id culpa eu. Labore sint voluptate exercitation laborum pariatur. Minim reprehenderit occaecat excepteur eu dolore nisi officia ipsum.</p>
+                                <p className="has-text-dark">Lorem amet tempor reprehenderit labore consequat minim et commodo. Laboris dolor id culpa eu. Labore sint voluptate exercitation laborum pariatur. Minim reprehenderit occaecat excepteur eu dolore nisi officia ipsum. Aute ea ullamco officia velit cillum nulla. Ex nostrud sunt ut in anim fugiat aute incididunt ex pariatur. Mollit sint pariatur velit pariatur incididunt culpa mollit culpa occaecat irure aliquip labore deserunt aliquip. Ut mollit labore velit eiusmod labore anim pariatur cupidatat dolor qui occaecat. Anim et reprehenderit labore officia tempor duis ullamco dolore. Aute nostrud officia minim laborum excepteur commodo ex officia elit sunt anim. Deserunt nulla laborum aliquip deserunt proident tempor mollit ut non. Elit proident pariatur nostrud elit esse et anim non. Occaecat cupidatat voluptate ea sint fugiat ea amet occaecat ea aute nulla. Commodo eiusmod aute enim consectetur dolore cillum occaecat id irure ut anim. Voluptate aliqua occaecat adipisicing velit veniam fugiat pariatur cupidatat sit reprehenderit quis culpa. Proident mollit enim sint esse. Nisi nostrud aliqua anim consectetur. Esse nisi minim minim quis eu aute cupidatat laborum labore consectetur non. Esse duis veniam laboris irure do laborum exercitation do proident qui irure est ut eiusmod. Dolore anim Lorem laborum anim. Nostrud occaecat sit amet ipsum. Occaecat ullamco cupidatat aliqua consequat adipisicing Lorem deserunt ex. Deserunt aliquip laborum irure irure excepteur est amet amet duis id labore. Culpa minim cupidatat aliqua cillum. Sit eiusmod laborum qui esse amet nostrud commodo labore tempor.</p>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>

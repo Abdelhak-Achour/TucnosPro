@@ -11,6 +11,7 @@ import { Footer } from './components/footer';
 import { Temoin } from './pages/temoin';
 import { NotFound } from './pages/notfound';
 import { Formation } from './pages/formation';
+import { Inscrire } from './pages/inscrire';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path = '/formations'>
           <Route index element = {<Formations />} />
           <Route path = ':id' element = {<Formation />} />
+          <Route path = ':id/inscrire' element = {<Inscrire />} />
         </Route>
         <Route path = '/certifications' element = {<Certifications />} />
         <Route path = '/contact' element = {<Contact />} />
