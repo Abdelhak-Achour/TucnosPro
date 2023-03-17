@@ -13,7 +13,7 @@ export function Temoin()
           input.addEventListener('change', () => {
             let files = input.files
             if (files.length === 0) {
-              name.innerText = 'Aucune photo choisie'
+              name.innerText = 'photo'
             } else {
               name.innerText = files[0].name
             }

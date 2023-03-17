@@ -116,10 +116,10 @@ export function Formation()
                             </div>
                             <div className="columns">
                                 <div className="column pt-0 is-narrow">
-                                    <Link to="/inscription"><button className="button is-medium is-link">S'INSCRIRE</button></Link>
+                                    <Link to={`/formations/${id}/inscrire`}><button className="button is-medium is-link">S'INSCRIRE</button></Link>
                                 </div>
                                 <div className="column pt-0 is-narrow pl-0">
-                                <Link to="/inscription"><button className="button is-medium is-link">CATALOGUE</button></Link>
+                                <Link to={`/formations/${id}/inscrire`}><button className="button is-medium is-link">CATALOGUE</button></Link>
                                 </div>
                             </div>
                         </div>
@@ -232,7 +232,9 @@ export function Formation()
                                 <textarea className="textarea" type="message"></textarea>
                             </div>
                         </div>
-                        <button className="button is-link">Publier un commentaire</button>
+                        <div className="control">
+                            <button className="button is-link">Publier un commentaire</button>
+                        </div>
                     </form>
                 </div>
 
