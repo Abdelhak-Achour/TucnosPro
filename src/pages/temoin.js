@@ -30,7 +30,7 @@ export function Temoin()
         }
     })
     }
-    })      
+    })
 
     return(
         <>
@@ -129,7 +129,7 @@ export function Temoin()
                                 </div>
                             </div>
                         </div>
-                        <div class="field">
+                        <div className="field">
                             <div className="columns is-mobile">
                                 <div className="column pb-0 pr-0 is-narrow">
                                     <label className="label">Votre témoignage</label>
@@ -138,7 +138,7 @@ export function Temoin()
                                     <p className="orange-star">*</p>
                                 </div>
                             </div>
-                            <div class="control">
+                            <div className="control">
                                 <textarea class="textarea" placeholder="Votre témoignage"></textarea>
                             </div>
                         </div>

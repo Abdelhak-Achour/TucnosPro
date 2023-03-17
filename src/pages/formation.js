@@ -5,6 +5,7 @@ import data from '../mock_data.json';
 import { A11y, EffectFade } from 'swiper';
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
+import uuid from "react-uuid";
 
 export function Formation()
 {
@@ -125,7 +126,7 @@ export function Formation()
                     </div>
                 </div>
 
-                <div className="box is-shadowless m-6 pr-6 pl-6 pt-5">
+                <div className="box is-shadowless mt-6 mr-6 ml-6 mb-0 pr-6 pl-6 pt-5">
                     <Swiper
                         modules={[A11y, EffectFade]}
                         slidesPerView={1}
@@ -134,7 +135,7 @@ export function Formation()
                         loop={true}
                         rewind={false}
                         initialSlide = {0}
-                        speed={150}
+                        speed={100}
                         effect={"fade"}
                         breakpoints={
                             {
@@ -152,6 +153,7 @@ export function Formation()
                             </div>
                             <div className="under-tab-content p-6">
                                 <p className="title has-text-dark">description:</p>
+                                <p className="has-text-dark">Cillum irure enim ipsum aliqua non cillum reprehenderit ipsum nostrud. Eiusmod dolore enim ea in qui veniam ipsum. Do aliqua et nostrud dolore incididunt amet nostrud eiusmod ullamco. Consectetur quis velit officia irure eu aliquip duis enim excepteur deserunt minim dolor eiusmod id. Elit eiusmod consequat voluptate consectetur commodo excepteur et elit proident pariatur labore.</p>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
@@ -160,6 +162,7 @@ export function Formation()
                             </div>
                             <div className="under-tab-content p-6">
                                 <p className="title has-text-dark">programme:</p>
+                                <p className="has-text-dark">Nulla ea consectetur aute aliqua est consequat Lorem sint. Sint ad mollit ullamco do pariatur incididunt Lorem est amet. Et culpa et tempor qui tempor irure ipsum Lorem qui do. Aliquip nulla sint officia sit laborum velit laborum eiusmod.</p>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
@@ -168,6 +171,7 @@ export function Formation()
                             </div>
                             <div className="under-tab-content p-6">
                                 <p className="title has-text-dark">pré-requis:</p>
+                                <p className="has-text-dark">Esse ex tempor id commodo. Duis excepteur tempor sunt ea esse mollit nulla. Labore consectetur laboris ut et proident dolor veniam Lorem consectetur. Non sit excepteur id nostrud incididunt exercitation deserunt eiusmod aliquip deserunt. Proident aliquip voluptate et id.</p>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
@@ -176,6 +180,7 @@ export function Formation()
                             </div>
                             <div className="under-tab-content p-6">
                                 <p className="title has-text-dark">objectif:</p>
+                                <p className="has-text-dark">Cillum pariatur esse duis officia. Amet cupidatat do cupidatat voluptate reprehenderit id id irure magna ad. Adipisicing voluptate commodo ullamco pariatur nulla sit nulla quis Lorem aliquip elit incididunt aliqua. Labore dolore elit amet voluptate occaecat. Nostrud laboris exercitation occaecat aliqua anim.</p>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
@@ -184,6 +189,7 @@ export function Formation()
                             </div>
                             <div className="under-tab-content p-6">
                                 <p className="title has-text-dark">déroulement:</p>
+                                <p className="has-text-dark">Labore aute qui veniam voluptate mollit do ullamco. Dolore proident ullamco incididunt et consectetur reprehenderit magna tempor consequat proident ex magna elit veniam. Tempor do velit voluptate culpa dolor laboris ipsum. Laborum consectetur velit aliqua labore adipisicing sint sit ipsum nostrud Lorem Lorem. Qui irure dolore eu officia anim et dolore occaecat aliquip. Ullamco pariatur eu occaecat deserunt cupidatat aliqua dolore cillum occaecat laboris voluptate irure incididunt aliquip.</p>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
@@ -192,6 +198,7 @@ export function Formation()
                             </div>
                             <div className="under-tab-content p-6">
                                 <p className="title has-text-dark">les outils:</p>
+                                <p className="has-text-dark">Lorem amet tempor reprehenderit labore consequat minim et commodo. Laboris dolor id culpa eu. Labore sint voluptate exercitation laborum pariatur. Minim reprehenderit occaecat excepteur eu dolore nisi officia ipsum.</p>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
@@ -200,11 +207,52 @@ export function Formation()
                             </div>
                             <div className="under-tab-content p-6">
                                 <p className="title has-text-dark">public cible:</p>
+                                <p className="has-text-dark">Velit sint laborum qui magna veniam. Do labore adipisicing non quis ullamco. Ullamco deserunt in anim est duis reprehenderit nostrud amet exercitation ipsum elit ut amet.</p>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                         </SwiperSlide>
                     </Swiper>
+                </div>
+
+                <div className="leave-comment-section">
+                    <hr className="comment-hr" />
+                    <p className="title orange-text has-text-centered">QU'EN PENSEZ-VOUS ?</p>
+                    <form className="box leave-comment-form">
+                        <div className="field">
+                            <label className="label">NOM D'UTILISATEUR</label>
+                            <div className="control">
+                                <input className="input" type="username" />
+                            </div>
+                        </div>
+                        <div className="field">
+                            <label className="label">VOTRE MESSAGE</label>
+                            <div className="control">
+                                <textarea className="textarea" type="message"></textarea>
+                            </div>
+                        </div>
+                        <button className="button is-link">Publier un commentaire</button>
+                    </form>
+                </div>
+
+                <div className="comment-section">
+                    <hr className="comment-hr" />
+                    <p className={data.formations[id-1].comments.length === 0 ? "title has-text-dark has-text-centered mb-6 orange-text" : "is-hidden"}>Il n'y a pas encore de commentaire.</p>
+                    <div className={data.formations[id-1].comments.length === 0 ? "is-hidden" : "comments"}>
+                        <p className="title has-text-dark has-text-centered orange-text">Commentaires</p>
+                        {
+                            data.formations[id-1].comments.map((comment) =>
+                            {
+                                return(
+                                    <div key={uuid()}>
+                                        <p className="title is-4 mb-0 pb-0 has-text-dark">{comment.username}</p>
+                                        <p className="has-text-dark lvl-10 mt-0 pt-0">{comment.date}</p>
+                                        <p className="subtitle is-5 has-text-dark mb-6 mt-2">{comment.comment}</p>
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
                 </div>
             </>
         )

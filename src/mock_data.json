@@ -52,7 +52,19 @@
             "date": "2022-03-31",
             "price": 2500,
             "image": "pceh.png",
-            "formateur": "TucnosPro"
+            "formateur": "TucnosPro",
+            "comments": [
+                {
+                    "username": "user one",
+                    "date": "2020-10-03",
+                    "comment": "very educative"
+                },
+                {
+                    "username": "user two",
+                    "date": "2020-10-03",
+                    "comment": "Consectetur reprehenderit est voluptate dolore." 
+                }
+            ]
         },
         {
             "id": 2,
@@ -62,7 +74,8 @@
             "date": "2023-03-04",
             "price": 800,
             "image": "pia.png",
-            "formateur": "TucnosPro"
+            "formateur": "TucnosPro",
+            "comments": []
         },
         {
             "id": 3,
@@ -72,7 +85,24 @@
             "date": "2020-10-10",
             "price": 400,
             "image": "fp.png",
-            "formateur": "TucnosPro"
+            "formateur": "TucnosPro",
+            "comments": [
+                {
+                    "username": "user one",
+                    "date": "2020-10-03",
+                    "comment": "very educative"
+                },
+                {
+                    "username": "user two",
+                    "date": "2020-10-03",
+                    "comment": "Consectetur reprehenderit est voluptate dolore." 
+                },
+                {
+                    "username": "user three",
+                    "date": "2020-10-03",
+                    "comment": "Mollit in ipsum enim qui occaecat dolore sint ut. Commodo incididunt fugiat deserunt nulla cupidatat non irure elit laborum et dolor." 
+                }
+            ]
         },
         {
             "id": 4,
@@ -82,7 +112,19 @@
             "date": "2020-10-03",
             "price": 400,
             "image": "ceh.png",
-            "formateur": "TucnosPro"
+            "formateur": "TucnosPro",
+            "comments": [
+                {
+                    "username": "user one",
+                    "date": "2020-10-03",
+                    "comment": "very educative"
+                },
+                {
+                    "username": "user two",
+                    "date": "2020-10-03",
+                    "comment": "Consectetur reprehenderit est voluptate dolore." 
+                }
+            ]
         },
         {
             "id": 5,
@@ -92,7 +134,19 @@
             "date": "2020-10-24",
             "price": 500,
             "image": "sba.png",
-            "formateur": "TucnosPro"
+            "formateur": "TucnosPro",
+            "comments": [
+                {
+                    "username": "user one",
+                    "date": "2020-10-03",
+                    "comment": "very educative"
+                },
+                {
+                    "username": "user two",
+                    "date": "2020-10-03",
+                    "comment": "Consectetur reprehenderit est voluptate dolore." 
+                }
+            ]
         },
         {
             "id": 6,
@@ -102,7 +156,19 @@
             "date": "2022-03-11",
             "price": 2200,
             "image": "vm.png",
-            "formateur": "TucnosPro"
+            "formateur": "TucnosPro",
+            "comments": [
+                {
+                    "username": "user one",
+                    "date": "2020-10-03",
+                    "comment": "very educative"
+                },
+                {
+                    "username": "user two",
+                    "date": "2020-10-03",
+                    "comment": "Consectetur reprehenderit est voluptate dolore." 
+                }
+            ]
         },
         {
             "id": 7,
@@ -112,7 +178,19 @@
             "date": "2022-03-25",
             "price": 600,
             "image": "agile.png",
-            "formateur": "TucnosPro"
+            "formateur": "TucnosPro",
+            "comments": [
+                {
+                    "username": "user one",
+                    "date": "2020-10-03",
+                    "comment": "very educative"
+                },
+                {
+                    "username": "user two",
+                    "date": "2020-10-03",
+                    "comment": "Consectetur reprehenderit est voluptate dolore." 
+                }
+            ]
         },
         {
             "id": 8,
@@ -132,7 +210,19 @@
             "date": "2023-01-07",
             "price": 850,
             "image": "mspbi.png",
-            "formateur": "TucnosPro"
+            "formateur": "TucnosPro",
+            "comments": [
+                {
+                    "username": "user one",
+                    "date": "2020-10-03",
+                    "comment": "very educative"
+                },
+                {
+                    "username": "user two",
+                    "date": "2020-10-03",
+                    "comment": "Consectetur reprehenderit est voluptate dolore." 
+                }
+            ]
         },
         {
             "id": 10,
@@ -142,7 +232,19 @@
             "date": "2022-06-17",
             "price": 400,
             "image": "msaz.png",
-            "formateur": "TucnosPro"
+            "formateur": "TucnosPro",
+            "comments": [
+                {
+                    "username": "user one",
+                    "date": "2020-10-03",
+                    "comment": "very educative"
+                },
+                {
+                    "username": "user two",
+                    "date": "2020-10-03",
+                    "comment": "Consectetur reprehenderit est voluptate dolore." 
+                }
+            ]
         },
         {
             "id": 11,
@@ -152,7 +254,19 @@
             "date": "2022-10-01",
             "price": 1250,
             "image": "azadmin.png",
-            "formateur": "TucnosPro"
+            "formateur": "TucnosPro",
+            "comments": [
+                {
+                    "username": "user one",
+                    "date": "2020-10-03",
+                    "comment": "very educative"
+                },
+                {
+                    "username": "user two",
+                    "date": "2020-10-03",
+                    "comment": "Consectetur reprehenderit est voluptate dolore." 
+                }
+            ]
         },
         {
             "id": 12,
@@ -162,7 +276,19 @@
             "date": "2022-06-09",
             "price": 400,
             "image": "aiaz.png",
-            "formateur": "TucnosPro"
+            "formateur": "TucnosPro",
+            "comments": [
+                {
+                    "username": "user one",
+                    "date": "2020-10-03",
+                    "comment": "very educative"
+                },
+                {
+                    "username": "user two",
+                    "date": "2020-10-03",
+                    "comment": "Consectetur reprehenderit est voluptate dolore." 
+                }
+            ]
         },
         {
             "id": 13,
@@ -172,7 +298,19 @@
             "date": "2022-06-09",
             "price": 400,
             "image": "azf.png",
-            "formateur": "TucnosPro"
+            "formateur": "TucnosPro",
+            "comments": [
+                {
+                    "username": "user one",
+                    "date": "2020-10-03",
+                    "comment": "very educative"
+                },
+                {
+                    "username": "user two",
+                    "date": "2020-10-03",
+                    "comment": "Consectetur reprehenderit est voluptate dolore." 
+                }
+            ]
         },
         {
             "id": 14,
@@ -182,7 +320,19 @@
             "date": "2022-06-18",
             "price": 400,
             "image": "ppf.png",
-            "formateur": "TucnosPro"
+            "formateur": "TucnosPro",
+            "comments": [
+                {
+                    "username": "user one",
+                    "date": "2020-10-03",
+                    "comment": "very educative"
+                },
+                {
+                    "username": "user two",
+                    "date": "2020-10-03",
+                    "comment": "Consectetur reprehenderit est voluptate dolore." 
+                }
+            ]
         },
         {
             "id": 15,
@@ -192,7 +342,19 @@
             "date": "2022-06-12",
             "price": 400,
             "image": "msazsecurity.png",
-            "formateur": "TucnosPro"
+            "formateur": "TucnosPro",
+            "comments": [
+                {
+                    "username": "user one",
+                    "date": "2020-10-03",
+                    "comment": "very educative"
+                },
+                {
+                    "username": "user two",
+                    "date": "2020-10-03",
+                    "comment": "Consectetur reprehenderit est voluptate dolore." 
+                }
+            ]
         }
     ],
     "testimonies": [

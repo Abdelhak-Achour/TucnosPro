@@ -568,3 +568,25 @@ p {
 .under-tab-content {
     background-color: #ffffff;
 }
+
+.comment-hr {
+    background: #7d7d7d;
+    height: 2.5px;
+    width: 35rem;
+    margin: auto;
+    margin-bottom: 1.7rem;
+}
+
+.orange-text {
+    color: #ff5a2c !important;
+}
+
+.leave-comment-form {
+    max-width: 50rem;
+    margin: 2rem auto 5rem auto;
+}
+
+.comments {
+    max-width: 47rem;
+    margin: auto;
+}
