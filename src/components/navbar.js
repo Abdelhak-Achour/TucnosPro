@@ -129,10 +129,10 @@ export function Navbar ()
                 </div>
                 <div className = {active ? "navbar-menu is-active mx-5" : "navbar-menu mx-6"} id = "nav-links">
                     <div className = "navbar-end">
-                        <NavLink className = "navbar-item aqua font-size" to = "/">Accueil</NavLink>
-                        <NavLink className = "navbar-item aqua font-size" to = "/a-propos">A propos</NavLink>
+                        <NavLink className = "subtitle is-5 custom-item-margin navbar-item aqua font-size" to = "/">Accueil</NavLink>
+                        <NavLink className = "subtitle is-5 custom-item-margin navbar-item aqua font-size" to = "/a-propos">A propos</NavLink>
                         <div className="drop">
-                            <NavLink onMouseEnter={() => {toggle ? setToggle(true) : setToggle(true)}} onMouseLeave={toggleDrop} className = "navbar-item aqua font-size drop-btn-padding" to = "/formations">Formations</NavLink>
+                            <NavLink onMouseEnter={() => {toggle ? setToggle(true) : setToggle(true)}} onMouseLeave={toggleDrop} className = "subtitle is-5 navbar-item aqua font-size drop-btn-padding" to = "/formations">Formations</NavLink>
                             <div className="drop-menu-box">
                                 <div ref={dropmenuRef} onMouseEnter={() => {toggle ? setToggle(true) : setToggle(true)}} onMouseLeave={toggleDrop} className="drop-menu box">
                                     {
@@ -148,9 +148,9 @@ export function Navbar ()
                                 </div>
                             </div>
                         </div>
-                        <NavLink className = "navbar-item aqua font-size" to = "/nos-partenaires">Nos partenaires</NavLink>
+                        <NavLink className = "subtitle is-5 custom-item-margin navbar-item aqua font-size" to = "/nos-partenaires">Nos partenaires</NavLink>
                         <div className="drop">
-                            <NavLink onMouseEnter={() => {toggle2 ? setToggle2(true) : setToggle2(true)}} onMouseLeave={toggleDrop2} className = "navbar-item aqua font-size drop-btn-padding" to = "/certifications">Certifications</NavLink>
+                            <NavLink onMouseEnter={() => {toggle2 ? setToggle2(true) : setToggle2(true)}} onMouseLeave={toggleDrop2} className = "subtitle is-5 navbar-item aqua font-size drop-btn-padding" to = "/certifications">Certifications</NavLink>
                             <div className="drop-menu-box">
                                 <div ref={dropmenuRef2} onMouseEnter={() => {toggle2 ? setToggle2(true) : setToggle2(true)}} onMouseLeave={toggleDrop2} className="drop-menu box">
                                     {
@@ -166,8 +166,8 @@ export function Navbar ()
                                 </div>
                             </div>
                         </div>
-                        <NavLink className = "navbar-item aqua font-size" to = "/blog">Blog</NavLink>
-                        <NavLink className = "navbar-item aqua font-size" to = "/contact">Contact</NavLink>
+                        <NavLink className = "subtitle is-5 custom-item-margin navbar-item aqua font-size" to = "/blog">Blog</NavLink>
+                        <NavLink className = "subtitle is-5 custom-item-margin-contact navbar-item aqua font-size" to = "/contact">Contact</NavLink>
                     </div>
                 </div>
             </nav>
