@@ -7,7 +7,7 @@
         padding: 0px;
         overflow-x: hidden; 
     }
-  }
+}
 
 .temp-div {
     margin-top: 3rem;
@@ -549,6 +549,13 @@ p {
     margin-right: 2rem;
 }
 
+@media only screen and (max-width: 768px) {
+    .formation-page-image {
+        max-width: 20rem;
+        margin-right: 2rem;
+    }
+}
+
 .formateur-image {
     width: 5rem;
     height: 5rem;
@@ -569,6 +576,22 @@ p {
     background-color: #ffffff;
 }
 
+@media only screen and (max-width: 768px) {
+    .under-tab-content {
+        background-color: #ffffff;
+        padding: 0px !important;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .formation-details {
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+        padding-top: 1rem !important;
+        padding-bottom: 2rem !important;
+    }
+}
+
 .comment-hr {
     background: #7d7d7d;
     height: 2.5px;
@@ -586,7 +609,29 @@ p {
     margin: 2rem auto 5rem auto;
 }
 
+@media only screen and (max-width: 768px) {
+    .leave-comment-form {
+        max-width: 21.7rem;
+        margin: 2rem auto 5rem auto;
+    }
+}
+
 .comments {
     max-width: 47rem;
     margin: auto;
 }
+
+@media only screen and (max-width: 768px) {
+    .comments {
+        max-width: 21rem;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .tabs ul {
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+  }

@@ -79,7 +79,7 @@ export function Formation()
                             <img className="formation-page-image" src = {require(`../images/${image}`)} alt = "formation" />
                         </div>
                         <div className="column is-narrow">
-                            <div className="columns">
+                            <div className="columns is-mobile">
                                 <div className="column is-narrow">
                                     <img className="formateur-image" src = {require(`../images/not_real_person_2.png`)} alt = "formateur" />
                                 </div>
@@ -90,7 +90,7 @@ export function Formation()
                                     </div>
                                 </div>
                             </div>
-                            <div className="columns">
+                            <div className="columns is-mobile">
                                 <div className="column is-narrow">
                                     <p className="is-size-3 has-text-dark">Durée:</p>
                                 </div>
@@ -98,7 +98,7 @@ export function Formation()
                                     <p className="is-size-3 has-text-dark">{data.formations[id-1].duration} heures</p>
                                 </div>
                             </div>
-                            <div className="columns">
+                            <div className="columns is-mobile">
                                 <div className="column pt-0 is-narrow">
                                     <p className="is-size-3 has-text-dark">Date:</p>
                                 </div>
@@ -106,7 +106,7 @@ export function Formation()
                                     <p className="is-size-3 has-text-dark">{data.formations[id-1].date}</p>
                                 </div>
                             </div>
-                            <div className="columns">
+                            <div className="columns is-mobile">
                                 <div className="column pt-0 is-narrow">
                                     <p className="is-size-3 has-text-dark">Prix:</p>
                                 </div>
@@ -114,24 +114,24 @@ export function Formation()
                                     <p className="is-size-3 has-text-dark">{data.formations[id-1].price} TND</p>
                                 </div>
                             </div>
-                            <div className="columns">
+                            <div className="columns is-mobile">
                                 <div className="column pt-0 is-narrow">
                                     <Link to={`/formations/${id}/inscrire`}><button className="button is-medium is-link">S'INSCRIRE</button></Link>
                                 </div>
                                 <div className="column pt-0 is-narrow pl-0">
-                                <Link to={`/formations/${id}/inscrire`}><button className="button is-medium is-link">CATALOGUE</button></Link>
+                                    <Link to={`/formations/${id}/inscrire`}><button className="button is-medium is-link">CATALOGUE</button></Link>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div className="box is-shadowless mt-6 mr-6 ml-6 mb-0 pr-6 pl-6 pt-5">
+                <div className="formation-details box is-shadowless mt-6 mr-6 ml-6 mb-0 pr-6 pl-6 pt-5">
                     <Swiper
                         modules={[A11y, EffectFade]}
                         slidesPerView={1}
                         centeredSlides={true}
-                        allowTouchMove = {true}
+                        allowTouchMove = {false}
                         autoHeight={true}
                         loop={true}
                         rewind={false}
