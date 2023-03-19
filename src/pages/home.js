@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import data from '../mock_data.json';
 import { Navigation, Pagination, A11y, EffectCoverflow, EffectCreative, EffectFade, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -27,6 +27,20 @@ export function Home()
     //     stagger: 0.05
     // })
 
+    const [delay, setDelay] = useState(10500);
+
+    function changeDelayLonger()
+    {
+        console.log("delay is longer");
+        setDelay(1800000);
+    }
+
+    function changeDelayShorter()
+    {
+        console.log("delay is shorter");
+        setDelay(10500);
+    }
+
     return (
         <>
             <div className='welcome-section'>
@@ -34,14 +48,13 @@ export function Home()
                     modules={[Navigation, Pagination, A11y, EffectFade, Autoplay]}
                     slidesPerView={1}
                     centeredSlides={true}
-                    // navigation
                     pagination={{ clickable: true, dynamicBullets: true }}
                     allowTouchMove = {false}
                     loop={true}
                     rewind={false}
                     initialSlide = {0}
                     autoplay={{
-                        delay: 10500,
+                        delay: delay,
                         disableOnInteraction: false,
                     }}
                     speed={750}
@@ -58,7 +71,7 @@ export function Home()
                     {/* <Navbar /> */}
                     <SwiperSlide>
                         <div className = 'home-image'>
-                            <Navbar />
+                            <Navbar changeDelayLonger={changeDelayLonger} changeDelayShorter={changeDelayShorter} />
                             <p className='title lvl-1 has-text-centered'>Tucnos Pro,</p>
                             <p className='subtitle lvl-1 is-spaced has-text-centered'>Se former, c'est Avancer</p>
                             <div className='buttons-div'>
@@ -75,7 +88,7 @@ export function Home()
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className = 'home-image-2'>
-                            <Navbar />
+                            <Navbar changeDelayLonger={changeDelayLonger} changeDelayShorter={changeDelayShorter} />
                             <p className='title lvl-1 has-text-centered'>Tucnos Pro,</p>
                             <p className='subtitle lvl-1 is-spaced has-text-centered'>Se former, c'est Avancer</p>
                             <div className='buttons-div'>

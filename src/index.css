@@ -61,6 +61,16 @@
     background-color: transparent !important;
 }
 
+.mobile-navbar-menu {
+    background-color: #363636;
+    width: 100%;
+    transform: translateX(100vh);
+}
+
+.mobile-navbar-menu-content {
+    color: aliceblue;
+}
+
 .custom-item-margin {
     margin-top: 1.75rem;
 }

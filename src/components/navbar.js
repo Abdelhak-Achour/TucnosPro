@@ -8,17 +8,8 @@ import { Expo, gsap } from "gsap";
 import data from '../mock_data.json';
 import uuid from "react-uuid";
 
-export function Navbar ()
+export function Navbar (props)
 {
-
-    const [active, setActive] = useState(false);
-
-    function activateLinks()
-    {
-        setActive( (prev) => {
-            return !prev
-        })
-    };
 
     const dropmenuRef = useRef(null);
 
@@ -96,6 +87,26 @@ export function Navbar ()
         }
     }, [toggle2]);
 
+    const mobilenavRef = useRef(null);
+
+    function menuClickedPull()
+    {
+        props.changeDelayLonger();
+        gsap.to(mobilenavRef.current, {
+            duration: 1,
+            x: 0,
+            ease: Expo.easeInOut
+        })
+    }
+
+    function menuClickedUnpull()
+    {
+        props.changeDelayShorter();
+        gsap.to(mobilenavRef.current, {
+            duration: 1,
+        })
+    }
+
     return(
         <>
             <nav className = "navbar is-fixed-top">
@@ -121,13 +132,12 @@ export function Navbar ()
                             </span>
                         </li>
                     </ul>
-                    <a className="navbar-burger" onClick={activateLinks}>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </a>
+                    <div className="navbar-burger mr-5 mt-5">
+                        <p className="" onClick={menuClickedPull}>menu</p>
+                        <p className="is-hidden">close menu</p>
+                    </div>
                 </div>
-                <div className = {active ? "navbar-menu is-active mx-5" : "navbar-menu mx-6"} id = "nav-links">
+                <div className = "navbar-menu mx-6" id = "nav-links">
                     <div className = "navbar-end">
                         <NavLink className = "subtitle is-5 custom-item-margin navbar-item aqua font-size" to = "/">Accueil</NavLink>
                         <NavLink className = "subtitle is-5 custom-item-margin navbar-item aqua font-size" to = "/a-propos">A propos</NavLink>
@@ -168,6 +178,29 @@ export function Navbar ()
                         </div>
                         <NavLink className = "subtitle is-5 custom-item-margin navbar-item aqua font-size" to = "/blog">Blog</NavLink>
                         <NavLink className = "subtitle is-5 custom-item-margin-contact navbar-item aqua font-size" to = "/contact">Contact</NavLink>
+                    </div>
+                </div>
+                <div ref={mobilenavRef} className="mobile-navbar-menu is-hidden-tablet">
+                    <div className="mobile-navbar-menu-content pt-5 pb-5 has-text-centered">
+                        <NavLink className = "subtitle mobile-navbar-menu-content is-4" to = "/">Accueil</NavLink>
+                        <br />
+                        <br />
+                        <NavLink className = "subtitle mobile-navbar-menu-content is-4" to = "/a-propos">A propos</NavLink>
+                        <br />
+                        <br />
+                        <NavLink className = "subtitle mobile-navbar-menu-content is-4" to = "/formations">Formations</NavLink>
+                        <br />
+                        <br />
+                        <NavLink className = "subtitle mobile-navbar-menu-content is-4" to = "/nos-partenaires">Nos partenaires</NavLink>
+                        <br />
+                        <br />
+                        <NavLink className = "subtitle mobile-navbar-menu-content is-4" to = "/certifications">Certifications</NavLink>
+                        <br />
+                        <br />
+                        <NavLink className = "subtitle mobile-navbar-menu-content is-4" to = "/blog">Blog</NavLink>
+                        <br />
+                        <br />
+                        <NavLink className = "subtitle mobile-navbar-menu-content is-4" to = "/contact">Contact</NavLink>
                     </div>
                 </div>
             </nav>
