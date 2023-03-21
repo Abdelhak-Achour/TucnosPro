@@ -99,13 +99,17 @@
 .drop-menu {
     padding: 7px 17px;
     width: 12rem;
-    transform: translateY(-375px);
+    transform: translateY(-100vh);
 }
 
 .drop-menu-box {
     position: absolute;
     top: calc(75%);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.welcome-section {
+    transform: translateY(-90px);
 }
 
 .home-image {
@@ -170,6 +174,7 @@ p {
 .card-section {
     max-width: 75rem;
     margin: auto;
+    transform: translateY(-25px);
 }
 
 .card-section-box {

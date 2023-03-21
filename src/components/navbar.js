@@ -8,7 +8,7 @@ import { Expo, gsap } from "gsap";
 import data from '../mock_data.json';
 import uuid from "react-uuid";
 
-export function Navbar (props)
+export function Navbar ()
 {
 
     const dropmenuRef = useRef(null);
@@ -38,8 +38,8 @@ export function Navbar (props)
         {
             console.log(toggle)
             gsap.to(dropmenuRef.current, {
-                duration: 0.85,
-                y: -375,
+                duration: 1,
+                y: "-100vh",
                 delay: 0,
                 repeat: 0,
                 yoyo: false,
@@ -76,8 +76,8 @@ export function Navbar (props)
         {
             console.log(toggle2)
             gsap.to(dropmenuRef2.current, {
-                duration: 0.85,
-                y: -375,
+                duration: 1,
+                y: "-100vh",
                 delay: 0,
                 repeat: 0,
                 yoyo: false,
@@ -88,28 +88,33 @@ export function Navbar (props)
     }, [toggle2]);
 
     const mobilenavRef = useRef(null);
+    const [pulled, setPulled] = useState(false);
 
     function menuClickedPull()
     {
-        props.changeDelayLonger();
-        gsap.to(mobilenavRef.current, {
-            duration: 1,
-            x: 0,
-            ease: Expo.easeInOut
-        })
-    }
-
-    function menuClickedUnpull()
-    {
-        props.changeDelayShorter();
-        gsap.to(mobilenavRef.current, {
-            duration: 1,
-        })
+        if (pulled)
+        {
+            setPulled(false);
+            gsap.to(mobilenavRef.current, {
+                duration: 1,
+                x: "100vh",
+                ease: Expo.easeInOut
+            })
+        }
+        else
+        {
+            setPulled(true);
+            gsap.to(mobilenavRef.current, {
+                duration: 1,
+                x: 0,
+                ease: Expo.easeInOut
+            })
+        }
     }
 
     return(
         <>
-            <nav className = "navbar is-fixed-top">
+            <nav className = "navbar">
                 <div className = "navbar-brand">
                     <Link className = "navbar-item my-4 mx-5" to = "/"> <img className = "logo" src = {Logo} alt = "logo img" /></Link>
                     <ul className="info">
@@ -133,8 +138,8 @@ export function Navbar (props)
                         </li>
                     </ul>
                     <div className="navbar-burger mr-5 mt-5">
-                        <p className="" onClick={menuClickedPull}>menu</p>
-                        <p className="is-hidden">close menu</p>
+                        <p className={pulled ? "is-hidden" : ""} onClick={menuClickedPull}>menu</p>
+                        <p className={pulled ? "" : "is-hidden"} onClick={menuClickedPull}>close menu</p>
                     </div>
                 </div>
                 <div className = "navbar-menu mx-6" id = "nav-links">

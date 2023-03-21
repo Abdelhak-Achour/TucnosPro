@@ -43,6 +43,7 @@ export function Home()
 
     return (
         <>
+            <Navbar />
             <div className='welcome-section'>
                 <Swiper
                     modules={[Navigation, Pagination, A11y, EffectFade, Autoplay]}
@@ -68,10 +69,9 @@ export function Home()
                         }
                     }
                 >
-                    {/* <Navbar /> */}
+                    
                     <SwiperSlide>
                         <div className = 'home-image'>
-                            <Navbar changeDelayLonger={changeDelayLonger} changeDelayShorter={changeDelayShorter} />
                             <p className='title lvl-1 has-text-centered'>Tucnos Pro,</p>
                             <p className='subtitle lvl-1 is-spaced has-text-centered'>Se former, c'est Avancer</p>
                             <div className='buttons-div'>
@@ -88,7 +88,6 @@ export function Home()
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className = 'home-image-2'>
-                            <Navbar changeDelayLonger={changeDelayLonger} changeDelayShorter={changeDelayShorter} />
                             <p className='title lvl-1 has-text-centered'>Tucnos Pro,</p>
                             <p className='subtitle lvl-1 is-spaced has-text-centered'>Se former, c'est Avancer</p>
                             <div className='buttons-div'>
@@ -107,7 +106,7 @@ export function Home()
             </div>
             
             <div className='card-section'>
-                <p className='title is-3 has-text-centered has-text-dark cards-title'> Nous avons ce qu'il vous faut</p>
+                <p className='title is-2 mt-0 pt-0 has-text-centered has-text-dark cards-title'> Nous avons ce qu'il vous faut</p>
                 <Swiper
                     modules={[Navigation, Pagination, A11y, EffectCoverflow]}
                     slidesPerView={1}
