@@ -71,6 +71,11 @@
     color: aliceblue;
 }
 
+.categories-menu {
+    opacity: 0;
+    display: none;
+}
+
 .custom-item-margin {
     margin-top: 1.75rem;
 }

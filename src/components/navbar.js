@@ -112,6 +112,17 @@ export function Navbar ()
         }
     }
 
+    const categoriesMenuRef = useRef(null);
+
+    function categoriesPull()
+    {
+        gsap.to(categoriesMenuRef.current, {
+            duration: 1,
+            opacity: 1,
+            display: "block"
+        })
+    }
+
     return(
         <>
             <nav className = "navbar">
@@ -186,16 +197,27 @@ export function Navbar ()
                     </div>
                 </div>
                 <div ref={mobilenavRef} className="mobile-navbar-menu is-hidden-tablet">
-                    <div className="mobile-navbar-menu-content pt-5 pb-5 has-text-centered">
+                    <div className="mobile-navbar-menu-content pt-5 pb-5 pl-3">
                         <NavLink className = "subtitle mobile-navbar-menu-content is-4" to = "/">Accueil</NavLink>
                         <br />
                         <br />
                         <NavLink className = "subtitle mobile-navbar-menu-content is-4" to = "/a-propos">A propos</NavLink>
                         <br />
                         <br />
-                        <NavLink className = "subtitle mobile-navbar-menu-content is-4" to = "/formations">Formations</NavLink>
+                        <p className = "subtitle mobile-navbar-menu-content is-4 pb-0 mb-0" to = "" onClick={categoriesPull}>Formations</p>
                         <br />
-                        <br />
+                        <div ref={categoriesMenuRef} className="categories-menu pl-3 pt-0 pb-2">
+                            {
+                                data.categories.map((categorie) =>
+                                {
+                                    return (
+                                        <>
+                                            <p key={uuid()} className="subtitle mobile-navbar-menu-content is-5 mb-2">{categorie.name}</p>
+                                        </>
+                                    )
+                                })
+                            }
+                        </div>
                         <NavLink className = "subtitle mobile-navbar-menu-content is-4" to = "/nos-partenaires">Nos partenaires</NavLink>
                         <br />
                         <br />
