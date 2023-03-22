@@ -113,14 +113,28 @@ export function Navbar ()
     }
 
     const categoriesMenuRef = useRef(null);
+    const [categoriesPulled, setCategoriesPulled] = useState(false);
 
     function categoriesPull()
     {
-        gsap.to(categoriesMenuRef.current, {
-            duration: 1,
-            opacity: 1,
-            display: "block"
-        })
+        if(categoriesPulled)
+        {
+            setCategoriesPulled(false);
+            gsap.to(categoriesMenuRef.current, {
+                duration: 0.3,
+                opacity: 0,
+                display: "none"
+            })
+        }
+        else
+        {
+            setCategoriesPulled(true);
+            gsap.to(categoriesMenuRef.current, {
+                duration: 1,
+                opacity: 1,
+                display: "block"
+            })
+        }
     }
 
     return(
@@ -150,7 +164,7 @@ export function Navbar ()
                     </ul>
                     <div className="navbar-burger mr-5 mt-5">
                         <p className={pulled ? "is-hidden" : ""} onClick={menuClickedPull}>menu</p>
-                        <p className={pulled ? "" : "is-hidden"} onClick={menuClickedPull}>close menu</p>
+                        <p className={pulled ? "" : "is-hidden"} onClick={menuClickedPull}>close</p>
                     </div>
                 </div>
                 <div className = "navbar-menu mx-6" id = "nav-links">
@@ -206,7 +220,7 @@ export function Navbar ()
                         <br />
                         <p className = "subtitle mobile-navbar-menu-content is-4 pb-0 mb-0" to = "" onClick={categoriesPull}>Formations</p>
                         <br />
-                        <div ref={categoriesMenuRef} className="categories-menu pl-3 pt-0 pb-2">
+                        <div ref={categoriesMenuRef} className="categories-menu pl-5 pt-0 pb-2">
                             {
                                 data.categories.map((categorie) =>
                                 {
