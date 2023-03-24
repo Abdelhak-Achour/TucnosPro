@@ -11,15 +11,6 @@ import uuid from "react-uuid";
 export function Navbar2 ()
 {
 
-    const [active, setActive] = useState(false);
-
-    function activateLinks()
-    {
-        setActive( (prev) => {
-            return !prev
-        })
-    };
-
     const dropmenuRef = useRef(null);
 
     const [toggle, setToggle] = useState(false);
@@ -47,8 +38,8 @@ export function Navbar2 ()
         {
             console.log(toggle)
             gsap.to(dropmenuRef.current, {
-                duration: 0.85,
-                y: -375,
+                duration: 1,
+                y: "-100vh",
                 delay: 0,
                 repeat: 0,
                 yoyo: false,
@@ -57,6 +48,94 @@ export function Navbar2 ()
             });
         }
     }, [toggle]);
+
+    const dropmenuRef2 = useRef(null);
+
+    const [toggle2, setToggle2] = useState(false);
+
+    function toggleDrop2 ()
+    {
+        setToggle2(!toggle2);
+    };
+
+    useEffect(() => {
+        if (toggle2)
+        {
+            console.log(toggle2);
+            gsap.to(dropmenuRef2.current, {
+                duration: 1,
+                y: 0,
+                delay: 0,
+                repeat: 0,
+                yoyo: false,
+                ease: Expo.easeInOut,
+                paused: false
+            });
+        }
+        else
+        {
+            console.log(toggle2)
+            gsap.to(dropmenuRef2.current, {
+                duration: 1,
+                y: "-100vh",
+                delay: 0,
+                repeat: 0,
+                yoyo: false,
+                ease: Expo.easeInOut,
+                paused: false
+            });
+        }
+    }, [toggle2]);
+
+    const mobilenavRef = useRef(null);
+    const [pulled, setPulled] = useState(false);
+
+    function menuClickedPull()
+    {
+        if (pulled)
+        {
+            setPulled(false);
+            gsap.to(mobilenavRef.current, {
+                duration: 1,
+                x: "100vh",
+                ease: Expo.easeInOut
+            })
+        }
+        else
+        {
+            setPulled(true);
+            gsap.to(mobilenavRef.current, {
+                duration: 1,
+                x: 0,
+                ease: Expo.easeInOut
+            })
+        }
+    }
+
+    const categoriesMenuRef = useRef(null);
+    const [categoriesPulled, setCategoriesPulled] = useState(false);
+
+    function categoriesPull()
+    {
+        if(categoriesPulled)
+        {
+            setCategoriesPulled(false);
+            gsap.to(categoriesMenuRef.current, {
+                duration: 0.3,
+                opacity: 0,
+                display: "none"
+            })
+        }
+        else
+        {
+            setCategoriesPulled(true);
+            gsap.to(categoriesMenuRef.current, {
+                duration: 1,
+                opacity: 1,
+                display: "block"
+            })
+        }
+    }
 
     return(
         <>
@@ -83,20 +162,19 @@ export function Navbar2 ()
                             </span>
                         </li>
                     </ul>
-                    <a className="navbar-burger" onClick={activateLinks}>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </a>
+                    <div className="navbar-burger mr-5 mt-5">
+                        <p className={pulled ? "is-hidden" : "has-text-dark"} onClick={menuClickedPull}>menu</p>
+                        <p className={pulled ? "has-text-dark" : "is-hidden"} onClick={menuClickedPull}>close</p>
+                    </div>
                 </div>
-                <div className = {active ? "navbar-menu is-active mx-5" : "navbar-menu mx-6"} id = "nav-links">
+                <div className = "navbar-menu mx-6" id = "nav-links">
                     <div className = "navbar-end">
-                        <NavLink className = "navbar-item has-text-dark font-size" to = "/">Accueil</NavLink>
-                        <NavLink className = "navbar-item has-text-dark font-size" to = "/a-propos">A propos</NavLink>
+                        <NavLink className = "subtitle is-5 custom-item-margin navbar-item has-text-dark font-size" to = "/">Accueil</NavLink>
+                        <NavLink className = "subtitle is-5 custom-item-margin navbar-item has-text-dark font-size" to = "/a-propos">A propos</NavLink>
                         <div className="drop">
-                            <NavLink onMouseEnter={() => {toggle ? setToggle(true) : setToggle(true)}} onMouseLeave={toggleDrop} className = "navbar-item has-text-dark font-size drop-btn-padding" to = "/formations">Formations</NavLink>
+                            <NavLink onMouseEnter={() => {toggle ? setToggle(true) : setToggle(true)}} onMouseLeave={toggleDrop} className = "subtitle is-5 navbar-item has-text-dark font-size drop-btn-padding" to = "/formations">Formations</NavLink>
                             <div className="drop-menu-box">
-                                <div ref={dropmenuRef} onMouseEnter={() => {toggle ? setToggle(true) : setToggle(true)}} onMouseLeave={toggleDrop} className="drop-menu box fa-bg">
+                                <div ref={dropmenuRef} onMouseEnter={() => {toggle ? setToggle(true) : setToggle(true)}} onMouseLeave={toggleDrop} className="drop-menu box">
                                     {
                                         data.categories.map((categorie) =>
                                         {
@@ -110,10 +188,60 @@ export function Navbar2 ()
                                 </div>
                             </div>
                         </div>
-                        <NavLink className = "navbar-item has-text-dark font-size" to = "/nos-partenaires">Nos partenaires</NavLink>
-                        <NavLink className = "navbar-item has-text-dark font-size" to = "/certifications">Certifications</NavLink>
-                        <NavLink className = "navbar-item has-text-dark font-size" to = "/blog">Blog</NavLink>
-                        <NavLink className = "navbar-item has-text-dark font-size" to = "/contact">Contact</NavLink>
+                        <NavLink className = "subtitle is-5 custom-item-margin navbar-item has-text-dark font-size" to = "/nos-partenaires">Nos partenaires</NavLink>
+                        <div className="drop">
+                            <NavLink onMouseEnter={() => {toggle2 ? setToggle2(true) : setToggle2(true)}} onMouseLeave={toggleDrop2} className = "subtitle is-5 navbar-item has-text-dark font-size drop-btn-padding" to = "/certifications">Certifications</NavLink>
+                            <div className="drop-menu-box">
+                                <div ref={dropmenuRef2} onMouseEnter={() => {toggle2 ? setToggle2(true) : setToggle2(true)}} onMouseLeave={toggleDrop2} className="drop-menu box">
+                                    {
+                                        data.categories.map((categorie) =>
+                                        {
+                                            return (
+                                                <>
+                                                    <a key={uuid()}><p className="has-text-dark my-2">{categorie.name}</p></a>
+                                                </>
+                                            )
+                                        })
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <NavLink className = "subtitle is-5 custom-item-margin navbar-item has-text-dark font-size" to = "/blog">Blog</NavLink>
+                        <NavLink className = "subtitle is-5 custom-item-margin-contact navbar-item has-text-dark font-size" to = "/contact">Contact</NavLink>
+                    </div>
+                </div>
+                <div ref={mobilenavRef} className="mobile-navbar-menu is-hidden-tablet">
+                    <div className="mobile-navbar-menu-content pt-5 pb-5 pl-3">
+                        <NavLink className = "subtitle mobile-navbar-menu-content is-4" to = "/">Accueil</NavLink>
+                        <br />
+                        <br />
+                        <NavLink className = "subtitle mobile-navbar-menu-content is-4" to = "/a-propos">A propos</NavLink>
+                        <br />
+                        <br />
+                        <p className = "subtitle mobile-navbar-menu-content is-4 pb-0 mb-0" to = "" onClick={categoriesPull}>Formations</p>
+                        <br />
+                        <div ref={categoriesMenuRef} className="categories-menu pl-5 pt-0 pb-2">
+                            {
+                                data.categories.map((categorie) =>
+                                {
+                                    return (
+                                        <>
+                                            <p key={uuid()} className="subtitle mobile-navbar-menu-content is-5 mb-2">{categorie.name}</p>
+                                        </>
+                                    )
+                                })
+                            }
+                        </div>
+                        <NavLink className = "subtitle mobile-navbar-menu-content is-4" to = "/nos-partenaires">Nos partenaires</NavLink>
+                        <br />
+                        <br />
+                        <NavLink className = "subtitle mobile-navbar-menu-content is-4" to = "/certifications">Certifications</NavLink>
+                        <br />
+                        <br />
+                        <NavLink className = "subtitle mobile-navbar-menu-content is-4" to = "/blog">Blog</NavLink>
+                        <br />
+                        <br />
+                        <NavLink className = "subtitle mobile-navbar-menu-content is-4" to = "/contact">Contact</NavLink>
                     </div>
                 </div>
             </nav>

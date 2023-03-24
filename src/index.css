@@ -76,6 +76,10 @@
     display: none;
 }
 
+.navbar-burger, .navbar-burger p:focus {
+    background-color: transparent !important;
+} 
+
 .custom-item-margin {
     margin-top: 1.75rem;
 }
@@ -662,4 +666,26 @@ p {
       flex-wrap: wrap;
       width: 100%;
     }
-  }
+}
+
+/*
+
+
+            formation page
+
+
+*/
+
+.login-logo-div {
+    margin: 2rem auto 2rem auto;
+    text-align: center;
+}
+
+.login-logo {
+    max-width: 10rem;
+}
+
+.login-form {
+    max-width: 25rem;
+    margin: 0rem auto 10rem auto !important;
+}

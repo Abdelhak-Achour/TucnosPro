@@ -12,6 +12,7 @@ import { Temoin } from './pages/temoin';
 import { NotFound } from './pages/notfound';
 import { Formation } from './pages/formation';
 import { Inscrire } from './pages/inscrire';
+import { Login } from './pages/login';
 
 function App() {
   return (
@@ -29,7 +30,8 @@ function App() {
         <Route path = '/contact' element = {<Contact />} />
         <Route path = '/nos-partenaires' element = {<Partners />} />
         <Route path = '/temoin' element = {<Temoin />} />
-        <Route path = 'not-found' element = {<NotFound />} />
+        <Route path = '/not-found' element = {<NotFound />} />
+        <Route path = '/login' element = {<Login />} />
         <Route path = '*' element = {<NotFound />} />
       </Routes>
       <Footer />
