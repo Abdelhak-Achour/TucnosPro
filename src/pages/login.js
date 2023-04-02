@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Navbar2 } from "../components/navbar2";
 import Logo from "../images/logo_tucnospro.png";
-import { useCookies, userCookies } from "react-cookie";
+import { useCookies } from "react-cookie";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
