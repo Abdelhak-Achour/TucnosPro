@@ -14,11 +14,11 @@ export function Register()
 
         try
         {
-            await axios.post("http://localhost:3001/auth/register", {
+            const response = await axios.post("http://localhost:3001/auth/register", {
                 email,
                 password
             });
-            alert("Registration successful");
+            alert(response.data.message);
         }
         catch (err)
         {

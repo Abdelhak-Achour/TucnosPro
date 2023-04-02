@@ -14,6 +14,7 @@ import { Formation } from './pages/formation';
 import { Inscrire } from './pages/inscrire';
 import { Login } from './pages/login';
 import { Register } from './pages/register';
+import { Admin } from './pages/admin';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route path = '/not-found' element = {<NotFound />} />
         <Route path = '/login' element = {<Login />} />
         <Route path = '/register' element = {<Register />} />
+        <Route path = '/admin' element = {<Admin />} />
         <Route path = '*' element = {<NotFound />} />
       </Routes>
       <Footer />
