@@ -13,6 +13,7 @@ import { NotFound } from './pages/notfound';
 import { Formation } from './pages/formation';
 import { Inscrire } from './pages/inscrire';
 import { Login } from './pages/login';
+import { Register } from './pages/register';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path = '/temoin' element = {<Temoin />} />
         <Route path = '/not-found' element = {<NotFound />} />
         <Route path = '/login' element = {<Login />} />
+        <Route path = '/register' element = {<Register />} />
         <Route path = '*' element = {<NotFound />} />
       </Routes>
       <Footer />
