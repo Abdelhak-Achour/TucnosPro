@@ -26,7 +26,7 @@ export function Admin()
         {
             logout();
         }
-    }, [])
+    }, []);
 
     return (
         <>
