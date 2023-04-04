@@ -9,6 +9,7 @@ export function Login()
 {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [remember, setRemember] = useState(false);
 
     const [_, setCookies] = useCookies(["access_token"]);
 
@@ -24,6 +25,15 @@ export function Login()
                 email,
                 password
             });
+
+            if(remember)
+            {
+                window.localStorage.setItem("remember", true);
+            }
+            else
+            {
+                window.sessionStorage.setItem("remember", true);
+            }
 
             setCookies("access_token", response.data.token);
             window.localStorage.setItem("userID", response.data.userID);
@@ -60,7 +70,7 @@ export function Login()
                 </div>
                 <div className="field">
                     <label className="checkbox">
-                        <input type="checkbox" /> Se souvenir de moi
+                        <input type="checkbox" onClick={() => setRemember(!remember)} /> Se souvenir de moi
                     </label>
                 </div>
                 <div className="control">

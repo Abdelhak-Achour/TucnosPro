@@ -1,19 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Navbar2 } from "../components/navbar2";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 
 export function Admin()
 {
-    const [cookies, setCookies] = useCookies(["access_token"]);
+    const [cookies, setCookies, removeCookies] = useCookies(["access_token"]);
     const navigate = useNavigate();
 
     function logout()
     {
-        setCookies("access_token", "");
+        removeCookies("access_token");
         window.localStorage.removeItem("userID");
+        window.localStorage.removeItem("remember");
+        window.sessionStorage.removeItem("remember");
         navigate("/login");
     };
+
+    useEffect(() => {
+        if(window.localStorage.getItem("remember") || window.sessionStorage.getItem("remember"))
+        {
+
+        }
+        else
+        {
+            logout();
+        }
+    }, [])
 
     return (
         <>
