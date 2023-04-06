@@ -41,25 +41,25 @@ export function Formation()
                 <div className="tabs is-toggle is-fullwidth">
                     <ul>
                         <li className={currentSlide === 1 ? "is-active" : ""} onClick={() => {tabSwitch(1)}}>
-                            <a>description</a>
+                            <a className="is-size-5">description</a>
                         </li>
                         <li className={currentSlide === 2 ? "is-active" : ""} onClick={() => {tabSwitch(2)}}>
-                            <a>programme</a>
+                            <a className="is-size-5">programme</a>
                         </li>
                         <li className={currentSlide === 3 ? "is-active" : ""} onClick={() => {tabSwitch(3)}}>
-                            <a>pré-requis</a>
+                            <a className="is-size-5">pré-requis</a>
                         </li>
                         <li className={currentSlide === 4 ? "is-active" : ""} onClick={() => {tabSwitch(4)}}>
-                            <a>objectif</a>
+                            <a className="is-size-5">objectif</a>
                         </li>
                         <li className={currentSlide === 5 ? "is-active" : ""} onClick={() => {tabSwitch(5)}}>
-                            <a>déroulement</a>
+                            <a className="is-size-5">déroulement</a>
                         </li>
                         <li className={currentSlide === 6 ? "is-active" : ""} onClick={() => {tabSwitch(6)}}>
-                            <a>les outils</a>
+                            <a className="is-size-5">les outils</a>
                         </li>
                         <li className={currentSlide === 7 ? "is-active" : ""} onClick={() => {tabSwitch(7)}}>
-                            <a>public cible</a>
+                            <a className="is-size-5">public cible</a>
                         </li>
                     </ul>
                 </div>
@@ -92,26 +92,26 @@ export function Formation()
                             </div>
                             <div className="columns is-mobile">
                                 <div className="column is-narrow">
-                                    <p className="is-size-3 has-text-dark">Durée:</p>
+                                    <p className="is-size-4 has-text-dark">Durée:</p>
                                 </div>
                                 <div className="column is-narrow pl-0">
-                                    <p className="is-size-3 has-text-dark">{data.formations[id-1].duration} heures</p>
+                                    <p className="is-size-4 has-text-dark">{data.formations[id-1].duration} heures</p>
                                 </div>
                             </div>
                             <div className="columns is-mobile">
                                 <div className="column pt-0 is-narrow">
-                                    <p className="is-size-3 has-text-dark">Date:</p>
+                                    <p className="is-size-4 has-text-dark">Date:</p>
                                 </div>
                                 <div className="column pt-0 is-narrow pl-0">
-                                    <p className="is-size-3 has-text-dark">{data.formations[id-1].date}</p>
+                                    <p className="is-size-4 has-text-dark">{data.formations[id-1].date}</p>
                                 </div>
                             </div>
                             <div className="columns is-mobile">
                                 <div className="column pt-0 is-narrow">
-                                    <p className="is-size-3 has-text-dark">Prix:</p>
+                                    <p className="is-size-4 has-text-dark">Prix:</p>
                                 </div>
                                 <div className="column pt-0 is-narrow pl-0">
-                                    <p className="is-size-3 has-text-dark">{data.formations[id-1].price} TND</p>
+                                    <p className="is-size-4 has-text-dark">{data.formations[id-1].price} TND</p>
                                 </div>
                             </div>
                             <div className="columns is-mobile">
@@ -153,8 +153,7 @@ export function Formation()
                                 <Tabs />
                             </div>
                             <div className="under-tab-content p-6">
-                                <p className="title has-text-dark">description:</p>
-                                <p className="has-text-dark">Cillum irure enim ipsum aliqua non cillum reprehenderit ipsum nostrud. Eiusmod dolore enim ea in qui veniam ipsum. Do aliqua et nostrud dolore incididunt amet nostrud eiusmod ullamco. Consectetur quis velit officia irure eu aliquip duis enim excepteur deserunt minim dolor eiusmod id. Elit eiusmod consequat voluptate consectetur commodo excepteur et elit proident pariatur labore.</p>
+                                <p className="has-text-dark is-size-5">Cillum irure enim ipsum aliqua non cillum reprehenderit ipsum nostrud. Eiusmod dolore enim ea in qui veniam ipsum. Do aliqua et nostrud dolore incididunt amet nostrud eiusmod ullamco. Consectetur quis velit officia irure eu aliquip duis enim excepteur deserunt minim dolor eiusmod id. Elit eiusmod consequat voluptate consectetur commodo excepteur et elit proident pariatur labore.</p>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
@@ -162,8 +161,7 @@ export function Formation()
                                 <Tabs />
                             </div>
                             <div className="under-tab-content p-6">
-                                <p className="title has-text-dark">programme:</p>
-                                <p className="has-text-dark">Nulla ea consectetur aute aliqua est consequat Lorem sint. Sint ad mollit ullamco do pariatur incididunt Lorem est amet. Et culpa et tempor qui tempor irure ipsum Lorem qui do. Aliquip nulla sint officia sit laborum velit laborum eiusmod. Mollit nulla non proident consectetur excepteur id elit quis sint aute voluptate do et aute. Ipsum mollit anim cupidatat labore commodo eiusmod anim proident eu quis id magna do dolore. Et aliquip culpa sit esse. Non excepteur Lorem Lorem deserunt dolor pariatur sit ad est ut quis commodo amet ullamco. Consequat deserunt laboris exercitation magna exercitation eiusmod excepteur reprehenderit sunt minim fugiat in excepteur aute. Laboris cupidatat esse Lorem cupidatat cillum ullamco in voluptate pariatur. Ad eu duis sint laboris sint est culpa qui elit ut. Ullamco veniam magna cupidatat duis ea duis aliquip sit nisi. Quis magna adipisicing occaecat esse. Consectetur dolor ullamco excepteur aute adipisicing deserunt laborum aliquip irure ut qui amet in velit. Mollit amet labore duis ut ad et voluptate exercitation nostrud proident. Fugiat aute Lorem eu ea elit pariatur ullamco irure nisi. Ad aliqua reprehenderit do ipsum culpa aliquip.</p>
+                                <p className="has-text-dark is-size-5">Nulla ea consectetur aute aliqua est consequat Lorem sint. Sint ad mollit ullamco do pariatur incididunt Lorem est amet. Et culpa et tempor qui tempor irure ipsum Lorem qui do. Aliquip nulla sint officia sit laborum velit laborum eiusmod. Mollit nulla non proident consectetur excepteur id elit quis sint aute voluptate do et aute. Ipsum mollit anim cupidatat labore commodo eiusmod anim proident eu quis id magna do dolore. Et aliquip culpa sit esse. Non excepteur Lorem Lorem deserunt dolor pariatur sit ad est ut quis commodo amet ullamco. Consequat deserunt laboris exercitation magna exercitation eiusmod excepteur reprehenderit sunt minim fugiat in excepteur aute. Laboris cupidatat esse Lorem cupidatat cillum ullamco in voluptate pariatur. Ad eu duis sint laboris sint est culpa qui elit ut. Ullamco veniam magna cupidatat duis ea duis aliquip sit nisi. Quis magna adipisicing occaecat esse. Consectetur dolor ullamco excepteur aute adipisicing deserunt laborum aliquip irure ut qui amet in velit. Mollit amet labore duis ut ad et voluptate exercitation nostrud proident. Fugiat aute Lorem eu ea elit pariatur ullamco irure nisi. Ad aliqua reprehenderit do ipsum culpa aliquip.</p>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
@@ -171,8 +169,7 @@ export function Formation()
                                 <Tabs />
                             </div>
                             <div className="under-tab-content p-6">
-                                <p className="title has-text-dark">pré-requis:</p>
-                                <p className="has-text-dark">Esse ex tempor id commodo. Duis excepteur tempor sunt ea esse mollit nulla. Labore consectetur laboris ut et proident dolor veniam Lorem consectetur. Non sit excepteur id nostrud incididunt exercitation deserunt eiusmod aliquip deserunt. Proident aliquip voluptate et id.</p>
+                                <p className="has-text-dark is-size-5">Esse ex tempor id commodo. Duis excepteur tempor sunt ea esse mollit nulla. Labore consectetur laboris ut et proident dolor veniam Lorem consectetur. Non sit excepteur id nostrud incididunt exercitation deserunt eiusmod aliquip deserunt. Proident aliquip voluptate et id.</p>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
@@ -180,8 +177,7 @@ export function Formation()
                                 <Tabs />
                             </div>
                             <div className="under-tab-content p-6">
-                                <p className="title has-text-dark">objectif:</p>
-                                <p className="has-text-dark">Cillum pariatur esse duis officia. Amet cupidatat do cupidatat voluptate reprehenderit id id irure magna ad. Adipisicing voluptate commodo ullamco pariatur nulla sit nulla quis Lorem aliquip elit incididunt aliqua. Labore dolore elit amet voluptate occaecat. Nostrud laboris exercitation occaecat aliqua anim.</p>
+                                <p className="has-text-dark is-size-5">Cillum pariatur esse duis officia. Amet cupidatat do cupidatat voluptate reprehenderit id id irure magna ad. Adipisicing voluptate commodo ullamco pariatur nulla sit nulla quis Lorem aliquip elit incididunt aliqua. Labore dolore elit amet voluptate occaecat. Nostrud laboris exercitation occaecat aliqua anim.</p>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
@@ -189,8 +185,7 @@ export function Formation()
                                 <Tabs />
                             </div>
                             <div className="under-tab-content p-6">
-                                <p className="title has-text-dark">déroulement:</p>
-                                <p className="has-text-dark">Labore aute qui veniam voluptate mollit do ullamco. Dolore proident ullamco incididunt et consectetur reprehenderit magna tempor consequat proident ex magna elit veniam. Tempor do velit voluptate culpa dolor laboris ipsum. Laborum consectetur velit aliqua labore adipisicing sint sit ipsum nostrud Lorem Lorem. Qui irure dolore eu officia anim et dolore occaecat aliquip. Ullamco pariatur eu occaecat deserunt cupidatat aliqua dolore cillum occaecat laboris voluptate irure incididunt aliquip.</p>
+                                <p className="has-text-dark is-size-5">Labore aute qui veniam voluptate mollit do ullamco. Dolore proident ullamco incididunt et consectetur reprehenderit magna tempor consequat proident ex magna elit veniam. Tempor do velit voluptate culpa dolor laboris ipsum. Laborum consectetur velit aliqua labore adipisicing sint sit ipsum nostrud Lorem Lorem. Qui irure dolore eu officia anim et dolore occaecat aliquip. Ullamco pariatur eu occaecat deserunt cupidatat aliqua dolore cillum occaecat laboris voluptate irure incididunt aliquip.</p>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
@@ -198,8 +193,7 @@ export function Formation()
                                 <Tabs />
                             </div>
                             <div className="under-tab-content p-6">
-                                <p className="title has-text-dark">les outils:</p>
-                                <p className="has-text-dark">Lorem amet tempor reprehenderit labore consequat minim et commodo. Laboris dolor id culpa eu. Labore sint voluptate exercitation laborum pariatur. Minim reprehenderit occaecat excepteur eu dolore nisi officia ipsum. Aute ea ullamco officia velit cillum nulla. Ex nostrud sunt ut in anim fugiat aute incididunt ex pariatur. Mollit sint pariatur velit pariatur incididunt culpa mollit culpa occaecat irure aliquip labore deserunt aliquip. Ut mollit labore velit eiusmod labore anim pariatur cupidatat dolor qui occaecat. Anim et reprehenderit labore officia tempor duis ullamco dolore. Aute nostrud officia minim laborum excepteur commodo ex officia elit sunt anim. Deserunt nulla laborum aliquip deserunt proident tempor mollit ut non. Elit proident pariatur nostrud elit esse et anim non. Occaecat cupidatat voluptate ea sint fugiat ea amet occaecat ea aute nulla. Commodo eiusmod aute enim consectetur dolore cillum occaecat id irure ut anim. Voluptate aliqua occaecat adipisicing velit veniam fugiat pariatur cupidatat sit reprehenderit quis culpa. Proident mollit enim sint esse. Nisi nostrud aliqua anim consectetur. Esse nisi minim minim quis eu aute cupidatat laborum labore consectetur non. Esse duis veniam laboris irure do laborum exercitation do proident qui irure est ut eiusmod. Dolore anim Lorem laborum anim. Nostrud occaecat sit amet ipsum. Occaecat ullamco cupidatat aliqua consequat adipisicing Lorem deserunt ex. Deserunt aliquip laborum irure irure excepteur est amet amet duis id labore. Culpa minim cupidatat aliqua cillum. Sit eiusmod laborum qui esse amet nostrud commodo labore tempor.</p>
+                                <p className="has-text-dark is-size-5">Lorem amet tempor reprehenderit labore consequat minim et commodo. Laboris dolor id culpa eu. Labore sint voluptate exercitation laborum pariatur. Minim reprehenderit occaecat excepteur eu dolore nisi officia ipsum. Aute ea ullamco officia velit cillum nulla. Ex nostrud sunt ut in anim fugiat aute incididunt ex pariatur. Mollit sint pariatur velit pariatur incididunt culpa mollit culpa occaecat irure aliquip labore deserunt aliquip. Ut mollit labore velit eiusmod labore anim pariatur cupidatat dolor qui occaecat. Anim et reprehenderit labore officia tempor duis ullamco dolore. Aute nostrud officia minim laborum excepteur commodo ex officia elit sunt anim. Deserunt nulla laborum aliquip deserunt proident tempor mollit ut non. Elit proident pariatur nostrud elit esse et anim non. Occaecat cupidatat voluptate ea sint fugiat ea amet occaecat ea aute nulla. Commodo eiusmod aute enim consectetur dolore cillum occaecat id irure ut anim. Voluptate aliqua occaecat adipisicing velit veniam fugiat pariatur cupidatat sit reprehenderit quis culpa. Proident mollit enim sint esse. Nisi nostrud aliqua anim consectetur. Esse nisi minim minim quis eu aute cupidatat laborum labore consectetur non. Esse duis veniam laboris irure do laborum exercitation do proident qui irure est ut eiusmod. Dolore anim Lorem laborum anim. Nostrud occaecat sit amet ipsum. Occaecat ullamco cupidatat aliqua consequat adipisicing Lorem deserunt ex. Deserunt aliquip laborum irure irure excepteur est amet amet duis id labore. Culpa minim cupidatat aliqua cillum. Sit eiusmod laborum qui esse amet nostrud commodo labore tempor.</p>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
@@ -207,8 +201,7 @@ export function Formation()
                                 <Tabs />
                             </div>
                             <div className="under-tab-content p-6">
-                                <p className="title has-text-dark">public cible:</p>
-                                <p className="has-text-dark">Velit sint laborum qui magna veniam. Do labore adipisicing non quis ullamco. Ullamco deserunt in anim est duis reprehenderit nostrud amet exercitation ipsum elit ut amet.</p>
+                                <p className="has-text-dark is-size-5">Velit sint laborum qui magna veniam. Do labore adipisicing non quis ullamco. Ullamco deserunt in anim est duis reprehenderit nostrud amet exercitation ipsum elit ut amet.</p>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>

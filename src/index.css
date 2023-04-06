@@ -126,11 +126,11 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top: 17rem;
+    padding-top: 13rem;
     padding-bottom: 17rem;
     filter: brightness(100%);
     color: rgb(255, 255, 255) !important;
-    height: 10rem;
+    height: 7rem;
 }
 
 .home-image-2 {
@@ -138,11 +138,11 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top: 17rem;
+    padding-top: 13rem;
     padding-bottom: 17rem;
     filter: brightness(100%);
     color: rgb(255, 255, 255) !important;
-    height: 10rem;
+    height: 7rem;
 }
 
 p {

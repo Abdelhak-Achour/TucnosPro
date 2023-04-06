@@ -4,7 +4,6 @@ import React from 'react';
 import {About} from './pages/about';
 import {Blog} from './pages/blog';
 import { Formations} from './pages/formations';
-import {Certifications} from './pages/certifications';
 import {Contact} from './pages/contact';
 import {Partners} from './pages/partners';
 import { Footer } from './components/footer';
@@ -28,7 +27,6 @@ function App() {
           <Route path = ':id' element = {<Formation />} />
           <Route path = ':id/inscrire' element = {<Inscrire />} />
         </Route>
-        <Route path = '/certifications' element = {<Certifications />} />
         <Route path = '/contact' element = {<Contact />} />
         <Route path = '/nos-partenaires' element = {<Partners />} />
         <Route path = '/temoin' element = {<Temoin />} />

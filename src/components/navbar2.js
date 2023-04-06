@@ -189,23 +189,6 @@ export function Navbar2 ()
                             </div>
                         </div>
                         <NavLink className = "subtitle is-5 custom-item-margin navbar-item has-text-dark font-size" to = "/nos-partenaires">Nos partenaires</NavLink>
-                        <div className="drop">
-                            <NavLink onMouseEnter={() => {toggle2 ? setToggle2(true) : setToggle2(true)}} onMouseLeave={toggleDrop2} className = "subtitle is-5 navbar-item has-text-dark font-size drop-btn-padding" to = "/certifications">Certifications</NavLink>
-                            <div className="drop-menu-box">
-                                <div ref={dropmenuRef2} onMouseEnter={() => {toggle2 ? setToggle2(true) : setToggle2(true)}} onMouseLeave={toggleDrop2} className="drop-menu box">
-                                    {
-                                        data.categories.map((categorie) =>
-                                        {
-                                            return (
-                                                <>
-                                                    <a key={uuid()}><p className="has-text-dark my-2">{categorie.name}</p></a>
-                                                </>
-                                            )
-                                        })
-                                    }
-                                </div>
-                            </div>
-                        </div>
                         <NavLink className = "subtitle is-5 custom-item-margin navbar-item has-text-dark font-size" to = "/blog">Blog</NavLink>
                         <NavLink className = "subtitle is-5 custom-item-margin-contact navbar-item has-text-dark font-size" to = "/contact">Contact</NavLink>
                     </div>
@@ -233,9 +216,6 @@ export function Navbar2 ()
                             }
                         </div>
                         <NavLink className = "subtitle mobile-navbar-menu-content is-4" to = "/nos-partenaires">Nos partenaires</NavLink>
-                        <br />
-                        <br />
-                        <NavLink className = "subtitle mobile-navbar-menu-content is-4" to = "/certifications">Certifications</NavLink>
                         <br />
                         <br />
                         <NavLink className = "subtitle mobile-navbar-menu-content is-4" to = "/blog">Blog</NavLink>
