@@ -1,8 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { Navbar2 } from "../components/navbar2";
+import axios from "axios";
 
 export function Contact ()
 {
+    const [nom, setNom] = useState("");
+    const [prenom, setPrenom] = useState("");
+    const [sujet, setSujet] = useState("");
+    const [message, setMessage] = useState("");
+
+    async function submitHandle(event)
+    {
+        try
+        {
+            const response = await axios.post("http://localhost:3001/contact/sendmessage", {
+                nom,
+                prenom,
+                sujet,
+                message
+            });
+            alert(response.data.message);
+        }
+        catch (err)
+        {
+            console.error(err)
+        }
+    }
+
     return (
         <>
             <Navbar2 />
@@ -43,7 +67,7 @@ export function Contact ()
                     </div>
                     <div className="column is-6 contact-form-col">
                         <p className="title is-1 has-text-dark">Envoyez-nous un message</p>
-                        <form className="has-text-left-desktop">
+                        <form className="has-text-left-desktop" onSubmit={submitHandle}>
                             <div className="columns">
                                 <div className="column">
                                     <div className="field">
@@ -56,7 +80,7 @@ export function Contact ()
                                             </div>
                                         </div>
                                         <div className="control">
-                                            <input className="input" type="lastname" placeholder="Votre nom" />
+                                            <input className="input" type="lastname" placeholder="Votre nom" onChange={(event) => setNom(event.target.value)} required />
                                         </div>
                                     </div>
                                 </div>
@@ -71,7 +95,7 @@ export function Contact ()
                                             </div>
                                         </div>
                                         <div className="control">
-                                            <input className="input" type="name" placeholder="Votre prénom" />
+                                            <input className="input" type="name" placeholder="Votre prénom" onChange={(event) => setPrenom(event.target.value)} required />
                                         </div>
                                     </div>
                                 </div>
@@ -86,7 +110,7 @@ export function Contact ()
                                     </div>
                                 </div>
                                 <div className="control">
-                                    <input className="input" type="job" placeholder="Sujet" />
+                                    <input className="input" type="job" placeholder="Sujet" onChange={(event) => setSujet(event.target.value)} required />
                                 </div>
                             </div>
                             <div class="field">
@@ -99,11 +123,11 @@ export function Contact ()
                                     </div>
                                 </div>
                                 <div className="control">
-                                    <textarea class="textarea" placeholder="Ecrivez votre message"></textarea>
+                                    <textarea class="textarea" placeholder="Ecrivez votre message" onChange={(event) => setMessage(event.target.value)} required></textarea>
                                 </div>
                             </div>
                             <div className="control">
-                                <button className="button is-link">Envoyez</button>
+                                <button className="button is-link" type="submit">Envoyez</button>
                             </div>
                         </form>
                     </div>
