@@ -14,6 +14,7 @@ import { Inscrire } from './pages/inscrire';
 import { Login } from './pages/login';
 import { Register } from './pages/register';
 import { Admin } from './pages/admin';
+import { Testpage } from './pages/testpage';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route path = '/login' element = {<Login />} />
         <Route path = '/register' element = {<Register />} />
         <Route path = '/admin' element = {<Admin />} />
+        <Route path = '/testpage' element = {<Testpage />} />
         <Route path = '*' element = {<NotFound />} />
       </Routes>
       <Footer />
