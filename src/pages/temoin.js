@@ -47,15 +47,15 @@ export function Temoin()
 
     async function submitHandle(event)
     {
-        event.preventDefault();
-
         const formData = new FormData();
+        
         formData.append('image', image);
         formData.append('nom', nom);
         formData.append('prenom', prenom);
         formData.append('fonction', fonction);
         formData.append('note', note);
         formData.append('temoigne', temoigne);
+
         try
         {
             const response = await axios.post("http://localhost:3001/about/temoin", formData);
