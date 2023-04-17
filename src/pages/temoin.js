@@ -34,6 +34,11 @@ export function Temoin()
     });
 
     const [image, setImage] = useState('');
+    const [nom, setNom] = useState("");
+    const [prenom, setPrenom] = useState("");
+    const [fonction, setFonction] = useState("");
+    const [note, setNote] = useState("");
+    const [temoigne, setTemoigne] = useState("");
 
     function handleImage(event)
     {
@@ -46,6 +51,11 @@ export function Temoin()
 
         const formData = new FormData();
         formData.append('image', image);
+        formData.append('nom', nom);
+        formData.append('prenom', prenom);
+        formData.append('fonction', fonction);
+        formData.append('note', note);
+        formData.append('temoigne', temoigne);
         try
         {
             const response = await axios.post("http://localhost:3001/about/temoin", formData);
@@ -75,7 +85,7 @@ export function Temoin()
                                         </div>
                                     </div>
                                     <div className="control">
-                                        <input className="input" type="lastname" placeholder="Nom" />
+                                        <input className="input" type="lastname" placeholder="Nom" onChange={(event) => setNom(event.target.value)} required />
                                     </div>
                                 </div>
                             </div>
@@ -90,7 +100,7 @@ export function Temoin()
                                         </div>
                                     </div>
                                     <div className="control">
-                                        <input className="input" type="name" placeholder="Prénom" />
+                                        <input className="input" type="name" placeholder="Prénom" onChange={(event) => setPrenom(event.target.value)} required />
                                     </div>
                                 </div>
                             </div>
@@ -105,7 +115,7 @@ export function Temoin()
                                 </div>
                             </div>
                             <div className="control">
-                                <input className="input" type="job" placeholder="Fonction" />
+                                <input className="input" type="job" placeholder="Fonction" onChange={(event) => setFonction(event.target.value)} required />
                             </div>
                         </div>
                         <div className="field">
@@ -119,7 +129,7 @@ export function Temoin()
                             </div>
                             <div className="file has-name">
                                 <label className="file-label">
-                                    <input className="file-input" type="file" name="image" accept="images/png,image/jpg,image/jpeg" onChange={handleImage} />
+                                    <input className="file-input" type="file" name="image" accept="images/png,image/jpg,image/jpeg" onChange={handleImage} required />
                                     <span className="file-cta">
                                         <img className="image-upload-icon" src={imageUpload} alt="up" />
                                         <span className="file-label pl-2">
@@ -143,12 +153,12 @@ export function Temoin()
                             </div>
                             <div className="control">
                                 <div className="select">
-                                    <select>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
+                                    <select onChange={(event) => setNote(event.target.value)} required>
+                                        <option value = "1">1</option>
+                                        <option value = "2">2</option>
+                                        <option value = "3">3</option>
+                                        <option value = "4">4</option>
+                                        <option value = "5">5</option>
                                     </select>
                                 </div>
                             </div>
@@ -163,7 +173,7 @@ export function Temoin()
                                 </div>
                             </div>
                             <div className="control">
-                                <textarea class="textarea" placeholder="Votre témoignage"></textarea>
+                                <textarea class="textarea" placeholder="Votre témoignage" onChange={(event) => setTemoigne(event.target.value)} required></textarea>
                             </div>
                         </div>
                         <div className="control">
