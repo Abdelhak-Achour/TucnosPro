@@ -25,3 +25,5 @@ yarn-error.log*
 /src/pdf
 
 /src/pages/testpage.js
+
+/garbage.txt

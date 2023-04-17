@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Navbar2 } from "../components/navbar2";
 import imageUpload from '../images/image-upload.svg';
+import axios from "axios";
 
 export function Temoin()
 {
@@ -30,7 +31,30 @@ export function Temoin()
         }
     })
     }
-    })
+    });
+
+    const [image, setImage] = useState('');
+
+    function handleImage(event)
+    {
+        setImage(event.target.files[0]);
+    }
+
+    async function submitHandle(event)
+    {
+        event.preventDefault();
+
+        const formData = new FormData();
+        formData.append('image', image);
+        try
+        {
+            const response = await axios.post("http://localhost:3001/about/temoin", formData);
+        }
+        catch (err)
+        {
+            console.log(err);
+        }
+    }
 
     return(
         <>
@@ -38,7 +62,7 @@ export function Temoin()
             <div className="temoin">
                 <p className="title is-1 has-text-dark is-family-primary">Que pensez vous de votre expérience avec notre centre</p>
                 <div className="box temoin-form-div">
-                    <form className="has-text-left-desktop">
+                    <form className="has-text-left-desktop" onSubmit={submitHandle}>
                         <div className="columns">
                             <div className="column">
                                 <div className="field">
@@ -95,7 +119,7 @@ export function Temoin()
                             </div>
                             <div className="file has-name">
                                 <label className="file-label">
-                                    <input className="file-input" type="file" name="image" accept="images/png,image/jpg,image/jpeg" />
+                                    <input className="file-input" type="file" name="image" accept="images/png,image/jpg,image/jpeg" onChange={handleImage} />
                                     <span className="file-cta">
                                         <img className="image-upload-icon" src={imageUpload} alt="up" />
                                         <span className="file-label pl-2">
@@ -143,7 +167,7 @@ export function Temoin()
                             </div>
                         </div>
                         <div className="control">
-                            <button className="button is-link">Soumettre votre témoignage</button>
+                            <button className="button is-link" type="submit">Soumettre votre témoignage</button>
                         </div>
                     </form>
                 </div>
