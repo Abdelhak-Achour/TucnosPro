@@ -18,7 +18,6 @@ export function About ()
         try
         {
             const response = await axios.get("http://localhost:3001/about/temoin");
-            console.log(response.data);
             setData(response.data);
         }
         catch (err)
