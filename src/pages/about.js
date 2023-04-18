@@ -1,18 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import proposImage from '../images/propos.jpg';
 import methodsimg from '../images/methods.jpg';
 import founderWordImage from '../images/founder_word.jpg';
 import { Navigation, Pagination, A11y, EffectCoverflow } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
-import data from '../mock_data.json';
 import { Testemony } from "../components/testemony";
 import { Navbar2 } from "../components/navbar2";
 import { Link } from "react-router-dom";
 import uuid from "react-uuid";
+import axios from "axios";
 
 export function About ()
 {
+    async function getData()
+    {
+        try
+        {
+            const response = await axios.get("http://localhost:3001/about/temoin");
+            console.log(response.data);
+            setData(response.data);
+        }
+        catch (err)
+        {
+            console.log(err);
+        }
+    }
+
+    const [data, setData] = useState({testimonies: []});
+
+    useEffect(() => {
+        getData()
+    }, [])
+
     return (
         <>
             <Navbar2 />
@@ -133,17 +153,17 @@ export function About ()
                         }
                         >
                         {
-                            data.testimonies.map((testemony) => {
+                            data.testimonies.map((testimony) => {
                                 return (
                                     <SwiperSlide>
                                         <Testemony
                                             key = {uuid()}
-                                            id = {testemony.id}
-                                            name = {testemony.name}
-                                            lastname = {testemony.lastname}
-                                            image = {testemony.image}
-                                            job = {testemony.job}
-                                            testemony = {testemony.testimony}
+                                            name = {testimony.nom}
+                                            lastname = {testimony.prenom}
+                                            image = {testimony.image}
+                                            job = {testimony.fonction}
+                                            testemony = {testimony.temoigne}
+                                            note = {testimony.note}
                                         />
                                     </SwiperSlide>
                                 )
