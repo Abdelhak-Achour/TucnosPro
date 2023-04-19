@@ -689,3 +689,34 @@ p {
     max-width: 25rem;
     margin: 0rem auto 10rem auto !important;
 }
+
+/*
+
+
+            blog page
+
+
+*/
+
+.blog-hr {
+    background: #c7c8c9;
+    margin: 7px 0px 28px 0px;
+    height: 1.7px;
+}
+
+.comments-icon {
+    max-width: 1rem;
+    transform: translateY(4px);
+    margin-right: 3px;
+}
+
+.article-img {
+    max-width: 50rem;
+}
+
+.article-btn:hover {
+    background-color: #ffffff !important;
+    color: #ff5a2c !important;
+    border-color: #ff5a2c !important;
+    border-width: 1px !important;
+}
