@@ -2,7 +2,6 @@ import React, {useState, useEffect} from "react";
 import { Navbar2 } from "../components/navbar2";
 import axios from "axios";
 import { Article } from "../components/article";
-import uuid from "react-uuid";
 
 export function Blog ()
 {
@@ -11,7 +10,6 @@ export function Blog ()
         try
         {
             const response = await axios.get("http://localhost:3001/blog/");
-            console.log(response.data.blogs);
             setData(response.data);
         }
         catch (err)
@@ -46,8 +44,6 @@ export function Blog ()
                                                 id = {blog._id}
                                                 title = {blog.title}
                                                 content = {blog.content}
-                                                date = {blog.date}
-                                                category = {blog.category}
                                                 image = {blog.image}
                                                 comments = {blog.comments}
                                              />
