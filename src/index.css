@@ -720,3 +720,7 @@ p {
     border-color: #ff5a2c !important;
     border-width: 1px !important;
 }
+
+.category-link:hover {
+    color: #ff5a2c !important;
+}
