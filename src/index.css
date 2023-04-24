@@ -724,3 +724,17 @@ p {
 .category-link:hover {
     color: #ff5a2c !important;
 }
+
+/*
+
+
+            single blog page
+
+
+*/
+
+.blog-date-icon {
+    max-width: 1.1rem;
+    transform: translateY(2px);
+    margin-right: 3px;
+}

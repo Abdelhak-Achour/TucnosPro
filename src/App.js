@@ -23,10 +23,10 @@ function App() {
       <Routes>
         <Route path = '/' element = {<Home />} />
         <Route path = '/a-propos' element = {<About />} />
+        <Route path = '/blog/post/:id' element = {<Post />} />
         <Route path = '/blog' element = {<Blog />}>
           <Route index element = {<Blog />} />
           <Route path = ':id' element = {<Blog />} />
-          <Route path = 'post/:id' element = {<Post />} />
         </Route>
         <Route path = '/formations'>
           <Route index element = {<Formations />} />

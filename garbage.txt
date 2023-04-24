@@ -212,3 +212,43 @@ export function Navbar ()
 
 
  onClick={() => window.location.reload(true)}
+
+
+
+
+
+
+const {id} = useParams();
+
+    const [blogData, setBlogData] = useState({blog: {}})
+    const [comments, setComments] = useState([]);
+    const [image, setImage] = useState(["something"]);
+
+    async function getBlogData()
+    {
+        try
+        {
+            const response = await axios.get(`http://localhost:3001/blog/post/${id}`);
+            setBlogData(response.data);
+            setImage([response.data.blog.image]);
+            setComments(response.data.blog.comments);
+            
+            const img = response.data.blog.image;
+            console.log(img);
+            console.log(typeof img);
+            console.log(image);
+        }
+        catch(err)
+        {
+            console.log(err);
+        }
+    }
+
+    useEffect(() => {
+        getBlogData();
+        console.log(image);
+    }, [id]);
+
+    useEffect(() => {
+        console.log(comments);
+    }, [comments]);

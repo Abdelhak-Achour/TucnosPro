@@ -1,5 +1,6 @@
 import React from "react";
 import commentsicon from "../images/comment-103.svg";
+import { Link } from "react-router-dom";
 
 export function Article (props)
 {
@@ -15,7 +16,7 @@ export function Article (props)
                     <p className="has-text-dark is-size-5">{props.content.length > 377 ? props.content.slice(0, 375) + "..." : props.content}</p>
                 </div>
                 <div className="article-btn-div has-text-centered">
-                    <button className="button article-btn is-link orange-bg mt-5">VOIR LA PUBLICATION</button>
+                    <Link to={`/blog/post/${props.id}`}><button className="button article-btn is-link orange-bg mt-5">VOIR LA PUBLICATION</button></Link>
                 </div>
             </div>
         </>

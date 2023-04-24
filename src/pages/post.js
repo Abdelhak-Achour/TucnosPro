@@ -1,37 +1,101 @@
 import React, { useEffect, useState } from "react";
 import { Navbar2 } from "../components/navbar2";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
+import { FullPost } from "../components/fullpost";
+import { BlogComments } from "../components/blogcomments";
 
 export function Post()
 {
     const {id} = useParams();
 
-    const [blogData, setBlogData] = useState({blog: {}})
-
-    async function getBlogData()
+    async function getBlogsData()
     {
         try
         {
-            const response = await axios.get(`http://localhost:3001/blog/post/${id}`);
-            setBlogData(response.data);
+            var response = await axios.get(`http://localhost:3001/blog`);   
+            console.log(response.data);
+            setBlogsData(response.data);
         }
-        catch(err)
+        catch (err)
         {
             console.log(err);
         }
     }
 
+    const [blogsData, setBlogsData] = useState({blogs: []});
+
     useEffect(() => {
-        getBlogData();
-    }, [id]);
+        getBlogsData();
+        console.log(blogsData);
+    }, [id])
 
     return (
-        <>
+        <div>
             <Navbar2 />
-            <div className="box post-div">
-                
+            <div className="box m-6 is-shadowless">
+                <div className="mb-5 ml-5">
+                    <Link className="subtitle is-5 has-text-grey mb-0" to="/blog">← TOUTES LES CATÉGORIES</Link>
+                </div>
+                <div className="articles-div">
+                    {
+                        blogsData.blogs.map((blog) => {
+                            if(blog._id === id)
+                            {
+                                return (
+                                <FullPost
+                                    key = {blog._id}
+                                    id = {blog._id}
+                                    title = {blog.title}
+                                    content = {blog.content}
+                                    image = {blog.image}
+                                    comments = {blog.comments}
+                                    category = {blog.category}
+                                    date = {blog.date}
+                                 /> 
+                            )
+                            }
+                        })
+                    }
+                </div>
+                <div className="has-text-centered">
+                    <p className="title is-2 orange-text mt-6">QU'EN PENSEZ-VOUS ?</p>
+                    <form className="box leave-comment-form">
+                        <div className="field">
+                            <label className="label">NOM D'UTILISATEUR</label>
+                            <div className="control">
+                                <input className="input" type="username" />
+                            </div>
+                        </div>
+                        <div className="field">
+                            <label className="label">VOTRE MESSAGE</label>
+                            <div className="control">
+                                <textarea className="textarea" type="message"></textarea>
+                            </div>
+                        </div>
+                        <div className="control">
+                            <button className="button is-link">Publier un commentaire</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div className="comment-section">
+                {
+                    blogsData.blogs.map((blog) => {
+                        if(blog._id === id)
+                        {
+                            return (
+                            <BlogComments
+                                key = {blog._id}
+                                id = {blog._id}
+                                comments = {blog.comments}
+                             /> 
+                        )
+                        }
+                    })
+                }
+                </div>
             </div>
-        </>
+        </div>
     )
 }
