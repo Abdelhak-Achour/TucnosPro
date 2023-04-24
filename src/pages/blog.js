@@ -51,12 +51,12 @@ export function Blog()
         console.log(id);
         getBlogsData();
         getCategoriesData();
-    }, [])
+    }, [id])
 
     if (blogsData.blogs.length === 0)
     {
         return (
-            <>
+            <div>
                 <Navbar2 />
                 <div className="box m-6 is-shadowless">
                     <div className="columns">
@@ -79,7 +79,7 @@ export function Blog()
                                         return (
                                             <div key={category._id}>
                                                 <div className="mt-2">
-                                                    <Link className="has-text-dark category-link lvl-5 ml-1" to={`/blog/${category._id}`}>{category.name}</Link>
+                                                    <Link key={`${id}`} className={category._id === id ? "has-text-dark category-link lvl-5 ml-1 orange-text" : "has-text-dark category-link lvl-5 ml-1"} to={`/blog/${category._id}`}>{category.name}</Link>
                                                 </div>
                                             </div>
                                         )
@@ -89,12 +89,12 @@ export function Blog()
                         </div>
                     </div>
                 </div>
-            </>
+            </div>
         )
     }
 
     return (
-        <>
+        <div>
             <Navbar2 />
             <div className="box m-6 is-shadowless">
                 <div className="columns">
@@ -130,7 +130,7 @@ export function Blog()
                                     return (
                                         <div key={category._id}>
                                             <div className="mt-2">
-                                                <Link className="has-text-dark category-link lvl-5 ml-1" to={`/blog/${category._id}`}>{category.name}</Link>
+                                                <Link key={`${id}`} className={category._id === id ? "has-text-dark category-link lvl-5 ml-1 orange-text" : "has-text-dark category-link lvl-5 ml-1"} to={`/blog/${category._id}`}>{category.name}</Link>
                                             </div>
                                         </div>
                                     )
@@ -140,6 +140,6 @@ export function Blog()
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }

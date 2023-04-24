@@ -205,3 +205,10 @@ export function Navbar ()
 
 
 , {headers: {"Content-Type": "multipart/form-data"}}
+
+
+
+
+
+
+ onClick={() => window.location.reload(true)}
