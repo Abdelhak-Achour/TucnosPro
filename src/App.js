@@ -15,6 +15,7 @@ import { Login } from './pages/login';
 import { Register } from './pages/register';
 import { Admin } from './pages/admin';
 import { Testpage } from './pages/testpage';
+import { Post } from './pages/post';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path = '/blog' element = {<Blog />}>
           <Route index element = {<Blog />} />
           <Route path = ':id' element = {<Blog />} />
+          <Route path = 'post/:id' element = {<Post />} />
         </Route>
         <Route path = '/formations'>
           <Route index element = {<Formations />} />
