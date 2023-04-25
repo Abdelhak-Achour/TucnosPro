@@ -30,6 +30,26 @@ export function Post()
         console.log(blogsData);
     }, [id])
 
+    const [username, setUsername] = useState("");
+    const [comment, setComment] = useState("");
+
+    async function submitHandle(event)
+    {
+        try
+        {
+            const response = await axios.post("http://localhost:3001/blog/comment", {
+                id,
+                username,
+                comment
+            });
+            alert(response.data.message);
+        }
+        catch (err)
+        {
+            console.error(err)
+        }
+    }
+
     return (
         <div>
             <Navbar2 />
@@ -58,23 +78,24 @@ export function Post()
                         })
                     }
                 </div>
+
                 <div className="has-text-centered">
                     <p className="title is-2 orange-text mt-6">QU'EN PENSEZ-VOUS ?</p>
-                    <form className="box leave-comment-form">
+                    <form className="box leave-comment-form" onSubmit={submitHandle}>
                         <div className="field">
                             <label className="label">NOM D'UTILISATEUR</label>
                             <div className="control">
-                                <input className="input" type="username" />
+                                <input className="input" type="username" onChange={(event) => setUsername(event.target.value)} required />
                             </div>
                         </div>
                         <div className="field">
                             <label className="label">VOTRE MESSAGE</label>
                             <div className="control">
-                                <textarea className="textarea" type="message"></textarea>
+                                <textarea className="textarea" type="message" onChange={(event) => setComment(event.target.value)} required></textarea>
                             </div>
                         </div>
                         <div className="control">
-                            <button className="button is-link">Publier un commentaire</button>
+                            <button className="button is-link" type="submit">Publier un commentaire</button>
                         </div>
                     </form>
                 </div>

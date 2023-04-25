@@ -19,7 +19,6 @@ export function Contact ()
                 sujet,
                 message
             });
-            alert(response.data.message);
         }
         catch (err)
         {
