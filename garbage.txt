@@ -252,3 +252,12 @@ const {id} = useParams();
     useEffect(() => {
         console.log(comments);
     }, [comments]);
+
+    ﻿Le Data Scientist est responsable de la gestion et de l’analyse des données (big data). Plus que cela, il est en charge de la récupération et du traitement de millions d’informations car au-delà de la fonction du « Data Analyst », le Data Scientist a le rôle de faire parler les données et de les mettre au service de la direction d’une entreprise. Ce métier relève des enjeux à la fois fonctionnels et stratégiques.
+Les diverses compétences techniques d'un Data Scientist lui permettent de s’adapter à son environnement de travail. Certaines entreprises font le choix de combiner différents profils afin de créer une équipe Big Data en raison de la complexité technique des taches demandées pour ce poste.
+Les champs d’analyse des données en entreprise sont très larges : données relatives à la production, analyse du marché et ses prédictions, connaissance du comportement client, précision marketing, résultats de l’entreprise… Ainsi, le Data Scientist joue un grand rôle dans la création d’indicateurs précieux et ce, à tous les niveaux de l’entreprise. C’est grâce à la précision de son analyse qu’il peut mettre sur pied des modèles de prédiction.
+Aussi, bien que les missions du Data Scientist diffèrent du Data miner, certains considèrent que c’est l’évolution de poste de ce dernier. Missions principales du Data Scientist et Chief Data Scientist
+item one
+item two
+item three
+dssqdz
