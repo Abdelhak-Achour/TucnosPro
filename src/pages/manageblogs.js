@@ -162,6 +162,19 @@ export function ManageBlogs()
         }
     }
 
+    async function deleteHandle(event)
+    {
+        try
+        {
+            console.log(blogId);
+            const response = await axios.delete(`http://localhost:3001/blog/${blogId}`, {headers: {auth: cookies.access_token}});
+        }
+        catch (err)
+        {
+            console.log(err);
+        }
+    }
+
     async function getBlogsData()
     {
         try
@@ -428,14 +441,45 @@ export function ManageBlogs()
                                 </form>
                             </div>
                             <div className={currentSlide === 3 ? "under-tab-content p-6" : "is-hidden under-tab-content p-6"}>
-                                <p className="title is-3 has-text-dark">Supprimer</p>
+                                <form className="has-text-left-desktop" onSubmit={deleteHandle}>
+                                    <div className="field">
+                                        <div className="columns is-mobile">
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <label className="label">Blog à supprimer</label>
+                                            </div>
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <p className="orange-star">*</p>
+                                            </div>
+                                        </div>
+                                        <div className="control">
+                                            <div className="select">
+                                                <select onChange={(event) => setBlogId(event.target.value)} required>
+                                                    <option value="">Choisissez une blog</option>
+                                                    {
+                                                        blogsData.blogs.length != 0 ?
+                                                        <>
+                                                            {
+                                                                blogsData.blogs.map((blog) => {
+                                                                    return (
+                                                                        <option key={blog._id} value={blog._id}>{blog.title}</option>
+                                                                    )
+                                                                })
+                                                            }
+                                                        </> :
+                                                        <></>
+                                                    }
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="has-text-left">
+                                        <button className="button is-medium is-link" type="submit">Supprimer</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="has-text-centered">
-                <button className="button is-medium is-link m-5" onClick={submitHandle}>Ajouter</button>
             </div>
         </>
     )
