@@ -21,7 +21,6 @@ export function Blog()
                 var response = await axios.get(`http://localhost:3001/blog`);
             }
             
-            console.log(response.data);
             setBlogsData(response.data);
         }
         catch (err)
