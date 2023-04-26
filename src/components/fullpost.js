@@ -16,9 +16,7 @@ export function FullPost (props)
                 <div className="has-text-right mr-6">
                     <p className="title lvl-5 has-text-dark"><img className="blog-date-icon" src={dateicon} alt="di" />{props.date}</p>
                 </div>
-                <div className="content-preview-div">
-                    <p className="has-text-dark is-size-5 m-3 mt-4 mb-5">{props.content}</p>
-                </div>
+                <div className="content-preview-div" dangerouslySetInnerHTML={{__html: props.content}} />
             </div>
         </>
     )
