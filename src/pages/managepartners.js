@@ -148,7 +148,6 @@ export function ManagePartners()
     {
         try
         {
-            console.log(partnerId);
             const response = await axios.delete(`http://localhost:3001/partner/${partnerId}`, {headers: {auth: cookies.access_token}});
         }
         catch (err)

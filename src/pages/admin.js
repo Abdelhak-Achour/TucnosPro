@@ -32,7 +32,7 @@ export function Admin()
     return (
         <>
             <Navbar2 />
-            <div className="box m-2 mt-5">
+            <div className="box is-shadowless m-2 mt-5">
                 <div className="columns">
                     <div className="column is-narrow">
                         <AdminLinks />

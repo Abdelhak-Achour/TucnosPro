@@ -50,7 +50,7 @@ export function Messages()
     return (
         <>
             <Navbar2 />
-            <div className="box m-2 mt-5">
+            <div className="box is-shadowless m-2 mt-5 mb-6">
                 <div className="columns">
                     <div className="column is-narrow">
                         <AdminLinks />
@@ -82,7 +82,6 @@ export function Messages()
                     </div>
                 </div>
             </div>
-            <p className="title is-1 has-text-centered has-text-dark m-5">Messages page</p>
         </>
     )
 }

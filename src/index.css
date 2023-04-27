@@ -751,3 +751,44 @@ p {
     max-width: 50rem;
     margin: auto;
 }
+
+/*
+
+
+            single blog page
+
+
+*/
+
+.partner-image {
+    width: 5rem;
+    height: 5rem;
+}
+
+.partners-container {
+    display: grid;
+    grid-gap: 0rem;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    margin: auto 5rem auto 5rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .partners-container
+    {
+        display: grid;
+        grid-gap: 0rem;
+        grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+        margin: auto 2.5rem auto 2.5rem; 
+    }
+}
+
+.partners-section {
+    margin: 7rem 3rem 5rem 3rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .partners-section
+    {
+        margin: 7rem 0rem 5rem 0rem;
+    }
+}
