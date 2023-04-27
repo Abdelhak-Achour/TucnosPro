@@ -738,3 +738,16 @@ p {
     transform: translateY(2px);
     margin-right: 3px;
 }
+
+/*
+
+
+            single blog page
+
+
+*/
+
+.messages-div {
+    max-width: 50rem;
+    margin: auto;
+}

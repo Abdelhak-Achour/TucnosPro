@@ -13,7 +13,7 @@ export function Contact ()
     {
         try
         {
-            const response = await axios.post("http://localhost:3001/contact/sendmessage", {
+            const response = await axios.post("http://localhost:3001/contact", {
                 nom,
                 prenom,
                 sujet,
