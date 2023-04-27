@@ -19,7 +19,7 @@ export function Messages()
         navigate("/login");
     };
 
-    async function getBlogsData()
+    async function getMessages()
     {
         try
         {
@@ -44,7 +44,7 @@ export function Messages()
         {
             logout();
         }
-        getBlogsData();
+        getMessages();
     }, []);
 
     return (

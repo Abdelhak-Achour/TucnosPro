@@ -6,10 +6,8 @@ import { AdminLinks } from "../components/adminlinks";
 import 'swiper/swiper-bundle.css';
 import imageUpload from '../images/image-upload.svg';
 import axios from "axios";
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
 
-export function ManageBlogs()
+export function ManagePartners()
 {
     document.addEventListener('DOMContentLoaded', () => {
         // 1. Display file name when select file
@@ -60,8 +58,7 @@ export function ManageBlogs()
         {
             logout();
         }
-        getCategoriesData();
-        getBlogsData()
+        getPartners()
     }, []);
 
     const [currentSlide, setCurrentSlide] = useState(1);
@@ -92,10 +89,8 @@ export function ManageBlogs()
         )
     }
 
-    const [title, setTitle] = useState("");
-    const [category, setCategory] = useState("");
+    const [name, setName] = useState("");
     const [image, setImage] = useState('');
-    const [content, setContent] = useState("");
 
     function handleImage(event)
     {
@@ -104,21 +99,14 @@ export function ManageBlogs()
 
     async function submitHandle(event)
     {
-        if(category === "")
-        {
-            event.preventDefault();
-            alert("Choissisez une catégorie")
-        }
         const formData = new FormData();
 
         formData.append('image', image);
-        formData.append('title', title);
-        formData.append('category', category);
-        formData.append('content', content);
-
+        formData.append('name', name);
+        
         try
         {
-            const response = await axios.post("http://localhost:3001/blog", formData, {headers: {auth: cookies.access_token}});
+            const response = await axios.post("http://localhost:3001/partner", formData, {headers: {auth: cookies.access_token}});
         }
         catch (err)
         {
@@ -131,27 +119,23 @@ export function ManageBlogs()
         const formData = new FormData();
 
         formData.append('image', image);
-        formData.append('blogId', blogId);
-        formData.append('title', title);
-        formData.append('category', category);
-        formData.append('content', content);
+        formData.append('partnerId', partnerId);
+        formData.append('name', name);
 
         try
         {
             if (image === '')
             {
-                const response = await axios.put("http://localhost:3001/blog/noimage",
+                const response = await axios.put("http://localhost:3001/partner/noimage",
                 {
-                    blogId,
-                    title,
-                    category,
-                    content
+                    partnerId,
+                    name,
                 },
                 {headers: {auth: cookies.access_token}});
             }
             else
             {
-                const response = await axios.put("http://localhost:3001/blog", formData, {headers: {auth: cookies.access_token}});
+                const response = await axios.put("http://localhost:3001/partner", formData, {headers: {auth: cookies.access_token}});
             }
         }
         catch (err)
@@ -164,8 +148,8 @@ export function ManageBlogs()
     {
         try
         {
-            console.log(blogId);
-            const response = await axios.delete(`http://localhost:3001/blog/${blogId}`, {headers: {auth: cookies.access_token}});
+            console.log(partnerId);
+            const response = await axios.delete(`http://localhost:3001/partner/${partnerId}`, {headers: {auth: cookies.access_token}});
         }
         catch (err)
         {
@@ -173,13 +157,13 @@ export function ManageBlogs()
         }
     }
 
-    async function getBlogsData()
+    async function getPartners()
     {
         try
         {
             
-            const response = await axios.get(`http://localhost:3001/blog`);
-            setBlogsData(response.data);
+            const response = await axios.get(`http://localhost:3001/partner`);
+            setPartners(response.data);
         }
         catch (err)
         {
@@ -187,39 +171,8 @@ export function ManageBlogs()
         }
     }
 
-    const [blogsData, setBlogsData] = useState({blogs: []});
-    const [blogId, setBlogId] = useState("");
-
-    async function getCategoriesData()
-    {
-        try
-        {
-            const response = await axios.get("http://localhost:3001/category/");
-            setCategoriesData(response.data);
-        }
-        catch (err)
-        {
-            console.log(err);
-        }
-    }
-
-    const [categoriesData, setCategoriesData] = useState({categories: []});
-
-    const modules = {
-        toolbar: [
-          [{ header: [1, 2, 3, false] }],
-          [{ color: [ "#000000", "#e60000", "#ff9900", "#ffff00", "#008a00", "#0066cc", "#9933ff", "#ffffff", "#facccc", "#ffebcc", "#ffffcc", "#cce8cc", "#cce0f5", "#ebd6ff", "#bbbbbb", "#f06666", "#ffc266", "#ffff66", "#66b966", "#66a3e0", "#c285ff", "#888888", "#a10000", "#b26b00", "#b2b200", "#006100", "#0047b2", "#6b24b2", "#444444", "#5c0000", "#663d00", "#666600", "#003700", "#002966", "#3d1466", ] }],
-          ['bold', 'italic', 'underline', 'strike', 'blockquote'],
-          [
-            { list: 'ordered' },
-            { list: 'bullet' },
-            { indent: '-1' },
-            { indent: '+1' },
-          ],
-          ['link'],
-          ['clean'],
-        ],
-    };
+    const [partners, setPartners] = useState({partners: []});
+    const [partnerId, setPartnerId] = useState("");
 
     return (
         <>
@@ -239,14 +192,14 @@ export function ManageBlogs()
                                     <div className="field">
                                         <div className="columns is-mobile">
                                             <div className="column pb-0 pr-0 is-narrow">
-                                                <label className="label">Title</label>
+                                                <label className="label">Nom</label>
                                             </div>
                                             <div className="column pb-0 pr-0 is-narrow">
                                                 <p className="orange-star">*</p>
                                             </div>
                                         </div>
                                         <div className="control">
-                                            <input className="input" type="title" placeholder="Title" onChange={(event) => setTitle(event.target.value)} required />
+                                            <input className="input" type="name" placeholder="Nom" onChange={(event) => setName(event.target.value)} required />
                                         </div>
                                     </div>
                                     <div className="field">
@@ -273,49 +226,6 @@ export function ManageBlogs()
                                             </label>
                                         </div>
                                     </div>
-                                    <div className="field">
-                                        <div className="columns is-mobile">
-                                            <div className="column pb-0 pr-0 is-narrow">
-                                                <label className="label">Catégorie</label>
-                                            </div>
-                                            <div className="column pb-0 pr-0 is-narrow">
-                                                <p className="orange-star">*</p>
-                                            </div>
-                                        </div>
-                                        <div className="control">
-                                            <div className="select">
-                                                <select onChange={(event) => setCategory(event.target.value)} required>
-                                                    <option value="">Choisissez une catégorie</option>
-                                                    {
-                                                        categoriesData.categories.length != 0 ?
-                                                        <>
-                                                            {
-                                                                categoriesData.categories.map((category) => {
-                                                                    return (
-                                                                        <option key={category._id} value={category.name}>{category.name}</option>
-                                                                    )
-                                                                })
-                                                            }
-                                                        </> :
-                                                        <></>
-                                                    }
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="field">
-                                        <div className="columns is-mobile">
-                                            <div className="column pb-0 pr-0 is-narrow">
-                                                <label className="label">Contenu</label>
-                                            </div>
-                                            <div className="column pb-0 pr-0 is-narrow">
-                                                <p className="orange-star">*</p>
-                                            </div>
-                                        </div>
-                                        <div className="control has-text-dark">
-                                            <ReactQuill value={content} modules={modules} onChange={(text) => setContent(text)} />
-                                        </div>
-                                    </div>
                                     <div className="has-text-left">
                                         <button className="button is-medium is-link" type="submit">Ajouter</button>
                                     </div>
@@ -326,7 +236,7 @@ export function ManageBlogs()
                                     <div className="field">
                                         <div className="columns is-mobile">
                                             <div className="column pb-0 pr-0 is-narrow">
-                                                <label className="label">Blog à modifier</label>
+                                                <label className="label">Partenaire à modifier</label>
                                             </div>
                                             <div className="column pb-0 pr-0 is-narrow">
                                                 <p className="orange-star">*</p>
@@ -334,15 +244,15 @@ export function ManageBlogs()
                                         </div>
                                         <div className="control">
                                             <div className="select">
-                                                <select onChange={(event) => setBlogId(event.target.value)} required>
-                                                    <option value="">Choisissez une blog</option>
+                                                <select onChange={(event) => setPartnerId(event.target.value)} required>
+                                                    <option value="">Choisissez un partenaire</option>
                                                     {
-                                                        blogsData.blogs.length != 0 ?
+                                                        partners.partners.length != 0 ?
                                                         <>
                                                             {
-                                                                blogsData.blogs.map((blog) => {
+                                                                partners.partners.map((partner) => {
                                                                     return (
-                                                                        <option key={blog._id} value={blog._id}>{blog.title}</option>
+                                                                        <option key={partner._id} value={partner._id}>{partner.nom}</option>
                                                                     )
                                                                 })
                                                             }
@@ -356,14 +266,14 @@ export function ManageBlogs()
                                     <div className="field">
                                         <div className="columns is-mobile">
                                             <div className="column pb-0 pr-0 is-narrow">
-                                                <label className="label">Title</label>
+                                                <label className="label">Nom</label>
                                             </div>
                                             <div className="column pb-0 pr-0 is-narrow">
                                                 <p className="orange-star">*</p>
                                             </div>
                                         </div>
                                         <div className="control">
-                                            <input className="input" type="title" placeholder="Title" onChange={(event) => setTitle(event.target.value)} />
+                                            <input className="input" type="name" placeholder="Nom" onChange={(event) => setName(event.target.value)} />
                                         </div>
                                     </div>
                                     <div className="field">
@@ -390,49 +300,6 @@ export function ManageBlogs()
                                             </label>
                                         </div>
                                     </div>
-                                    <div className="field">
-                                        <div className="columns is-mobile">
-                                            <div className="column pb-0 pr-0 is-narrow">
-                                                <label className="label">Catégorie</label>
-                                            </div>
-                                            <div className="column pb-0 pr-0 is-narrow">
-                                                <p className="orange-star">*</p>
-                                            </div>
-                                        </div>
-                                        <div className="control">
-                                            <div className="select">
-                                                <select onChange={(event) => setCategory(event.target.value)}>
-                                                    <option value="">Choisissez une catégorie</option>
-                                                    {
-                                                        categoriesData.categories.length != 0 ?
-                                                        <>
-                                                            {
-                                                                categoriesData.categories.map((category) => {
-                                                                    return (
-                                                                        <option key={category._id} value={category.name}>{category.name}</option>
-                                                                    )
-                                                                })
-                                                            }
-                                                        </> :
-                                                        <></>
-                                                    }
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="field">
-                                        <div className="columns is-mobile">
-                                            <div className="column pb-0 pr-0 is-narrow">
-                                                <label className="label">Contenu</label>
-                                            </div>
-                                            <div className="column pb-0 pr-0 is-narrow">
-                                                <p className="orange-star">*</p>
-                                            </div>
-                                        </div>
-                                        <div className="control has-text-dark">
-                                            <ReactQuill value={content} modules={modules} onChange={(text) => setContent(text)} />
-                                        </div>
-                                    </div>
                                     <div className="has-text-left">
                                         <button className="button is-medium is-link" type="submit">Modifier</button>
                                     </div>
@@ -443,7 +310,7 @@ export function ManageBlogs()
                                     <div className="field">
                                         <div className="columns is-mobile">
                                             <div className="column pb-0 pr-0 is-narrow">
-                                                <label className="label">Blog à supprimer</label>
+                                                <label className="label">Partenaire à supprimer</label>
                                             </div>
                                             <div className="column pb-0 pr-0 is-narrow">
                                                 <p className="orange-star">*</p>
@@ -451,15 +318,15 @@ export function ManageBlogs()
                                         </div>
                                         <div className="control">
                                             <div className="select">
-                                                <select onChange={(event) => setBlogId(event.target.value)} required>
-                                                    <option value="">Choisissez une blog</option>
+                                                <select onChange={(event) => setPartnerId(event.target.value)} required>
+                                                    <option value="">Choisissez un partenaire</option>
                                                     {
-                                                        blogsData.blogs.length != 0 ?
+                                                        partners.partners.length != 0 ?
                                                         <>
                                                             {
-                                                                blogsData.blogs.map((blog) => {
+                                                                partners.partners.map((partner) => {
                                                                     return (
-                                                                        <option key={blog._id} value={blog._id}>{blog.title}</option>
+                                                                        <option key={partner._id} value={partner._id}>{partner.nom}</option>
                                                                     )
                                                                 })
                                                             }
