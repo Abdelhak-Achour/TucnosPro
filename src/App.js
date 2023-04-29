@@ -19,6 +19,7 @@ import { Post } from './pages/post';
 import { ManageBlogs } from './pages/manageblogs';
 import { Messages } from './pages/messages';
 import { ManagePartners } from './pages/managepartners';
+import { ManageCategories } from './pages/managecategories';
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
         <Route path = '/admin' element = {<Admin />} />
         <Route path = '/manageblogs' element = {<ManageBlogs />} />
         <Route path = '/managepartners' element = {<ManagePartners />} />
+        <Route path = '/managecategories' element = {<ManageCategories />} />
         <Route path = '/messages' element = {<Messages />} />
         <Route path = '/testpage' element = {<Testpage />} />
         <Route path = '*' element = {<NotFound />} />
