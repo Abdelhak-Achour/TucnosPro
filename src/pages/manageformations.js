@@ -61,7 +61,7 @@ export function ManageFormations()
             logout();
         }
         getCategoriesData();
-        getBlogsData()
+        getFormationsData()
     }, []);
 
     const [currentSlide, setCurrentSlide] = useState(1);
@@ -118,7 +118,7 @@ export function ManageFormations()
 
         try
         {
-            const response = await axios.post("http://localhost:3001/blog", formData, {headers: {auth: cookies.access_token}});
+            const response = await axios.post("http://localhost:3001/formation", formData, {headers: {auth: cookies.access_token}});
         }
         catch (err)
         {
@@ -131,7 +131,7 @@ export function ManageFormations()
         const formData = new FormData();
 
         formData.append('image', image);
-        formData.append('blogId', blogId);
+        formData.append('formationId', formationId);
         formData.append('title', title);
         formData.append('category', category);
         formData.append('content', content);
@@ -140,9 +140,9 @@ export function ManageFormations()
         {
             if (image === '')
             {
-                const response = await axios.put("http://localhost:3001/blog/noimage",
+                const response = await axios.put("http://localhost:3001/formation/noimage",
                 {
-                    blogId,
+                    formationId,
                     title,
                     category,
                     content
@@ -151,7 +151,7 @@ export function ManageFormations()
             }
             else
             {
-                const response = await axios.put("http://localhost:3001/blog", formData, {headers: {auth: cookies.access_token}});
+                const response = await axios.put("http://localhost:3001/formation", formData, {headers: {auth: cookies.access_token}});
             }
         }
         catch (err)
@@ -164,8 +164,8 @@ export function ManageFormations()
     {
         try
         {
-            console.log(blogId);
-            const response = await axios.delete(`http://localhost:3001/blog/${blogId}`, {headers: {auth: cookies.access_token}});
+            console.log(formationId);
+            const response = await axios.delete(`http://localhost:3001/formation/${formationId}`, {headers: {auth: cookies.access_token}});
         }
         catch (err)
         {
@@ -173,13 +173,13 @@ export function ManageFormations()
         }
     }
 
-    async function getBlogsData()
+    async function getFormationsData()
     {
         try
         {
             
-            const response = await axios.get(`http://localhost:3001/blog`);
-            setBlogsData(response.data);
+            const response = await axios.get(`http://localhost:3001/formation`);
+            setFormationsData(response.data);
         }
         catch (err)
         {
@@ -187,8 +187,8 @@ export function ManageFormations()
         }
     }
 
-    const [blogsData, setBlogsData] = useState({blogs: []});
-    const [blogId, setBlogId] = useState("");
+    const [formationsData, setFormationsData] = useState({formations: []});
+    const [formationId, setFormationId] = useState("");
 
     async function getCategoriesData()
     {
@@ -252,7 +252,96 @@ export function ManageFormations()
                                     <div className="field">
                                         <div className="columns is-mobile">
                                             <div className="column pb-0 pr-0 is-narrow">
-                                                <label className="label">Photo</label>
+                                                <label className="label">Prix</label>
+                                            </div>
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <p className="orange-star">*</p>
+                                            </div>
+                                        </div>
+                                        <div className="control">
+                                            <input className="input" type="title" placeholder="Prix" onChange={(event) => setTitle(event.target.value)} required />
+                                        </div>
+                                    </div>
+                                    <div className="field">
+                                        <div className="columns is-mobile">
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <label className="label">Durée</label>
+                                            </div>
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <p className="orange-star">*</p>
+                                            </div>
+                                        </div>
+                                        <div className="control">
+                                            <input className="input" type="title" placeholder="Durée" onChange={(event) => setTitle(event.target.value)} required />
+                                        </div>
+                                    </div>
+                                    <div className="field">
+                                        <div className="columns is-mobile">
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <label className="label">Formateur</label>
+                                            </div>
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <p className="orange-star">*</p>
+                                            </div>
+                                        </div>
+                                        <div className="control">
+                                            <input className="input" type="title" placeholder="Formateur" onChange={(event) => setTitle(event.target.value)} required />
+                                        </div>
+                                    </div>
+                                    <div className="field">
+                                        <div className="columns is-mobile">
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <label className="label">Date</label>
+                                            </div>
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <p className="orange-star">*</p>
+                                            </div>
+                                        </div>
+                                        <div className="control">
+                                            <input className="input" type="date" onChange={(event) => setTitle(event.target.value)} required />
+                                        </div>
+                                    </div>
+                                    <div className="field">
+                                        <div className="columns is-mobile">
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <label className="label">Description bref</label>
+                                            </div>
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <p className="orange-star">*</p>
+                                            </div>
+                                        </div>
+                                        <div className="control">
+                                            <textarea class="textarea" placeholder="Description bref" rows="7"></textarea>
+                                        </div>
+                                    </div>
+                                    <div className="field">
+                                        <div className="columns is-mobile">
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <label className="label">Photo du formation</label>
+                                            </div>
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <p className="orange-star">*</p>
+                                            </div>
+                                        </div>
+                                        <div className="file has-name">
+                                            <label className="file-label">
+                                                <input className="file-input" type="file" name="image" accept="images/png,image/jpg,image/jpeg" onChange={handleImage} required />
+                                                <span className="file-cta">
+                                                    <img className="image-upload-icon" src={imageUpload} alt="up" />
+                                                    <span className="file-label pl-2">
+                                                        Choisisez une photo ...
+                                                    </span>
+                                                </span>
+                                                <span className="file-name">
+                                                    Aucune photo choisie
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div className="field">
+                                        <div className="columns is-mobile">
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <label className="label">Photo du formateur</label>
                                             </div>
                                             <div className="column pb-0 pr-0 is-narrow">
                                                 <p className="orange-star">*</p>
@@ -306,7 +395,85 @@ export function ManageFormations()
                                     <div className="field">
                                         <div className="columns is-mobile">
                                             <div className="column pb-0 pr-0 is-narrow">
-                                                <label className="label">Contenu</label>
+                                                <label className="label">Description</label>
+                                            </div>
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <p className="orange-star">*</p>
+                                            </div>
+                                        </div>
+                                        <div className="control has-text-dark">
+                                            <ReactQuill value={content} modules={modules} onChange={(text) => setContent(text)} />
+                                        </div>
+                                    </div>
+                                    <div className="field">
+                                        <div className="columns is-mobile">
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <label className="label">Program</label>
+                                            </div>
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <p className="orange-star">*</p>
+                                            </div>
+                                        </div>
+                                        <div className="control has-text-dark">
+                                            <ReactQuill value={content} modules={modules} onChange={(text) => setContent(text)} />
+                                        </div>
+                                    </div>
+                                    <div className="field">
+                                        <div className="columns is-mobile">
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <label className="label">Pré-requis</label>
+                                            </div>
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <p className="orange-star">*</p>
+                                            </div>
+                                        </div>
+                                        <div className="control has-text-dark">
+                                            <ReactQuill value={content} modules={modules} onChange={(text) => setContent(text)} />
+                                        </div>
+                                    </div>
+                                    <div className="field">
+                                        <div className="columns is-mobile">
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <label className="label">Objectif</label>
+                                            </div>
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <p className="orange-star">*</p>
+                                            </div>
+                                        </div>
+                                        <div className="control has-text-dark">
+                                            <ReactQuill value={content} modules={modules} onChange={(text) => setContent(text)} />
+                                        </div>
+                                    </div>
+                                    <div className="field">
+                                        <div className="columns is-mobile">
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <label className="label">Déroulement</label>
+                                            </div>
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <p className="orange-star">*</p>
+                                            </div>
+                                        </div>
+                                        <div className="control has-text-dark">
+                                            <ReactQuill value={content} modules={modules} onChange={(text) => setContent(text)} />
+                                        </div>
+                                    </div>
+                                    <div className="field">
+                                        <div className="columns is-mobile">
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <label className="label">Les outils</label>
+                                            </div>
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <p className="orange-star">*</p>
+                                            </div>
+                                        </div>
+                                        <div className="control has-text-dark">
+                                            <ReactQuill value={content} modules={modules} onChange={(text) => setContent(text)} />
+                                        </div>
+                                    </div>
+                                    <div className="field">
+                                        <div className="columns is-mobile">
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <label className="label">Public cible</label>
                                             </div>
                                             <div className="column pb-0 pr-0 is-narrow">
                                                 <p className="orange-star">*</p>
@@ -326,7 +493,7 @@ export function ManageFormations()
                                     <div className="field">
                                         <div className="columns is-mobile">
                                             <div className="column pb-0 pr-0 is-narrow">
-                                                <label className="label">Blog à modifier</label>
+                                                <label className="label">Formation à modifier</label>
                                             </div>
                                             <div className="column pb-0 pr-0 is-narrow">
                                                 <p className="orange-star">*</p>
@@ -334,15 +501,15 @@ export function ManageFormations()
                                         </div>
                                         <div className="control">
                                             <div className="select">
-                                                <select onChange={(event) => setBlogId(event.target.value)} required>
-                                                    <option value="">Choisissez une blog</option>
+                                                <select onChange={(event) => setFormationId(event.target.value)} required>
+                                                    <option value="">Choisissez une formation</option>
                                                     {
-                                                        blogsData.blogs.length != 0 ?
+                                                        formationsData.formations.length != 0 ?
                                                         <>
                                                             {
-                                                                blogsData.blogs.map((blog) => {
+                                                                formationsData.formations.map((formation) => {
                                                                     return (
-                                                                        <option key={blog._id} value={blog._id}>{blog.title}</option>
+                                                                        <option key={formation._id} value={formation._id}>{formation.name}</option>
                                                                     )
                                                                 })
                                                             }
@@ -363,13 +530,78 @@ export function ManageFormations()
                                             </div>
                                         </div>
                                         <div className="control">
-                                            <input className="input" type="title" placeholder="Title" onChange={(event) => setTitle(event.target.value)} />
+                                            <input className="input" type="title" placeholder="Title" onChange={(event) => setTitle(event.target.value)} required />
                                         </div>
                                     </div>
                                     <div className="field">
                                         <div className="columns is-mobile">
                                             <div className="column pb-0 pr-0 is-narrow">
-                                                <label className="label">Photo</label>
+                                                <label className="label">Prix</label>
+                                            </div>
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <p className="orange-star">*</p>
+                                            </div>
+                                        </div>
+                                        <div className="control">
+                                            <input className="input" type="title" placeholder="Prix" onChange={(event) => setTitle(event.target.value)} required />
+                                        </div>
+                                    </div>
+                                    <div className="field">
+                                        <div className="columns is-mobile">
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <label className="label">Durée</label>
+                                            </div>
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <p className="orange-star">*</p>
+                                            </div>
+                                        </div>
+                                        <div className="control">
+                                            <input className="input" type="title" placeholder="Durée" onChange={(event) => setTitle(event.target.value)} required />
+                                        </div>
+                                    </div>
+                                    <div className="field">
+                                        <div className="columns is-mobile">
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <label className="label">Formateur</label>
+                                            </div>
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <p className="orange-star">*</p>
+                                            </div>
+                                        </div>
+                                        <div className="control">
+                                            <input className="input" type="title" placeholder="Formateur" onChange={(event) => setTitle(event.target.value)} required />
+                                        </div>
+                                    </div>
+                                    <div className="field">
+                                        <div className="columns is-mobile">
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <label className="label">Date</label>
+                                            </div>
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <p className="orange-star">*</p>
+                                            </div>
+                                        </div>
+                                        <div className="control">
+                                            <input className="input" type="date" onChange={(event) => setTitle(event.target.value)} required />
+                                        </div>
+                                    </div>
+                                    <div className="field">
+                                        <div className="columns is-mobile">
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <label className="label">Description bref</label>
+                                            </div>
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <p className="orange-star">*</p>
+                                            </div>
+                                        </div>
+                                        <div className="control">
+                                            <textarea class="textarea" placeholder="Description bref" rows="7"></textarea>
+                                        </div>
+                                    </div>
+                                    <div className="field">
+                                        <div className="columns is-mobile">
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <label className="label">Photo du formation</label>
                                             </div>
                                             <div className="column pb-0 pr-0 is-narrow">
                                                 <p className="orange-star">*</p>
@@ -377,7 +609,31 @@ export function ManageFormations()
                                         </div>
                                         <div className="file has-name">
                                             <label className="file-label">
-                                                <input className="file-input" type="file" name="image" accept="images/png,image/jpg,image/jpeg" onChange={handleImage} />
+                                                <input className="file-input" type="file" name="image" accept="images/png,image/jpg,image/jpeg" onChange={handleImage} required />
+                                                <span className="file-cta">
+                                                    <img className="image-upload-icon" src={imageUpload} alt="up" />
+                                                    <span className="file-label pl-2">
+                                                        Choisisez une photo ...
+                                                    </span>
+                                                </span>
+                                                <span className="file-name">
+                                                    Aucune photo choisie
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div className="field">
+                                        <div className="columns is-mobile">
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <label className="label">Photo du formateur</label>
+                                            </div>
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <p className="orange-star">*</p>
+                                            </div>
+                                        </div>
+                                        <div className="file has-name">
+                                            <label className="file-label">
+                                                <input className="file-input" type="file" name="image" accept="images/png,image/jpg,image/jpeg" onChange={handleImage} required />
                                                 <span className="file-cta">
                                                     <img className="image-upload-icon" src={imageUpload} alt="up" />
                                                     <span className="file-label pl-2">
@@ -401,7 +657,7 @@ export function ManageFormations()
                                         </div>
                                         <div className="control">
                                             <div className="select">
-                                                <select onChange={(event) => setCategory(event.target.value)}>
+                                                <select onChange={(event) => setCategory(event.target.value)} required>
                                                     <option value="">Choisissez une catégorie</option>
                                                     {
                                                         categoriesData.categories.length != 0 ?
@@ -423,7 +679,85 @@ export function ManageFormations()
                                     <div className="field">
                                         <div className="columns is-mobile">
                                             <div className="column pb-0 pr-0 is-narrow">
-                                                <label className="label">Contenu</label>
+                                                <label className="label">Description</label>
+                                            </div>
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <p className="orange-star">*</p>
+                                            </div>
+                                        </div>
+                                        <div className="control has-text-dark">
+                                            <ReactQuill value={content} modules={modules} onChange={(text) => setContent(text)} />
+                                        </div>
+                                    </div>
+                                    <div className="field">
+                                        <div className="columns is-mobile">
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <label className="label">Program</label>
+                                            </div>
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <p className="orange-star">*</p>
+                                            </div>
+                                        </div>
+                                        <div className="control has-text-dark">
+                                            <ReactQuill value={content} modules={modules} onChange={(text) => setContent(text)} />
+                                        </div>
+                                    </div>
+                                    <div className="field">
+                                        <div className="columns is-mobile">
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <label className="label">Pré-requis</label>
+                                            </div>
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <p className="orange-star">*</p>
+                                            </div>
+                                        </div>
+                                        <div className="control has-text-dark">
+                                            <ReactQuill value={content} modules={modules} onChange={(text) => setContent(text)} />
+                                        </div>
+                                    </div>
+                                    <div className="field">
+                                        <div className="columns is-mobile">
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <label className="label">Objectif</label>
+                                            </div>
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <p className="orange-star">*</p>
+                                            </div>
+                                        </div>
+                                        <div className="control has-text-dark">
+                                            <ReactQuill value={content} modules={modules} onChange={(text) => setContent(text)} />
+                                        </div>
+                                    </div>
+                                    <div className="field">
+                                        <div className="columns is-mobile">
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <label className="label">Déroulement</label>
+                                            </div>
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <p className="orange-star">*</p>
+                                            </div>
+                                        </div>
+                                        <div className="control has-text-dark">
+                                            <ReactQuill value={content} modules={modules} onChange={(text) => setContent(text)} />
+                                        </div>
+                                    </div>
+                                    <div className="field">
+                                        <div className="columns is-mobile">
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <label className="label">Les outils</label>
+                                            </div>
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <p className="orange-star">*</p>
+                                            </div>
+                                        </div>
+                                        <div className="control has-text-dark">
+                                            <ReactQuill value={content} modules={modules} onChange={(text) => setContent(text)} />
+                                        </div>
+                                    </div>
+                                    <div className="field">
+                                        <div className="columns is-mobile">
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <label className="label">Public cible</label>
                                             </div>
                                             <div className="column pb-0 pr-0 is-narrow">
                                                 <p className="orange-star">*</p>
@@ -443,7 +777,7 @@ export function ManageFormations()
                                     <div className="field">
                                         <div className="columns is-mobile">
                                             <div className="column pb-0 pr-0 is-narrow">
-                                                <label className="label">Blog à supprimer</label>
+                                                <label className="label">Formation à supprimer</label>
                                             </div>
                                             <div className="column pb-0 pr-0 is-narrow">
                                                 <p className="orange-star">*</p>
@@ -451,15 +785,15 @@ export function ManageFormations()
                                         </div>
                                         <div className="control">
                                             <div className="select">
-                                                <select onChange={(event) => setBlogId(event.target.value)} required>
-                                                    <option value="">Choisissez une blog</option>
+                                                <select onChange={(event) => setFormationId(event.target.value)} required>
+                                                    <option value="">Choisissez une formation</option>
                                                     {
-                                                        blogsData.blogs.length != 0 ?
+                                                        formationsData.formations.length != 0 ?
                                                         <>
                                                             {
-                                                                blogsData.blogs.map((blog) => {
+                                                                formationsData.formations.map((formation) => {
                                                                     return (
-                                                                        <option key={blog._id} value={blog._id}>{blog.title}</option>
+                                                                        <option key={formation._id} value={formation._id}>{formation.name}</option>
                                                                     )
                                                                 })
                                                             }
