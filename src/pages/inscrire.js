@@ -321,7 +321,7 @@ export function Inscrire()
                         </div>
 
                         <div className="control">
-                            <button className="button is-link">Soumettre votre témoignage</button>
+                            <button className="button is-link">S'inscrire</button>
                         </div>
 
                     </form>
