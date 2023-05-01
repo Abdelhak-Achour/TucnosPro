@@ -139,7 +139,8 @@ export function ManageCategories()
                         <AdminLinks />
                     </div>
                     <div className="column is-11 has-text-centered">
-                        <div className="formation-details box is-shadowless mt-6 mr-6 ml-6 mb-0 pr-6 pl-6 pt-5">
+                        <p className="title is-1 has-text-dark">Catégories</p>
+                        <div className="formation-details box is-shadowless mt-3 mr-6 ml-6 mb-0 pr-6 pl-6 pt-5">
                             <div className="under-tab-content p-3">
                                 <Tabs />
                             </div>

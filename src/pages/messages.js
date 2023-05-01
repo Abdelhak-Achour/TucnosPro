@@ -57,7 +57,7 @@ export function Messages()
                     </div>
                     <div className="column is-11">
                         <div className="has-text-centered">
-                            <p className="title is-2 has-text-dark mt-3 mb-5">Messages</p>
+                            <p className="title is-1 has-text-dark mt-3 mb-5">Messages</p>
                         </div>
                         <div className="messages-div">
                         {

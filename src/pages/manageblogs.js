@@ -230,7 +230,8 @@ export function ManageBlogs()
                         <AdminLinks />
                     </div>
                     <div className="column is-11 has-text-centered">
-                        <div className="formation-details box is-shadowless mt-6 mr-6 ml-6 mb-0 pr-6 pl-6 pt-5">
+                        <p className="title is-1 has-text-dark">Blogs</p>
+                        <div className="formation-details box is-shadowless mt-3 mr-6 ml-6 mb-0 pr-6 pl-6 pt-5">
                             <div className="under-tab-content p-3">
                                 <Tabs />
                             </div>
@@ -239,14 +240,14 @@ export function ManageBlogs()
                                     <div className="field">
                                         <div className="columns is-mobile">
                                             <div className="column pb-0 pr-0 is-narrow">
-                                                <label className="label">Title</label>
+                                                <label className="label">Titre</label>
                                             </div>
                                             <div className="column pb-0 pr-0 is-narrow">
                                                 <p className="orange-star">*</p>
                                             </div>
                                         </div>
                                         <div className="control">
-                                            <input className="input" type="title" placeholder="Title" onChange={(event) => setTitle(event.target.value)} required />
+                                            <input className="input" type="title" placeholder="Titre" onChange={(event) => setTitle(event.target.value)} required />
                                         </div>
                                     </div>
                                     <div className="field">
@@ -356,14 +357,14 @@ export function ManageBlogs()
                                     <div className="field">
                                         <div className="columns is-mobile">
                                             <div className="column pb-0 pr-0 is-narrow">
-                                                <label className="label">Title</label>
+                                                <label className="label">Titre</label>
                                             </div>
                                             <div className="column pb-0 pr-0 is-narrow">
                                                 <p className="orange-star">*</p>
                                             </div>
                                         </div>
                                         <div className="control">
-                                            <input className="input" type="title" placeholder="Title" onChange={(event) => setTitle(event.target.value)} />
+                                            <input className="input" type="title" placeholder="Titre" onChange={(event) => setTitle(event.target.value)} />
                                         </div>
                                     </div>
                                     <div className="field">

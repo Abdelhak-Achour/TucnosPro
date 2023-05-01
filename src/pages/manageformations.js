@@ -8,6 +8,7 @@ import imageUpload from '../images/image-upload.svg';
 import axios from "axios";
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+import dateformater from "date-and-time";
 
 export function ManageFormations()
 {
@@ -92,14 +93,43 @@ export function ManageFormations()
         )
     }
 
-    const [title, setTitle] = useState("");
+    const [name, setName] = useState("");
     const [category, setCategory] = useState("");
     const [image, setImage] = useState('');
-    const [content, setContent] = useState("");
+    const [formateurImage, setFormateurImage] = useState('');
+    const [price, setPrice] = useState("");
+    const [date, setDate] = useState("");
+    const [duration, setDuration] = useState("");
+    const [description, setDescription] = useState("");
+    const [long_description, setLong_description] = useState("");
+    const [formateur, setFormateur] = useState("");
+    const [program, setProgram] = useState("");
+    const [requirements, setRequirements] = useState("");
+    const [objectif, setObjectif] = useState("");
+    const [plan, setPlan] = useState("");
+    const [tools, setTools] = useState("");
+    const [target, setTarget] = useState("");
+
+    useEffect(() => {
+        console.log(date);
+        console.log(typeof date);
+    }, [date])
 
     function handleImage(event)
     {
         setImage(event.target.files[0]);
+    }
+
+    function handleFormateurImage(event)
+    {
+        setFormateurImage(event.target.files[0]);
+    }
+
+    function handleDate(value)
+    {
+        const dateNtime = value.split('-');
+        const formattedDate = `${dateNtime[2]}/${dateNtime[1]}/${dateNtime[0]}`
+        setDate(formattedDate);
     }
 
     async function submitHandle(event)
@@ -112,9 +142,21 @@ export function ManageFormations()
         const formData = new FormData();
 
         formData.append('image', image);
-        formData.append('title', title);
+        formData.append('image', formateurImage);
+        formData.append('name', name);
+        formData.append('price', price);
+        formData.append('date', date);
+        formData.append('duration', duration);
         formData.append('category', category);
-        formData.append('content', content);
+        formData.append('description', description);
+        formData.append('long_description', long_description);
+        formData.append('formateur', formateur);
+        formData.append('program', program);
+        formData.append('requirements', requirements);
+        formData.append('objectif', objectif);
+        formData.append('plan', plan);
+        formData.append('tools', tools);
+        formData.append('target', target);
 
         try
         {
@@ -131,23 +173,88 @@ export function ManageFormations()
         const formData = new FormData();
 
         formData.append('image', image);
-        formData.append('formationId', formationId);
-        formData.append('title', title);
+        formData.append('image', formateurImage);
+        formData.append('name', name);
+        formData.append('price', price);
+        formData.append('date', date);
+        formData.append('duration', duration);
         formData.append('category', category);
-        formData.append('content', content);
+        formData.append('description', description);
+        formData.append('long_description', long_description);
+        formData.append('formateur', formateur);
+        formData.append('program', program);
+        formData.append('requirements', requirements);
+        formData.append('objectif', objectif);
+        formData.append('plan', plan);
+        formData.append('tools', tools);
+        formData.append('target', target);
 
         try
         {
-            if (image === '')
+            if (image === '' && formateurImage === '')
             {
                 const response = await axios.put("http://localhost:3001/formation/noimage",
                 {
                     formationId,
-                    title,
+                    name,
+                    price,
+                    date,
+                    duration,
                     category,
-                    content
-                },
+                    description,
+                    long_description,
+                    formateur,
+                    program,
+                    requirements,
+                    objectif,
+                    plan,
+                    tools,
+                    target},
                 {headers: {auth: cookies.access_token}});
+            }
+            else if (image != '' && formateurImage === '')
+            {
+                const imageformData = new FormData();
+
+                imageformData.append('image', image);
+                imageformData.append('name', name);
+                imageformData.append('price', price);
+                imageformData.append('date', date);
+                imageformData.append('duration', duration);
+                imageformData.append('category', category);
+                imageformData.append('description', description);
+                imageformData.append('long_description', long_description);
+                imageformData.append('formateur', formateur);
+                imageformData.append('program', program);
+                imageformData.append('requirements', requirements);
+                imageformData.append('objectif', objectif);
+                imageformData.append('plan', plan);
+                imageformData.append('tools', tools);
+                imageformData.append('target', target);
+
+                const response = await axios.put("http://localhost:3001/formation/image", formData, {headers: {auth: cookies.access_token}});
+            }
+            else if (image === '' && formateurImage != '')
+            {
+                const imageformData = new FormData();
+
+                imageformData.append('image', formateurImage);
+                imageformData.append('name', name);
+                imageformData.append('price', price);
+                imageformData.append('date', date);
+                imageformData.append('duration', duration);
+                imageformData.append('category', category);
+                imageformData.append('description', description);
+                imageformData.append('long_description', long_description);
+                imageformData.append('formateur', formateur);
+                imageformData.append('program', program);
+                imageformData.append('requirements', requirements);
+                imageformData.append('objectif', objectif);
+                imageformData.append('plan', plan);
+                imageformData.append('tools', tools);
+                imageformData.append('target', target);
+
+                const response = await axios.put("http://localhost:3001/formation/formateurimage", formData, {headers: {auth: cookies.access_token}});
             }
             else
             {
@@ -230,7 +337,8 @@ export function ManageFormations()
                         <AdminLinks />
                     </div>
                     <div className="column is-11 has-text-centered">
-                        <div className="formation-details box is-shadowless mt-6 mr-6 ml-6 mb-0 pr-6 pl-6 pt-5">
+                        <p className="title is-1 has-text-dark">Formations</p>
+                        <div className="formation-details box is-shadowless mt-3 mr-6 ml-6 mb-0 pr-6 pl-6 pt-5">
                             <div className="under-tab-content p-3">
                                 <Tabs />
                             </div>
@@ -239,14 +347,14 @@ export function ManageFormations()
                                     <div className="field">
                                         <div className="columns is-mobile">
                                             <div className="column pb-0 pr-0 is-narrow">
-                                                <label className="label">Title</label>
+                                                <label className="label">Titre</label>
                                             </div>
                                             <div className="column pb-0 pr-0 is-narrow">
                                                 <p className="orange-star">*</p>
                                             </div>
                                         </div>
                                         <div className="control">
-                                            <input className="input" type="title" placeholder="Title" onChange={(event) => setTitle(event.target.value)} required />
+                                            <input className="input" type="name" placeholder="Titre" onChange={(event) => setName(event.target.value)} required />
                                         </div>
                                     </div>
                                     <div className="field">
@@ -259,7 +367,7 @@ export function ManageFormations()
                                             </div>
                                         </div>
                                         <div className="control">
-                                            <input className="input" type="title" placeholder="Prix" onChange={(event) => setTitle(event.target.value)} required />
+                                            <input className="input" type="name" placeholder="Prix" onChange={(event) => setPrice(event.target.value)} required />
                                         </div>
                                     </div>
                                     <div className="field">
@@ -272,7 +380,7 @@ export function ManageFormations()
                                             </div>
                                         </div>
                                         <div className="control">
-                                            <input className="input" type="title" placeholder="Durée" onChange={(event) => setTitle(event.target.value)} required />
+                                            <input className="input" type="name" placeholder="Durée" onChange={(event) => setDuration(event.target.value)} required />
                                         </div>
                                     </div>
                                     <div className="field">
@@ -285,7 +393,7 @@ export function ManageFormations()
                                             </div>
                                         </div>
                                         <div className="control">
-                                            <input className="input" type="title" placeholder="Formateur" onChange={(event) => setTitle(event.target.value)} required />
+                                            <input className="input" type="name" placeholder="Formateur" onChange={(event) => setFormateur(event.target.value)} required />
                                         </div>
                                     </div>
                                     <div className="field">
@@ -298,7 +406,7 @@ export function ManageFormations()
                                             </div>
                                         </div>
                                         <div className="control">
-                                            <input className="input" type="date" onChange={(event) => setTitle(event.target.value)} required />
+                                            <input className="input" type="date" onChange={(event) => handleDate(event.target.value)} required />
                                         </div>
                                     </div>
                                     <div className="field">
@@ -311,7 +419,7 @@ export function ManageFormations()
                                             </div>
                                         </div>
                                         <div className="control">
-                                            <textarea class="textarea" placeholder="Description bref" rows="7"></textarea>
+                                            <textarea class="textarea" placeholder="Description bref" rows="7" onChange={(event) => setDescription(event.target.value)} required></textarea>
                                         </div>
                                     </div>
                                     <div className="field">
@@ -349,7 +457,7 @@ export function ManageFormations()
                                         </div>
                                         <div className="file has-name">
                                             <label className="file-label">
-                                                <input className="file-input" type="file" name="image" accept="images/png,image/jpg,image/jpeg" onChange={handleImage} required />
+                                                <input className="file-input" type="file" name="image" accept="images/png,image/jpg,image/jpeg" onChange={handleFormateurImage} required />
                                                 <span className="file-cta">
                                                     <img className="image-upload-icon" src={imageUpload} alt="up" />
                                                     <span className="file-label pl-2">
@@ -402,7 +510,7 @@ export function ManageFormations()
                                             </div>
                                         </div>
                                         <div className="control has-text-dark">
-                                            <ReactQuill value={content} modules={modules} onChange={(text) => setContent(text)} />
+                                            <ReactQuill value={long_description} modules={modules} onChange={(text) => setLong_description(text)} preserveWhitespace />
                                         </div>
                                     </div>
                                     <div className="field">
@@ -415,7 +523,7 @@ export function ManageFormations()
                                             </div>
                                         </div>
                                         <div className="control has-text-dark">
-                                            <ReactQuill value={content} modules={modules} onChange={(text) => setContent(text)} />
+                                            <ReactQuill value={program} modules={modules} onChange={(text) => setProgram(text)} preserveWhitespace />
                                         </div>
                                     </div>
                                     <div className="field">
@@ -428,7 +536,7 @@ export function ManageFormations()
                                             </div>
                                         </div>
                                         <div className="control has-text-dark">
-                                            <ReactQuill value={content} modules={modules} onChange={(text) => setContent(text)} />
+                                            <ReactQuill value={requirements} modules={modules} onChange={(text) => setRequirements(text)} preserveWhitespace />
                                         </div>
                                     </div>
                                     <div className="field">
@@ -441,7 +549,7 @@ export function ManageFormations()
                                             </div>
                                         </div>
                                         <div className="control has-text-dark">
-                                            <ReactQuill value={content} modules={modules} onChange={(text) => setContent(text)} />
+                                            <ReactQuill value={objectif} modules={modules} onChange={(text) => setObjectif(text)} preserveWhitespace />
                                         </div>
                                     </div>
                                     <div className="field">
@@ -454,7 +562,7 @@ export function ManageFormations()
                                             </div>
                                         </div>
                                         <div className="control has-text-dark">
-                                            <ReactQuill value={content} modules={modules} onChange={(text) => setContent(text)} />
+                                            <ReactQuill value={plan} modules={modules} onChange={(text) => setPlan(text)} preserveWhitespace />
                                         </div>
                                     </div>
                                     <div className="field">
@@ -467,7 +575,7 @@ export function ManageFormations()
                                             </div>
                                         </div>
                                         <div className="control has-text-dark">
-                                            <ReactQuill value={content} modules={modules} onChange={(text) => setContent(text)} />
+                                            <ReactQuill value={tools} modules={modules} onChange={(text) => setTools(text)} preserveWhitespace />
                                         </div>
                                     </div>
                                     <div className="field">
@@ -480,7 +588,7 @@ export function ManageFormations()
                                             </div>
                                         </div>
                                         <div className="control has-text-dark">
-                                            <ReactQuill value={content} modules={modules} onChange={(text) => setContent(text)} />
+                                            <ReactQuill value={target} modules={modules} onChange={(text) => setTarget(text)} preserveWhitespace />
                                         </div>
                                     </div>
                                     <div className="has-text-left">
@@ -523,14 +631,14 @@ export function ManageFormations()
                                     <div className="field">
                                         <div className="columns is-mobile">
                                             <div className="column pb-0 pr-0 is-narrow">
-                                                <label className="label">Title</label>
+                                                <label className="label">Titre</label>
                                             </div>
                                             <div className="column pb-0 pr-0 is-narrow">
                                                 <p className="orange-star">*</p>
                                             </div>
                                         </div>
                                         <div className="control">
-                                            <input className="input" type="title" placeholder="Title" onChange={(event) => setTitle(event.target.value)} required />
+                                            <input className="input" type="name" placeholder="Titre" onChange={(event) => setName(event.target.value)} />
                                         </div>
                                     </div>
                                     <div className="field">
@@ -543,7 +651,7 @@ export function ManageFormations()
                                             </div>
                                         </div>
                                         <div className="control">
-                                            <input className="input" type="title" placeholder="Prix" onChange={(event) => setTitle(event.target.value)} required />
+                                            <input className="input" type="name" placeholder="Prix" onChange={(event) => setPrice(event.target.value)} />
                                         </div>
                                     </div>
                                     <div className="field">
@@ -556,7 +664,7 @@ export function ManageFormations()
                                             </div>
                                         </div>
                                         <div className="control">
-                                            <input className="input" type="title" placeholder="Durée" onChange={(event) => setTitle(event.target.value)} required />
+                                            <input className="input" type="name" placeholder="Durée" onChange={(event) => setDuration(event.target.value)} />
                                         </div>
                                     </div>
                                     <div className="field">
@@ -569,7 +677,7 @@ export function ManageFormations()
                                             </div>
                                         </div>
                                         <div className="control">
-                                            <input className="input" type="title" placeholder="Formateur" onChange={(event) => setTitle(event.target.value)} required />
+                                            <input className="input" type="name" placeholder="Formateur" onChange={(event) => setFormateur(event.target.value)} />
                                         </div>
                                     </div>
                                     <div className="field">
@@ -582,7 +690,7 @@ export function ManageFormations()
                                             </div>
                                         </div>
                                         <div className="control">
-                                            <input className="input" type="date" onChange={(event) => setTitle(event.target.value)} required />
+                                            <input className="input" type="date" onChange={(event) => handleDate(event.target.value)} />
                                         </div>
                                     </div>
                                     <div className="field">
@@ -595,7 +703,7 @@ export function ManageFormations()
                                             </div>
                                         </div>
                                         <div className="control">
-                                            <textarea class="textarea" placeholder="Description bref" rows="7"></textarea>
+                                            <textarea class="textarea" placeholder="Description bref" rows="7" onChange={(event) => setDescription(event.target.value)}></textarea>
                                         </div>
                                     </div>
                                     <div className="field">
@@ -609,7 +717,7 @@ export function ManageFormations()
                                         </div>
                                         <div className="file has-name">
                                             <label className="file-label">
-                                                <input className="file-input" type="file" name="image" accept="images/png,image/jpg,image/jpeg" onChange={handleImage} required />
+                                                <input className="file-input" type="file" name="image" accept="images/png,image/jpg,image/jpeg" onChange={handleImage} />
                                                 <span className="file-cta">
                                                     <img className="image-upload-icon" src={imageUpload} alt="up" />
                                                     <span className="file-label pl-2">
@@ -633,7 +741,7 @@ export function ManageFormations()
                                         </div>
                                         <div className="file has-name">
                                             <label className="file-label">
-                                                <input className="file-input" type="file" name="image" accept="images/png,image/jpg,image/jpeg" onChange={handleImage} required />
+                                                <input className="file-input" type="file" name="image" accept="images/png,image/jpg,image/jpeg" onChange={handleFormateurImage} />
                                                 <span className="file-cta">
                                                     <img className="image-upload-icon" src={imageUpload} alt="up" />
                                                     <span className="file-label pl-2">
@@ -657,7 +765,7 @@ export function ManageFormations()
                                         </div>
                                         <div className="control">
                                             <div className="select">
-                                                <select onChange={(event) => setCategory(event.target.value)} required>
+                                                <select onChange={(event) => setCategory(event.target.value)}>
                                                     <option value="">Choisissez une catégorie</option>
                                                     {
                                                         categoriesData.categories.length != 0 ?
@@ -686,7 +794,7 @@ export function ManageFormations()
                                             </div>
                                         </div>
                                         <div className="control has-text-dark">
-                                            <ReactQuill value={content} modules={modules} onChange={(text) => setContent(text)} />
+                                            <ReactQuill value={long_description} modules={modules} onChange={(text) => setLong_description(text)} preserveWhitespace />
                                         </div>
                                     </div>
                                     <div className="field">
@@ -699,7 +807,7 @@ export function ManageFormations()
                                             </div>
                                         </div>
                                         <div className="control has-text-dark">
-                                            <ReactQuill value={content} modules={modules} onChange={(text) => setContent(text)} />
+                                            <ReactQuill value={program} modules={modules} onChange={(text) => setProgram(text)} preserveWhitespace />
                                         </div>
                                     </div>
                                     <div className="field">
@@ -712,7 +820,7 @@ export function ManageFormations()
                                             </div>
                                         </div>
                                         <div className="control has-text-dark">
-                                            <ReactQuill value={content} modules={modules} onChange={(text) => setContent(text)} />
+                                            <ReactQuill value={requirements} modules={modules} onChange={(text) => setRequirements(text)} preserveWhitespace />
                                         </div>
                                     </div>
                                     <div className="field">
@@ -725,7 +833,7 @@ export function ManageFormations()
                                             </div>
                                         </div>
                                         <div className="control has-text-dark">
-                                            <ReactQuill value={content} modules={modules} onChange={(text) => setContent(text)} />
+                                            <ReactQuill value={objectif} modules={modules} onChange={(text) => setObjectif(text)} preserveWhitespace />
                                         </div>
                                     </div>
                                     <div className="field">
@@ -738,7 +846,7 @@ export function ManageFormations()
                                             </div>
                                         </div>
                                         <div className="control has-text-dark">
-                                            <ReactQuill value={content} modules={modules} onChange={(text) => setContent(text)} />
+                                            <ReactQuill value={plan} modules={modules} onChange={(text) => setPlan(text)} preserveWhitespace />
                                         </div>
                                     </div>
                                     <div className="field">
@@ -751,7 +859,7 @@ export function ManageFormations()
                                             </div>
                                         </div>
                                         <div className="control has-text-dark">
-                                            <ReactQuill value={content} modules={modules} onChange={(text) => setContent(text)} />
+                                            <ReactQuill value={tools} modules={modules} onChange={(text) => setTools(text)} preserveWhitespace />
                                         </div>
                                     </div>
                                     <div className="field">
@@ -764,7 +872,7 @@ export function ManageFormations()
                                             </div>
                                         </div>
                                         <div className="control has-text-dark">
-                                            <ReactQuill value={content} modules={modules} onChange={(text) => setContent(text)} />
+                                            <ReactQuill value={target} modules={modules} onChange={(text) => setTarget(text)} preserveWhitespace />
                                         </div>
                                     </div>
                                     <div className="has-text-left">
