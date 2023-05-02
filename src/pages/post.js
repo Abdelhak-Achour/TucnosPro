@@ -42,7 +42,6 @@ export function Post()
                 username,
                 comment
             });
-            alert(response.data.message);
         }
         catch (err)
         {

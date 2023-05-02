@@ -8,7 +8,7 @@ export function Formations()
 {
     const {id} = useParams();
 
-    async function getFormationData()
+    async function getFormationsData()
     {
         try
         {
@@ -21,7 +21,7 @@ export function Formations()
                 var response = await axios.get(`http://localhost:3001/formation`);
             }
             
-            setFormationData(response.data);
+            setFormationsData(response.data);
         }
         catch (err)
         {
@@ -42,12 +42,12 @@ export function Formations()
         }
     }
 
-    const [formationData, setFormationData] = useState({formations: []});
+    const [formationsData, setFormationsData] = useState({formations: []});
 
     const [categoriesData, setCategoriesData] = useState({categories: []});
 
     useEffect(() => {
-        getFormationData();
+        getFormationsData();
         getCategoriesData();
     }, [id])
 
@@ -58,12 +58,12 @@ export function Formations()
                 <div className="columns">
                     <div className="column is-narrow is-9">
                         <div className="articles-div">
-                            <div className={formationData.formations.length != 0 ? 'box formations-page-container' : 'is-hidden box formations-page-container'}>
+                            <div className={formationsData.formations.length != 0 ? 'box formations-page-container' : 'is-hidden box formations-page-container'}>
                                 {
-                                    formationData.formations.length != 0 ?
+                                    formationsData.formations.length != 0 ?
                                     <>
                                         {
-                                            formationData.formations.map((formation) => {
+                                            formationsData.formations.map((formation) => {
                                                 return (
                                                     <div key = {formation._id}>
                                                         <FormationCard
@@ -87,7 +87,7 @@ export function Formations()
                             </div>
                             {
                                 <div className="has-text-centered pt-6">
-                                    <p className={formationData.formations.length != 0 ? "is-hidden title is-2 has-text-dark pt-6" : "title is-2 has-text-dark pt-6"}>Il n'y a pas encore de formation.</p>
+                                    <p className={formationsData.formations.length != 0 ? "is-hidden title is-2 has-text-dark pt-6" : "title is-2 has-text-dark pt-6"}>Il n'y a pas encore de formation.</p>
                                 </div>
                             }
                         </div>

@@ -314,7 +314,7 @@ export function ManageBlogs()
                                             </div>
                                         </div>
                                         <div className="control has-text-dark">
-                                            <ReactQuill value={content} modules={modules} onChange={(text) => setContent(text)} />
+                                            <ReactQuill value={content} modules={modules} onChange={(text) => setContent(text)} preserveWhitespace />
                                         </div>
                                     </div>
                                     <div className="has-text-left">
@@ -431,7 +431,7 @@ export function ManageBlogs()
                                             </div>
                                         </div>
                                         <div className="control has-text-dark">
-                                            <ReactQuill value={content} modules={modules} onChange={(text) => setContent(text)} />
+                                            <ReactQuill value={content} modules={modules} onChange={(text) => setContent(text)} preserveWhitespace />
                                         </div>
                                     </div>
                                     <div className="has-text-left">
