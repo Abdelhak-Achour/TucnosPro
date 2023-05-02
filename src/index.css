@@ -578,7 +578,7 @@ p {
 
 .formation-page-image {
     max-width: 32.5rem;
-    margin-right: 2rem;
+    margin-right: 0.1rem;
 }
 
 @media only screen and (max-width: 768px) {

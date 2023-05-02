@@ -7,6 +7,8 @@ import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 import uuid from "react-uuid";
 import axios from "axios";
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import Pdf from "../components/pdf";
 
 export function Formation()
 {
@@ -147,7 +149,9 @@ export function Formation()
                                     <Link to={`/formations/${id}/inscrire`}><button className="button is-medium is-link">S'INSCRIRE</button></Link>
                                 </div>
                                 <div className="column pt-0 is-narrow pl-0">
-                                    <Link to={`/formations/${id}/inscrire`}><button className="button is-medium is-link">CATALOGUE</button></Link>
+                                    <PDFDownloadLink document={<Pdf formation = {formationData.formation} />} filename={`catalogue_${formationData.formation.name ? formationData.formation.name : "pdf"}`}>
+                                        {({loading}) => (loading ? <button className="button is-medium is-link" disabled>CATALOGUE</button> : <button className="button is-medium is-link">CATALOGUE</button> )}
+                                    </PDFDownloadLink>
                                 </div>
                             </div>
                         </div>
