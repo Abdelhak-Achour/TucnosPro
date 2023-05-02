@@ -37,6 +37,7 @@ function App() {
           <Route index element = {<Formations />} />
           <Route path = ':id' element = {<Formation />} />
           <Route path = ':id/inscrire' element = {<Inscrire />} />
+          <Route path = 'bycategory/:id' element = {<Formations />} />
         </Route>
         <Route path = '/contact' element = {<Contact />} />
         <Route path = '/nos-partenaires' element = {<Partners />} />

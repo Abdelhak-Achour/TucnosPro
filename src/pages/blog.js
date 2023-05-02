@@ -60,10 +60,6 @@ export function Blog()
                 <div className="box m-6 is-shadowless">
                     <div className="columns">
                         <div className="column is-narrow is-9">
-                            <div className="has-text-centered">
-                                <p className="subtitle is-5 has-text-grey mb-0">TOUTES LES CATÉGORIES</p>
-                                <hr className="blog-hr" />
-                            </div>
                             <div className="articles-div has-text-centered">
                                 <p className="title is-2 has-text-dark">Il n'y a pas encore d'Article.</p>
                             </div>
@@ -98,10 +94,6 @@ export function Blog()
             <div className="box m-6 is-shadowless">
                 <div className="columns">
                     <div className="column is-narrow is-9">
-                        <div className="has-text-centered">
-                            <p className="subtitle is-5 has-text-grey mb-0">TOUTES LES CATÉGORIES</p>
-                            <hr className="blog-hr" />
-                        </div>
                         <div className="articles-div">
                             {
                                 blogsData.blogs.map((blog) => {

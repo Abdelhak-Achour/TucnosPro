@@ -198,7 +198,7 @@ export function Home()
                     {
                         data.formations.map((formation) => {
                             return(
-                                <>
+                                <div key = {uuid()}>
                                     <FormationCard
                                         key = {uuid()}
                                         id = {formation.id}
@@ -210,7 +210,7 @@ export function Home()
                                         description = {formation.description}
                                         formateur = {formation.formateur}
                                      />
-                                </>
+                                </div>
                             )
                         })
                     }

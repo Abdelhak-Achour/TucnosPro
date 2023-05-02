@@ -128,7 +128,7 @@ export function ManageFormations()
     function handleDate(value)
     {
         const dateNtime = value.split('-');
-        const formattedDate = `${dateNtime[2]}/${dateNtime[1]}/${dateNtime[0]}`
+        const formattedDate = `${dateNtime[2]}-${dateNtime[1]}-${dateNtime[0]}`
         setDate(formattedDate);
     }
 

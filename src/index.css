@@ -792,3 +792,28 @@ p {
         margin: 7rem 0rem 5rem 0rem;
     }
 }
+
+/*
+
+
+            formations page
+
+
+*/
+
+.formations-page-container {
+    display: grid;
+    grid-gap: 0rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    margin: auto 1rem auto 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .formations-page-container
+    {
+        display: grid;
+        grid-gap: 0rem;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        margin: auto 0rem auto 0rem; 
+    }
+}
