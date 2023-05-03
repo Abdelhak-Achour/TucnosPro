@@ -23,6 +23,14 @@ const styles = StyleSheet.create({
     fontSize: 14,
     textAlign: "justify",
   },
+  centeredtext: {
+    marginTop: 7,
+    marginBottom: 5,
+    marginLeft: 17,
+    marginRight: 12,
+    fontSize: 14,
+    textAlign: "center",
+  },
   image: {
     marginVertical: 15,
     marginHorizontal: 100,
@@ -55,7 +63,9 @@ const Pdf = (formation) => {
     <Document>
       <Page style={styles.body}>
         <Text style={styles.title} fixed>{formation.formation.name}</Text>
+        <Text style={styles.centeredtext} fixed>{formation.formation.formateur}</Text>
         <Image style={styles.image} src={require(`../images/${formation.formation.image ? formation.formation.image : "logo_tucnospro.png"}`)} />
+        <Text style={styles.centeredtext} fixed>Date: {formation.formation.date}    Durée: {formation.formation.duration}    Prix: {formation.formation.price} TND</Text>
         <Text style={styles.subtitle}>
           Description:
         </Text>
