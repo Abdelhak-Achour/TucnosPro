@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import paperplane from '../images/paper-plane-solid.svg';
 import data from '../mock_data.json';
 import Logo from '../images/logo_tucnospro.png';
@@ -8,6 +8,7 @@ import Linkedin from '../images/linkedin.svg';
 import Instagram from '../images/instagram.svg';
 import uuid from 'react-uuid';
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export function Footer()
 {
@@ -26,6 +27,25 @@ export function Footer()
             console.error(err)
         }
     }
+
+    async function getCategoriesData()
+    {
+        try
+        {
+            const response = await axios.get("http://localhost:3001/category/");
+            setCategoriesData(response.data);
+        }
+        catch (err)
+        {
+            console.log(err);
+        }
+    }
+
+    const [categoriesData, setCategoriesData] = useState({categories: []});
+    
+    useEffect(() => {
+        getCategoriesData();
+    }, [])
 
     return (
         <>
@@ -55,7 +75,7 @@ export function Footer()
                     </div>
                     <div className="columns my-6 mx-6">
                         <div className="column has-text-left">
-                            <div className="footer-logo-margin has-text-centered"><img className="footer-logo" src={Logo} alt="logo" /></div>
+                            <div className="footer-logo-margin has-text-centered m-auto"><Link to={"/"}><img className="footer-logo" src={Logo} alt="logo" /></Link></div>
                             <p className="has-text-dark under-logo-text has-text-centered">
                                 TucnosPRO est une centre de formation et de consulting qui offre des formations principalement dans le domaine des nouvelles technologies. Nos experts vous accompagnent pour faciliter votre reconversion ou insertion professionnelle. Nos sessions répondent à vos besoins spécifiques et ciblent les domaines les plus en demande sur le marché.
                             </p>
@@ -72,9 +92,9 @@ export function Footer()
                                     Tucnos PRO
                                 </p>
                                 <ul className="menu-list">
-                                    <li><a>Contactez-nous</a></li>
-                                    <li><a>A propos de nous</a></li>
-                                    <li><a>Que vous pensez de nous</a></li>
+                                    <li><Link to={"/contact"}>Contactez-nous</Link></li>
+                                    <li><Link to={"/a-propos"}>A propos de nous</Link></li>
+                                    <li><Link to={"/temoin"}>Que vous pensez de nous</Link></li>
                                 </ul>
                             </div>
                         </div>
@@ -85,9 +105,9 @@ export function Footer()
                                 </p>
                                 <ul className="menu-list">
                                     {
-                                        data.categories.map((categorie) => {
+                                        categoriesData.categories.map((category) => {
                                             return(
-                                                <li key={uuid()}><a>{categorie.name}</a></li>
+                                                <li key={category._id}><Link to={`/formations/bycategory/${category._id}`}>{category.name}</Link></li>
                                             )
                                         })
                                     }
