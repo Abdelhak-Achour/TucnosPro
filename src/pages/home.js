@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import data from '../mock_data.json';
 import { Navigation, Pagination, A11y, EffectCoverflow, EffectCreative, EffectFade, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 import SplitType from 'split-type';
 import { gsap } from "gsap";
 import uuid from 'react-uuid';
+import axios from 'axios';
 
 export function Home()
 {
@@ -29,17 +30,28 @@ export function Home()
 
     const [delay, setDelay] = useState(10500);
 
-    function changeDelayLonger()
+    async function getFormationsData()
     {
-        console.log("delay is longer");
-        setDelay(1800000);
+        try
+        {
+            var response = await axios.get(`http://localhost:3001/formation`);
+            setFormationsData(response.data);
+        }
+        catch (err)
+        {
+            console.log(err);
+        }
     }
 
-    function changeDelayShorter()
-    {
-        console.log("delay is shorter");
-        setDelay(10500);
-    }
+    
+
+    const [formationsData, setFormationsData] = useState({formations: []});
+
+    
+
+    useEffect(() => {
+        getFormationsData();
+    }, [])
 
     return (
         <>
@@ -195,25 +207,31 @@ export function Home()
                     <a className='title is-1 has-text-dark'>Les sessions en cours</a>
                 </div>
                 <div className='box formations-container'>
-                    {
-                        data.formations.map((formation) => {
-                            return(
-                                <div key = {uuid()}>
-                                    <FormationCard
-                                        key = {uuid()}
-                                        id = {formation.id}
-                                        image = {formation.image}
-                                        name = {formation.name}
-                                        duration = {formation.duration}
-                                        date = {formation.date}
-                                        price = {formation.price}
-                                        description = {formation.description}
-                                        formateur = {formation.formateur}
-                                     />
-                                </div>
-                            )
-                        })
-                    }
+                {
+                    formationsData.formations.length != 0 ?
+                    <>
+                        {
+                            formationsData.formations.map((formation) => {
+                                return (
+                                    <div key = {formation._id}>
+                                        <FormationCard
+                                            key = {formation._id}
+                                            id = {formation._id}
+                                            image = {formation.image}
+                                            name = {formation.name}
+                                            duration = {formation.duration}
+                                            date = {formation.date}
+                                            price = {formation.price}
+                                            description = {formation.description}
+                                            formateur = {formation.formateur}
+                                        />
+                                    </div>
+                                )
+                            })
+                        }
+                    </> :
+                    <></>
+                }
                 </div>
             </div>
         </>

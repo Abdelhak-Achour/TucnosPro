@@ -9,6 +9,33 @@ import axios from "axios";
 
 export function ManageCategories()
 {
+    document.addEventListener('DOMContentLoaded', () => {
+        // 1. Display file name when select file
+        let fileInputs = document.querySelectorAll('.file.has-name')
+        for (let fileInput of fileInputs) {
+          let input = fileInput.querySelector('.file-input')
+          let name = fileInput.querySelector('.file-name')
+          input.addEventListener('change', () => {
+            let files = input.files
+            if (files.length === 0) {
+              name.innerText = 'photo'
+            } else {
+              name.innerText = files[0].name
+            }
+          })
+        }
+    // 2. Remove file name when form reset
+    let forms = document.getElementsByTagName('form')
+    for (let form of forms) {
+    form.addEventListener('reset', () => {
+        console.log('a')
+        let names = form.querySelectorAll('.file-name')
+        for (let name of names) {
+        name.innerText = 'Aucune photo choisie'
+        }
+    })
+    }
+    });
 
     const [cookies, setCookies, removeCookies] = useCookies(["access_token"]);
     const navigate = useNavigate();
@@ -63,6 +90,7 @@ export function ManageCategories()
     }
 
     const [name, setName] = useState("");
+    const [description, setDescription] = useState("");
     const [image, setImage] = useState('');
 
     function handleImage(event)
@@ -72,9 +100,15 @@ export function ManageCategories()
 
     async function submitHandle(event)
     {   
+        const formData = new FormData();
+
+        formData.append('image', image);
+        formData.append('name', name);
+        formData.append('description', description);
+
         try
         {
-            const response = await axios.post("http://localhost:3001/category/", {name}, {headers: {auth: cookies.access_token}});
+            const response = await axios.post("http://localhost:3001/category/", formData, {headers: {auth: cookies.access_token}});
         }
         catch (err)
         {
@@ -84,16 +118,28 @@ export function ManageCategories()
 
     async function updateHandle(event)
     {
+        const formData = new FormData();
+
+        formData.append('image', image);
+        formData.append('name', name);
+        formData.append('description', description);
+
         try
         {
-            
-            const response = await axios.put("http://localhost:3001/category/",
+            if (image === '')
             {
-                categoryId,
-                name,
-            },
-            {headers: {auth: cookies.access_token}});
-            
+                const response = await axios.put("http://localhost:3001/category/noimage",
+                {
+                    categoryId,
+                    name,
+                    description
+                },
+                {headers: {auth: cookies.access_token}});
+            }
+            else
+            {
+                const response = await axios.put("http://localhost:3001/category", formData, {headers: {auth: cookies.access_token}});
+            }
         }
         catch (err)
         {
@@ -159,6 +205,43 @@ export function ManageCategories()
                                             <input className="input" type="name" placeholder="Nom" onChange={(event) => setName(event.target.value)} required />
                                         </div>
                                     </div>
+                                    <div className="field">
+                                        <div className="columns is-mobile">
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <label className="label">Photo</label>
+                                            </div>
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <p className="orange-star">*</p>
+                                            </div>
+                                        </div>
+                                        <div className="file has-name">
+                                            <label className="file-label">
+                                                <input className="file-input" type="file" name="image" accept="images/png,image/jpg,image/jpeg" onChange={handleImage} required />
+                                                <span className="file-cta">
+                                                    <img className="image-upload-icon" src={imageUpload} alt="up" />
+                                                    <span className="file-label pl-2">
+                                                        Choisisez une photo ...
+                                                    </span>
+                                                </span>
+                                                <span className="file-name">
+                                                    Aucune photo choisie
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div className="field">
+                                        <div className="columns is-mobile">
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <label className="label">Description</label>
+                                            </div>
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <p className="orange-star">*</p>
+                                            </div>
+                                        </div>
+                                        <div className="control">
+                                            <textarea class="textarea" placeholder="Description" rows="7" onChange={(event) => setDescription(event.target.value)} required></textarea>
+                                        </div>
+                                    </div>
                                     <div className="has-text-left">
                                         <button className="button is-medium is-link" type="submit">Ajouter</button>
                                     </div>
@@ -207,6 +290,43 @@ export function ManageCategories()
                                         </div>
                                         <div className="control">
                                             <input className="input" type="name" placeholder="Nom" onChange={(event) => setName(event.target.value)} />
+                                        </div>
+                                    </div>
+                                    <div className="field">
+                                        <div className="columns is-mobile">
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <label className="label">Photo</label>
+                                            </div>
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <p className="orange-star">*</p>
+                                            </div>
+                                        </div>
+                                        <div className="file has-name">
+                                            <label className="file-label">
+                                                <input className="file-input" type="file" name="image" accept="images/png,image/jpg,image/jpeg" onChange={handleImage} />
+                                                <span className="file-cta">
+                                                    <img className="image-upload-icon" src={imageUpload} alt="up" />
+                                                    <span className="file-label pl-2">
+                                                        Choisisez une photo ...
+                                                    </span>
+                                                </span>
+                                                <span className="file-name">
+                                                    Aucune photo choisie
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div className="field">
+                                        <div className="columns is-mobile">
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <label className="label">Description</label>
+                                            </div>
+                                            <div className="column pb-0 pr-0 is-narrow">
+                                                <p className="orange-star">*</p>
+                                            </div>
+                                        </div>
+                                        <div className="control">
+                                            <textarea class="textarea" placeholder="Description" rows="7" onChange={(event) => setDescription(event.target.value)}></textarea>
                                         </div>
                                     </div>
                                     <div className="has-text-left">
