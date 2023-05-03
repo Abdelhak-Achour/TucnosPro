@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import paperplane from '../images/paper-plane-solid.svg';
 import data from '../mock_data.json';
 import Logo from '../images/logo_tucnospro.png';
@@ -7,9 +7,26 @@ import Twitter from '../images/twitter.svg';
 import Linkedin from '../images/linkedin.svg';
 import Instagram from '../images/instagram.svg';
 import uuid from 'react-uuid';
+import axios from "axios";
 
 export function Footer()
 {
+    const [email, setEmail] = useState("");
+
+    async function submitHandle(event)
+    {
+        try
+        {
+            const response = await axios.post("http://localhost:3001/newsletter", {
+                email
+            });
+        }
+        catch (err)
+        {
+            console.error(err)
+        }
+    }
+
     return (
         <>
             <footer className="footer">
@@ -23,14 +40,14 @@ export function Footer()
                                 <p className="title is-3 has-text-dark">Inscrivez-vous à notre newsletter!</p>
                             </div>
                             <div className="column form-col">
-                                <form className="box is-shadowless has-text-left-desktop is-paddingless">
+                                <form className="box is-shadowless has-text-left-desktop is-paddingless" onSubmit={submitHandle}>
                                     <div className="field">
                                         <div className="control">
-                                            <input className="input" type="email" placeholder="Email" />
+                                            <input className="input" type="email" placeholder="Email" onChange={(event) => setEmail(event.target.value)} required />
                                         </div>
                                     </div>
                                     <div className="control">
-                                        <button className="button is-link">S'inscrire</button>
+                                        <button className="button is-link" type="submit">S'inscrire</button>
                                     </div>
                                 </form>
                             </div>
