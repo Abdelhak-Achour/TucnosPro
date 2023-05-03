@@ -5,8 +5,7 @@ import {Link, NavLink} from "react-router-dom";
 import phoneIcon from '../images/phone-287.svg';
 import emailIcon from '../images/email-155.svg';
 import { Expo, gsap } from "gsap";
-import data from '../mock_data.json';
-import uuid from "react-uuid";
+import axios from "axios";
 
 export function Navbar ()
 {
@@ -48,44 +47,6 @@ export function Navbar ()
             });
         }
     }, [toggle]);
-
-    const dropmenuRef2 = useRef(null);
-
-    const [toggle2, setToggle2] = useState(false);
-
-    function toggleDrop2 ()
-    {
-        setToggle2(!toggle2);
-    };
-
-    useEffect(() => {
-        if (toggle2)
-        {
-            console.log(toggle2);
-            gsap.to(dropmenuRef2.current, {
-                duration: 1,
-                y: 0,
-                delay: 0,
-                repeat: 0,
-                yoyo: false,
-                ease: Expo.easeInOut,
-                paused: false
-            });
-        }
-        else
-        {
-            console.log(toggle2)
-            gsap.to(dropmenuRef2.current, {
-                duration: 1,
-                y: "-100vh",
-                delay: 0,
-                repeat: 0,
-                yoyo: false,
-                ease: Expo.easeInOut,
-                paused: false
-            });
-        }
-    }, [toggle2]);
 
     const mobilenavRef = useRef(null);
     const [pulled, setPulled] = useState(false);
@@ -137,6 +98,25 @@ export function Navbar ()
         }
     }
 
+    async function getCategoriesData()
+    {
+        try
+        {
+            const response = await axios.get("http://localhost:3001/category/");
+            setCategoriesData(response.data);
+        }
+        catch (err)
+        {
+            console.log(err);
+        }
+    }
+
+    const [categoriesData, setCategoriesData] = useState({categories: []});
+    
+    useEffect(() => {
+        getCategoriesData();
+    }, [])
+
     return(
         <>
             <nav className = "navbar">
@@ -176,12 +156,12 @@ export function Navbar ()
                             <div className="drop-menu-box">
                                 <div ref={dropmenuRef} onMouseEnter={() => {toggle ? setToggle(true) : setToggle(true)}} onMouseLeave={toggleDrop} className="drop-menu box">
                                     {
-                                        data.categories.map((categorie) =>
+                                        categoriesData.categories.map((category) =>
                                         {
                                             return (
-                                                <>
-                                                    <a key={uuid()}><p className="has-text-dark my-2">{categorie.name}</p></a>
-                                                </>
+                                                <div key={category._id}>
+                                                    <Link to={`/formations/bycategory/${category._id}`}><p className="has-text-dark my-2">{category.name}</p></Link>
+                                                </div>
                                             )
                                         })
                                     }
@@ -205,12 +185,12 @@ export function Navbar ()
                         <br />
                         <div ref={categoriesMenuRef} className="categories-menu pl-5 pt-0 pb-2">
                             {
-                                data.categories.map((categorie) =>
+                                categoriesData.categories.map((category) =>
                                 {
                                     return (
-                                        <>
-                                            <p key={uuid()} className="subtitle mobile-navbar-menu-content is-5 mb-2">{categorie.name}</p>
-                                        </>
+                                        <div key={category._id}>
+                                            <Link to={`/formations/bycategory/${category._id}`}><p className="subtitle mobile-navbar-menu-content is-5 mb-2">{category.name}</p></Link>
+                                        </div>
                                     )
                                 })
                             }

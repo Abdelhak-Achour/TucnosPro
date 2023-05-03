@@ -43,14 +43,25 @@ export function Home()
         }
     }
 
-    
+    async function getCategoriesData()
+    {
+        try
+        {
+            const response = await axios.get("http://localhost:3001/category/");
+            setCategoriesData(response.data);
+        }
+        catch (err)
+        {
+            console.log(err);
+        }
+    }
 
     const [formationsData, setFormationsData] = useState({formations: []});
-
+    const [categoriesData, setCategoriesData] = useState({categories: []});
     
-
     useEffect(() => {
         getFormationsData();
+        getCategoriesData();
     }, [])
 
     return (
@@ -89,10 +100,10 @@ export function Home()
                             <div className='buttons-div'>
                                 <div className='columns'>
                                     <div className='column is-narrow has-text-centered'>
-                                        <button className='button medium-height-btn is-medium is-link orange-bg'><Link className='anchor-style' href='/formation'>VOIR LES COURS</Link></button>
+                                        <Link className='anchor-style' to='/formations'><button className='button medium-height-btn is-medium is-link orange-bg'>VOIR LES COURS</button></Link>
                                     </div>
                                     <div className='column is-narrow has-text-centered'>
-                                        <button className='button medium-height-btn is-medium is-link'><Link className='anchor-style' href='/contact'>CONTACTEZ-NOUS</Link></button>
+                                    <Link className='anchor-style' to='/contact'><button className='button medium-height-btn is-medium is-link'>CONTACTEZ-NOUS</button></Link>
                                     </div>
                                 </div>
                             </div>
@@ -105,10 +116,10 @@ export function Home()
                             <div className='buttons-div'>
                                 <div className='columns'>
                                     <div className='column is-narrow has-text-centered'>
-                                        <button className='button medium-height-btn is-medium is-link orange-bg'><Link className='anchor-style' href='/formation'>VOIR LES COURS</Link></button>
+                                        <Link className='anchor-style' to='/formations'><button className='button medium-height-btn is-medium is-link orange-bg'>VOIR LES COURS</button></Link>
                                     </div>
                                     <div className='column is-narrow has-text-centered'>
-                                        <button className='button medium-height-btn is-medium is-link'><Link className='anchor-style' href='/contact'>CONTACTEZ-NOUS</Link></button>
+                                        <Link className='anchor-style' to='/contact'><button className='button medium-height-btn is-medium is-link'>CONTACTEZ-NOUS</button></Link>
                                     </div>
                                 </div>
                             </div>
@@ -125,8 +136,8 @@ export function Home()
                     centeredSlides={true}
                     navigation
                     pagination={{ clickable: true }}
-                    loop={true}
-                    rewind={false}
+                    loop={false}
+                    rewind={true}
                     initialSlide = {0}
                     grabCursor={true}
                     effect={"coverflow"}
@@ -147,15 +158,14 @@ export function Home()
                     }
                     >
                     {
-                        data.categories.map((categorie) => {
+                        categoriesData.categories.map((category) => {
                             return (
-                                <SwiperSlide>
+                                <SwiperSlide key = {category._id}>
                                     <Card
-                                        key = {uuid()}
-                                        id = {categorie.id}
-                                        name = {categorie.name}
-                                        description = {categorie.description}
-                                        image = {categorie.image}
+                                        id = {category._id}
+                                        name = {category.name}
+                                        description = {category.description}
+                                        image = {category.image}
                                      />
                                 </SwiperSlide>
                             )

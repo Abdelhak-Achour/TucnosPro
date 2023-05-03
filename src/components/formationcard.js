@@ -52,10 +52,10 @@ export function FormationCard(props)
                 >
                     <div className='card is-shadowless mb-5'>
                         <div className='formation-card-image has-text-centered'>
-                            <img className='formation-card-image' src = {require(`../images/${props.image}`)} alt = "categorie" />
+                            <Link to = {`/formations/${props.id}`}><img className='formation-card-image' src = {require(`../images/${props.image}`)} alt = "formation" /></Link>
                         </div>
                         <div className='card-content p-1'>
-                            <p className='title lvl-5 mt-1 mb-1 mr-0 ml-0 has-text-dark'>{props.name.length > 43 ? props.name.slice(0, 41) + "..." : props.name}</p>
+                            <Link to = {`/formations/${props.id}`}><p className='title lvl-5 mt-1 mb-1 mr-0 ml-0 has-text-dark'>{props.name.length > 43 ? props.name.slice(0, 41) + "..." : props.name}</p></Link>
                             <p className='subtitle has-text-dark lvl-10 mt-1 mb-1 mr-0 ml-0'>{props.formateur}</p>
                             <p className='tag orange-bg lvl-8 mt-1 mb-1 mr-0 ml-0'>{props.price} TND</p>
                         </div>
