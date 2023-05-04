@@ -24,6 +24,8 @@ export function AdminLinks(props)
             <br />
             <Link className="has-text-dark is-size-4 mt-2 mb-2" to="/manageformations">Formations</Link>
             <br />
+            <Link className="has-text-dark is-size-4 mt-2 mb-2" to="/inscriptions">Inscriptions</Link>
+            <br />
             <Link className="has-text-dark is-size-4 mt-2 mb-2" to="/manageblogs">Blogs</Link>
             <br />
             <Link className="has-text-dark is-size-4 mt-2 mb-2" to="/managepartners">Partenaires</Link>
