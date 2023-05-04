@@ -66,9 +66,9 @@ export function Inscriptions()
                                     formationsData.formations.map((formation) => {
                                         return (
                                             <div key={formation._id} className="box">
-                                            <p className="subtitle is-5 mb-0 pb-0 has-text-dark">{formation.formateur}</p>
-                                            <p className="has-text-dark lvl-9 mt-0 pt-0">{formation.inscriptions ? formation.inscriptions.length : ""} inscriptions</p>
-                                            <p className="title is-4 has-text-dark ml-4 mr-3 mb-0 mt-2">{formation.name}</p>
+                                                <p className="subtitle is-5 mb-0 pb-0 has-text-dark">{formation.formateur}</p>
+                                                <p className="has-text-dark lvl-9 mt-0 pt-0">{formation.inscriptions ? formation.inscriptions.length : ""} inscriptions</p>
+                                                <Link className="title is-4 has-text-dark ml-4 mr-3 mb-0 mt-2" to={`/inscriptionslist/${formation._id}`}>{formation.name}</Link>
                                             </div>
                                         )
                                     })

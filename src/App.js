@@ -22,6 +22,7 @@ import { ManagePartners } from './pages/managepartners';
 import { ManageCategories } from './pages/managecategories';
 import { ManageFormations } from './pages/manageformations';
 import { Inscriptions } from './pages/inscriptions';
+import { FormationInscriptions } from './pages/formationinscriptions';
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
         <Route path = '/manageformations' element = {<ManageFormations />} />
         <Route path = '/messages' element = {<Messages />} />
         <Route path = '/inscriptions' element = {<Inscriptions />} />
+        <Route path = '/inscriptionslist/:id' element = {<FormationInscriptions />} />
         <Route path = '/testpage' element = {<Testpage />} />
         <Route path = '*' element = {<NotFound />} />
       </Routes>
