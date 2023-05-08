@@ -1,11 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
-import {Home} from "./pages/home";
-import React from 'react';
-import {About} from './pages/about';
-import {Blog} from './pages/blog';
-import { Formations} from './pages/formations';
-import {Contact} from './pages/contact';
-import {Partners} from './pages/partners';
+import { Home } from "./pages/home";
+import React, { useEffect } from 'react';
+import { About } from './pages/about';
+import { Blog } from './pages/blog';
+import { Formations } from './pages/formations';
+import { Contact } from './pages/contact';
+import { Partners } from './pages/partners';
 import { Footer } from './components/footer';
 import { Temoin } from './pages/temoin';
 import { NotFound } from './pages/notfound';
@@ -24,8 +24,53 @@ import { ManageFormations } from './pages/manageformations';
 import { Inscriptions } from './pages/inscriptions';
 import { FormationInscriptions } from './pages/formationinscriptions';
 import { NewsletterEmails } from './pages/newsletteremails';
+import axios from 'axios';
 
 function App() {
+  async function visitView()
+  {
+    try
+    {
+      const response = await axios.post("http://localhost:3001/stats", {visited: true, viewed: true});
+    }
+    catch(err)
+    {
+      console.log(err);
+    }
+  }
+
+  async function view()
+  {
+    try
+    {
+      const response = await axios.post("http://localhost:3001/stats", {visited: false, viewed: true});
+    }
+    catch(err)
+    {
+      console.log(err);
+    }
+  }
+
+  useEffect(() => {
+    if(window.localStorage.getItem("visited"))
+    {
+      if(window.sessionStorage.getItem("viewed"))
+      {
+
+      }
+      else
+      {
+        view()
+        window.sessionStorage.setItem("viewed", true);
+      }
+    }
+    else
+    {
+      visitView();
+      window.localStorage.setItem("visited", true);
+      window.sessionStorage.setItem("viewed", true);
+    }
+  })
   return (
     <>
       <Routes>
