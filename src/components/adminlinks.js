@@ -32,6 +32,8 @@ export function AdminLinks(props)
             <br />
             <Link className="has-text-dark is-size-4 mt-2 mb-2" to="/messages">Messages</Link>
             <br />
+            <Link className="has-text-dark is-size-4 mt-2 mb-2" to="/newsletteremails">Newsletter</Link>
+            <br />
             <button className="button is-link mt-4" onClick={logout}>Logout</button>
         </div>
     )

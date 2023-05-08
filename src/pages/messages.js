@@ -76,7 +76,7 @@ export function Messages()
                                     })
                                 }
                             </> :
-                            <p className="title is-3">Pas de message</p>
+                            <p className="title has-text-dark is-3">Pas de message</p>
                         }
                         </div>
                     </div>

@@ -23,6 +23,7 @@ import { ManageCategories } from './pages/managecategories';
 import { ManageFormations } from './pages/manageformations';
 import { Inscriptions } from './pages/inscriptions';
 import { FormationInscriptions } from './pages/formationinscriptions';
+import { NewsletterEmails } from './pages/newsletteremails';
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
         <Route path = '/managecategories' element = {<ManageCategories />} />
         <Route path = '/manageformations' element = {<ManageFormations />} />
         <Route path = '/messages' element = {<Messages />} />
+        <Route path = '/newsletteremails' element = {<NewsletterEmails />} />
         <Route path = '/inscriptions' element = {<Inscriptions />} />
         <Route path = '/inscriptionslist/:id' element = {<FormationInscriptions />} />
         <Route path = '/testpage' element = {<Testpage />} />

@@ -84,7 +84,7 @@ export function FormationInscriptions()
                                     })
                                 }
                             </> :
-                            <p className="title is-3">Pas d'inscriptions</p>
+                            <p className="title has-text-dark is-3">Pas d'inscriptions</p>
                         }
                         </div>
                     </div>
