@@ -4,6 +4,7 @@ import { useCookies } from "react-cookie";
 import { Link, useNavigate } from "react-router-dom";
 import { AdminLinks } from "../components/adminlinks";
 import axios from "axios";
+import { StatsBar } from "../components/statsbar";
 
 export function Messages()
 {
@@ -50,6 +51,7 @@ export function Messages()
     return (
         <>
             <Navbar2 />
+            <StatsBar />
             <div className="box is-shadowless m-2 mt-5 mb-6">
                 <div className="columns">
                     <div className="column is-narrow">

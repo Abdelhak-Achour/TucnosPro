@@ -6,6 +6,7 @@ import { AdminLinks } from "../components/adminlinks";
 import 'swiper/swiper-bundle.css';
 import imageUpload from '../images/image-upload.svg';
 import axios from "axios";
+import { StatsBar } from "../components/statsbar";
 
 export function ManagePartners()
 {
@@ -176,6 +177,7 @@ export function ManagePartners()
     return (
         <>
             <Navbar2 />
+            <StatsBar />
             <div className="box m-2 mt-5 is-shadowless">
                 <div className="columns">
                     <div className="column is-narrow">

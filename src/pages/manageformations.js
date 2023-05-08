@@ -9,6 +9,7 @@ import axios from "axios";
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import dateformater from "date-and-time";
+import { StatsBar } from "../components/statsbar";
 
 export function ManageFormations()
 {
@@ -331,6 +332,7 @@ export function ManageFormations()
     return (
         <>
             <Navbar2 />
+            <StatsBar />
             <div className="box m-2 mt-5 is-shadowless">
                 <div className="columns">
                     <div className="column is-narrow">

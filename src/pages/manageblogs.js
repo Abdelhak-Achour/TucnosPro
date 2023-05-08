@@ -8,6 +8,7 @@ import imageUpload from '../images/image-upload.svg';
 import axios from "axios";
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+import { StatsBar } from "../components/statsbar";
 
 export function ManageBlogs()
 {
@@ -224,6 +225,7 @@ export function ManageBlogs()
     return (
         <>
             <Navbar2 />
+            <StatsBar />
             <div className="box m-2 mt-5 is-shadowless">
                 <div className="columns">
                     <div className="column is-narrow">
