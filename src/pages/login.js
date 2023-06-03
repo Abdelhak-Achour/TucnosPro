@@ -26,19 +26,26 @@ export function Login()
                 password
             });
 
-            if(remember)
+            if(response.data.token)
             {
-                window.localStorage.setItem("remember", true);
+                if(remember)
+                {
+                    window.localStorage.setItem("remember", true);
+                }
+                else
+                {
+                    window.sessionStorage.setItem("remember", true);
+                }
+
+                setCookies("access_token", response.data.token);
+                window.localStorage.setItem("userID", response.data.userID);
+
+                navigate("/admin")
             }
             else
             {
-                window.sessionStorage.setItem("remember", true);
+                alert("email ou mot de passe incorrecte");
             }
-
-            setCookies("access_token", response.data.token);
-            window.localStorage.setItem("userID", response.data.userID);
-
-            navigate("/admin")
         }
         catch (err)
         {

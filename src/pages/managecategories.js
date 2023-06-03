@@ -350,7 +350,7 @@ export function ManageCategories()
                                         <div className="control">
                                             <div className="select">
                                                 <select onChange={(event) => setCategoryId(event.target.value)} required>
-                                                    <option value="">Choisissez un partenaire</option>
+                                                    <option value="">Choisissez une catégorie</option>
                                                     {
                                                         categories.categories.length != 0 ?
                                                         <>

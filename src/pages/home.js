@@ -173,41 +173,23 @@ export function Home()
                     }
                 </Swiper>
             </div>
-
+            
             <div className='methods-section'>
-                <div className='columns'>
-                    <div className='column is-11-mobile has-text-centered-mobile is-4 padding-0'>
-                        <img className='has-text-centered-mobile' src = {methodsimg} alt = "work methods" />
-                    </div>
-                    <div className='column'>
-                        <p className='title is-2 has-text-dark margin-left'>Faire la bonne chose au bon moment.</p>
-                        <div className='columns is-mobile'>
-                            <div className='column is-narrow has-text-centered-tablet is-paddingless'>
-                                <p className='title is-3 method-nb margin-left'>01.</p>
-                            </div>
-                            <div className='column is-narrow is-paddingless'>
-                                <p className='title is-3 has-text-grey-dark has-text-centered-mobile'>Notre Centre</p>
-                            </div>
+                <p className='title is-2 has-text-dark has-text-centered pt-4 mb-0'>Faire la bonne chose au bon moment.</p>
+                <div className='box is-shadowless methods-box has-text-centered'>
+                    <div className='columns'>
+                        <div className='column pr-6'>
+                            <p className='title is-3 has-text-grey-dark has-text-centered orange-text'>Notre Centre</p>
+                            <p className='has-text-dark methods-p is-size-5'>TucnosPRO est spécialisé dans la formation et le consulting principalement dans les métiers des nouvelles technologies. Nous vous proposons des formations ciblées pour accélérer et faciliter votre intégration dans le milieu professionnel.Notre objectif est de vous garantir une formation qui répond à vos besoins et vous permet d'acquérir de véritables compétences. et vous rendre opérationnels.</p>
                         </div>
-                        <p className='has-text-dark methods-p margin-left'>TucnosPRO est spécialisé dans la formation et le consulting principalement dans les métiers des nouvelles technologies. Nous vous proposons des formations ciblées pour accélérer et faciliter votre intégration dans le milieu professionnel.Notre objectif est de vous garantir une formation qui répond à vos besoins et vous permet d'acquérir de véritables compétences. et vous rendre opérationnels.</p>
-                        <div className='columns is-mobile'>
-                            <div className='column is-narrow has-text-centered-tablet is-paddingless'>
-                                <p className='title is-3 method-nb margin-left'>02.</p>
-                            </div>
-                            <div className='column is-narrow is-paddingless'>
-                                <p className='title is-3 has-text-grey-dark has-text-centered-mobile'>Nos atouts</p>
-                            </div>
+                        <div className='column pr-5 pl-5'>
+                            <p className='title is-3 has-text-grey-dark has-text-centered orange-text'>Nos atouts</p>
+                            <p className='has-text-dark methods-p is-size-5'>C’est par la pratique et l'écoute de nos clients que nous arrivons à faciliter votre insertion professionnel. Les formations qu'on propose s'adressent aussi bien aux entreprises, aux particuliers, étudiants, personnes douées ou encore aux salariés à la recherche d'une formule de reconversion. Nous nous efforçons de traiter le besoins de la façon la plus appropriée possible tout en restant flexible et ouverts à toute suggestion.</p>
                         </div>
-                        <p className='has-text-dark methods-p margin-left'>C’est par la pratique et l'écoute de nos clients que nous arrivons à faciliter votre insertion professionnel. Les formations qu'on propose s'adressent aussi bien aux entreprises, aux particuliers, étudiants, personnes douées ou encore aux salariés à la recherche d'une formule de reconversion. Nous nous efforçons de traiter le besoins de la façon la plus appropriée possible tout en restant flexible et ouverts à toute suggestion.</p>
-                        <div className='columns is-mobile'>
-                            <div className='column is-narrow has-text-centered-tablet is-paddingless'>
-                                <p className='title is-3 method-nb margin-left'>03.</p>
-                            </div>
-                            <div className='column is-narrow is-paddingless'>
-                                <p className='title is-3 has-text-grey-dark has-text-centered-mobile'>Notre méthode</p>
-                            </div>
+                        <div className='column pl-6'>
+                            <p className='title is-3 has-text-grey-dark has-text-centered orange-text'>Notre méthode</p>
+                            <p className='has-text-dark methods-p is-size-5'>TucnosPRO vous propose des formations pratiques, sur-mesure et adaptés à vos besoins. Développez votre savoir-faire et vos compétences grâce à nos formations orientées métiers. Pratiques, adaptées et riches, nos formations répondent parfaitement aux besoins du marché du travail actuel. Nos formateurs qualifiés sont disponibles pour vous accompagner tout au long de votre passage chez nous.</p>
                         </div>
-                        <p className='has-text-dark methods-p margin-left'>TucnosPRO vous propose des formations pratiques, sur-mesure et adaptés à vos besoins. Développez votre savoir-faire et vos compétences grâce à nos formations orientées métiers. Pratiques, adaptées et riches, nos formations répondent parfaitement aux besoins du marché du travail actuel. Nos formateurs qualifiés sont disponibles pour vous accompagner tout au long de votre passage chez nous.</p>
                     </div>
                 </div>
             </div>
@@ -218,7 +200,7 @@ export function Home()
                 </div>
                 <div className='box formations-container'>
                 {
-                    formationsData.formations.length != 0 ?
+                    formationsData.formations ?
                     <>
                         {
                             formationsData.formations.map((formation) => {

@@ -62,39 +62,21 @@ export function About ()
             </div>
 
             <div className='methods-section'>
-                <div className='columns'>
-                    <div className='column is-11-mobile has-text-centered-mobile is-4 padding-0'>
-                        <img className='' src = {methodsimg} alt = "work methods" />
-                    </div>
-                    <div className='column is-paddingless'>
-                        <p className='title lvl-3 has-text-dark margin-left pt-2'>Notre plus-value</p>
-                        <div className='columns'>
-                            <div className='column is-1 has-text-centered-tablet is-paddingless'>
-                                <p className='title lvl-4 method-nb margin-left'>01.</p>
-                            </div>
-                            <div className='column is-paddingless'>
-                                <p className='title lvl-4 has-text-grey-dark has-text-centered-mobile'>Ecoute et disponibilité</p>
-                            </div>
+                <p className='title is-2 has-text-dark has-text-centered pt-4 mb-0'>Notre plus-value</p>
+                <div className='box is-shadowless methods-box has-text-centered'>
+                    <div className='columns'>
+                        <div className='column pr-6'>
+                            <p className='title is-3 has-text-grey-dark has-text-centered orange-text'>Ecoute et disponibilité</p>
+                            <p className='has-text-dark methods-p is-size-5'>On s'engage à être à l'écoute de ses clients et de traiter leurs besoins individuellement et à leur rythme. Nos conseillers sont à votre disposition pour vous guider et vous orienter jusqu'à atteindre votre objectif. Le contenu de votre formation s'adapte à votre niveau, vos objectifs, votre rythme d'apprentissage et peut être actualisé à tout moment. En terme de financement, on s'engage à proposer des plans selon votre budget et cherche des moyens de financement appropriés à proposer.</p>
                         </div>
-                        <p className='has-text-dark lvl-7 methods-p margin-left'>On s'engage à être à l'écoute de ses clients et de traiter leurs besoins individuellement et à leur rythme. Nos conseillers sont à votre disposition pour vous guider et vous orienter jusqu'à atteindre votre objectif. Le contenu de votre formation s'adapte à votre niveau, vos objectifs, votre rythme d'apprentissage et peut être actualisé à tout moment. En terme de financement, on s'engage à proposer des plans selon votre budget et cherche des moyens de financement appropriés à proposer.</p>
-                        <div className='columns'>
-                            <div className='column is-1 has-text-centered-tablet is-paddingless'>
-                                <p className='title lvl-4 method-nb margin-left'>02.</p>
-                            </div>
-                            <div className='column is-paddingless'>
-                            <p className='title lvl-4 has-text-grey-dark has-text-centered-mobile'>Qualité et expertise</p>
-                            </div>
+                        <div className='column pr-5 pl-5'>
+                            <p className='title is-3 has-text-grey-dark has-text-centered orange-text'>Qualité et expertise</p>
+                            <p className='has-text-dark methods-p is-size-5'>On s'engage à appliquer une procédure qualité à la mise en place d'une session de formation : validation des experts formateurs, des programmes de formation ciblés et spécifiques, un support de formation détaillé, disponibilité totale auprès de nos contacts, horaires adaptés, un suivi post-formation, évaluation de votre passage. Nos experts certifiés dans leurs domaines ont une expérience significative. Il partagent avec vous non seulement leur savoir technique mais aussi leur expérience dans le milieu professionnel pour vous permettre de vous faire une idée sur les opportunités et les parcours disponibles.</p>
                         </div>
-                        <p className='has-text-dark lvl-7 methods-p margin-left'>On s'engage à appliquer une procédure qualité à la mise en place d'une session de formation : validation des experts formateurs, des programmes de formation ciblés et spécifiques, un support de formation détaillé, disponibilité totale auprès de nos contacts, horaires adaptés, un suivi post-formation, évaluation de votre passage. Nos experts certifiés dans leurs domaines ont une expérience significative. Il partagent avec vous non seulement leur savoir technique mais aussi leur expérience dans le milieu professionnel pour vous permettre de vous faire une idée sur les opportunités et les parcours disponibles.</p>
-                        <div className='columns'>
-                            <div className='column is-1 has-text-centered-tablet is-paddingless'>
-                                <p className='title lvl-4 method-nb margin-left'>03.</p>
-                            </div>
-                            <div className='column is-paddingless'>
-                            <p className='title lvl-4 has-text-grey-dark has-text-centered-mobile'>Innovation et implication</p>
-                            </div>
+                        <div className='column pl-6'>
+                            <p className='title is-3 has-text-grey-dark has-text-centered orange-text'>Innovation et implication</p>
+                            <p className='has-text-dark methods-p is-size-5'>On s'engage dans un processus innovant qui vise à combiner les besoins des clients et les offres proposées. Nos méthodes font l'objet d'une réflexion continue et permanente pour moderniser et apporter des éléments nouveaux. On s'implique de façon directe avec nos clients en développant un relationnel fort et durable pour rester compétitif et installer la confiance.</p>
                         </div>
-                        <p className='has-text-dark lvl-7 methods-p margin-left'>On s'engage dans un processus innovant qui vise à combiner les besoins des clients et les offres proposées. Nos méthodes font l'objet d'une réflexion continue et permanente pour moderniser et apporter des éléments nouveaux. On s'implique de façon directe avec nos clients en développant un relationnel fort et durable pour rester compétitif et installer la confiance.</p>
                     </div>
                 </div>
             </div>

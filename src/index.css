@@ -208,10 +208,15 @@ p {
 }
 
 .methods-section {
-    margin-top: 3rem;
+    margin-top: 1rem;
     background-color: #fafafa;
     padding: 0;
     margin-bottom: 3rem;
+}
+
+.methods-box {
+    background-color: #fafafa;
+    margin: 0rem 5rem 1rem 5rem;
 }
 
 .methods-image {
@@ -577,7 +582,7 @@ p {
 */
 
 .formation-page-image {
-    max-width: 32.5rem;
+    max-width: 31rem;
     margin-right: 0.1rem;
 }
 
@@ -637,7 +642,7 @@ p {
 }
 
 .leave-comment-form {
-    max-width: 50rem;
+    max-width: 35rem;
     margin: 2rem auto 5rem auto;
 }
 
@@ -649,8 +654,15 @@ p {
 }
 
 .comments {
-    max-width: 47rem;
+    max-width: 55rem;
     margin: auto;
+}
+
+.comments-container {
+    display: grid;
+    grid-gap: 0rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    margin: auto 5rem auto 5rem;
 }
 
 @media only screen and (max-width: 768px) {

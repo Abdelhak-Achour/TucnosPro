@@ -88,7 +88,7 @@ export function Footer()
                         </div>
                         <div className="column has-text-left">
                             <div className="menu">
-                                <p className="menu-label has-text-dark">
+                                <p className="menu-label is-size-5 has-text-dark">
                                     Tucnos PRO
                                 </p>
                                 <ul className="menu-list">
@@ -100,7 +100,7 @@ export function Footer()
                         </div>
                         <div className="column has-text-left">
                             <div className="menu">
-                                <p className="menu-label has-text-dark">
+                                <p className="menu-label is-size-5 has-text-dark">
                                     Formations
                                 </p>
                                 <ul className="menu-list">
@@ -116,7 +116,7 @@ export function Footer()
                         </div>
                         <div className="column has-text-left">
                             <div className="menu">
-                                <p className="menu-label has-text-dark">
+                                <p className="menu-label is-size-5 has-text-dark">
                                     Contactez-nous
                                 </p>
                                 <ul className="menu-list">
