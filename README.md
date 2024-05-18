@@ -14,7 +14,7 @@ cd TucnosPro
 # Install the dependencies
 npm install
 
-# Starting the react app - note that changes for backend connections are needed
+# Starting the react app
 npm start
 ```
 
